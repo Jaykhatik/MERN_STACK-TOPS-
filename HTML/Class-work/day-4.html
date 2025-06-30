@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Register Form</legend>
+            <table>
+                <tr>
+                    <td><label for="">Name</label></td>
+                    <td><input type="text" placeholder="enetr your name" required pattern="[A-Z]+[a-z]{5,10}"
+                            maxlength="10" minlength="5"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Surname</label></td>
+                    <td><input type="text" placeholder="enetr your surname" required pattern="[A-Z]+[a-z]{6,20}"
+                            maxlength="20" minlength="6"></td>
+                </tr>
+                <tr>
+                    <td><label for="">E-mail</label></td>
+                    <td><input type="email" placeholder="enetr your email" required
+                            pattern="[a-z0-9#.*]+'@'+[a-z]+'.'+[a-z]{17,40}" maxlength="40" minlength="17" ></td>
+
+                </tr>
+                <tr>
+                    <td><label for="">Phone</label></td>
+                    <td><input type="tel" placeholder="enetr your phone number" required pattern="[0-9]{10}"
+                            maxlength="10"></td>
+                </tr>
+                <tr>
+                    <td><label for="">QTY</label></td>
+                    <td><input type="number" placeholder="enetr quantity" required pattern="[0-9]+" maxlength="6"
+                            minlength="1"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Password</label></td>
+                    <td><input type="password" placeholder="enetr your Password" required pattern="[a-zA-Z0-9]{8,12}"
+                            maxlength="12" minlength="8"></td>
+                </tr>
+                <tr>
+                    <td><label for="">country</label></td>
+                    <td>
+                        <select name="" id="">
+                            <option value="" hidden>------select city--------</option>
+                            <option value="">surat</option>
+                            <option value="">Ahmedabad</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">address</label></td>
+                    <td><textarea name="" id="" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit"></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+
+    <h2>image mapping</h2>
+
+    <img src="images/images (1).jpg" alt="" usemap="#img-map">
+    <map name="img-map">
+        <area shape="poly" coords="206,35,137,73,252,108" href="https://careercenter.tops-int.com/" alt="">
+    </map>
+    <img src="images/2.jpg" alt="" usemap="#img-map2">
+    <map name="img-map2">
+        <area shape="rect" coords="20,91,123,49" href="https://www.tesla.com/" alt="">
+    </map>
+
+</body>
+
+</html>
