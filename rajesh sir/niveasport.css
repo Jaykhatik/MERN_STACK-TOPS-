@@ -3,7 +3,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -77,6 +79,33 @@
     background-color: whitesmoke;
 }
 
+.dropdown{
+    position: relative;
+}
+.mega-menu{
+    position: fixed;
+    left: 50px;
+    top: 110px;
+    width: 90vw;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 50px;
+    display: grid;
+    gap: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translatey(20px);
+    transition: all 0.3s ease;
+}
+.dropdown:hover .mega-menu{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.category{
+    display: flex;
+    height: 110px;
+}
 nav {
     justify-content: center;
     align-items: center;
@@ -108,26 +137,76 @@ nav a {
 
 .one,
 .two,
-.three{
+.three {
     transition: 0.3s ease-in;
 }
 
-.one:hover{
+.one:hover {
     transform: scale(1.5);
 }
-.two:hover{
+
+.two:hover {
     transform: scale(1.5);
 }
-.three:hover{
+
+.three:hover {
     transform: scale(1.5);
 }
 
 /*main*/
 
-.banner img{
+.banner img {
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+
+
+.card_container {
+    background-image: url(images/logo_shaded_cropped.png);
+    background-repeat: inherit;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 200px;
+    text-align: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    background: #000;
+}
+.card img{
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    display: block;
+}
+.card_title{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 0;
+    border-top: 2px solid red;
+    letter-spacing: 1px;
+}
+.shoes_container1{
+    background-repeat: inherit;
+}
+.shoes1 {
+    display: flex;
+    gap: 20px;
+    padding: 40px 20px;
+    /*flex-wrap: wrap; */
+}
+.shoe_card{
+    position: relative;
 }
 
 /*footer*/
