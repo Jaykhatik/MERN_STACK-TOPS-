@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(aqua, rgb(140, 79, 180));
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .main {
+            height: 650px;
+            width: 600px;
+            background-color: whitesmoke;
+            border-radius: 10px 10px 10px 10px;
+            margin: 30px auto;
+            padding-top: 10px;
+            box-shadow: 10px 25px 25px 2px;
+        }
+
+        .container {
+            height: 400px;
+            width: 90%;
+            background-color: whitesmoke;
+            margin: auto;
+            display: flex;
+        }
+
+        .content1 {
+            height: 350px;
+            width: 240px;
+            background-color: #DCDFE0;
+            margin: auto;
+            padding: 10px;
+            font-size: medium;
+            border-radius: 10px;
+            box-shadow: 5px 0px 10px 0px;
+        }
+
+        .content1 input {
+            height: 25px;
+            width: 95%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: medium;
+            border: none;
+        }
+
+        .main_gender {
+            background-color: whitesmoke;
+            width: 90%;
+            margin-left: 30px;
+        }
+
+        .gender {
+            height: 50px;
+            margin: 20px 0px;
+            font-size: large;
+            background-color: #DCDFE0;
+            padding: 5px;
+            box-shadow: 10px 0px 10px 0px;
+            border-radius: 10px;
+        }
+
+        /* input[type="text"]{
+            height: 30px;
+            width: 95%;
+        } */
+        button {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            width: 90%;
+            height: 30px;
+            background: linear-gradient(to right, aqua, rgb(140, 79, 180));
+            border-radius: 10px 10px 10px 10px;
+            margin-left: 30px;
+            box-shadow: 5px 0px 10px 0px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <ul type="square">
+            <li>
+                <h1 style="text-shadow: 5px 7px 15px gray;"><u>REGISTRATION-FORM</u></h1>
+            </li>
+        </ul>
+        <div class="container">
+            <div class="content1">
+                <label for="">Full Name:</label>
+                <br>
+                <input type="text" placeholder="enter full name" required>
+                <br>
+                <label for="">E-mail:</label>
+                <br>
+                <input type="email" placeholder="enter full email" required>
+                <br>
+                <label for="">Password:</label>
+                <br>
+                <input type="password" placeholder="enter full Password" required>
+
+            </div>
+            <div class="content1">
+                <label for="">Username:</label>
+                <br>
+                <input type="text" placeholder="enter full username" required>
+                <br>
+                <label for="">Phone No:</label>
+                <br>
+                <input type="tel" placeholder="enter full mobile number" required>
+                <br>
+                <label for=""> Confirm-Password:</label>
+                <br>
+                <input type="password" placeholder="enter full confirm-password" required>
+            </div>
+        </div>
+        <div class="main_gender">
+            <div class="gender">
+                <label for="">Gender</label>
+                <br>
+                <input type="radio" name="gender">Male
+                <input type="radio" name="gender">Female
+                <input type="radio" name="gender">Prefer not to say
+            </div>
+        </div>
+        <br>
+        <button><strong>Register</strong></button>
+    </div>
+
+</body>
+
+</html>

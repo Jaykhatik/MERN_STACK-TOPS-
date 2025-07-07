@@ -3,9 +3,13 @@
     margin: 0px;
     padding: 0px;
 }
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
 }
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -79,10 +83,11 @@ body{
     background-color: whitesmoke;
 }
 
-.dropdown{
+.dropdown {
     position: relative;
 }
-.mega-menu{
+
+.mega-menu {
     position: fixed;
     left: 50px;
     top: 110px;
@@ -97,15 +102,18 @@ body{
     transform: translatey(20px);
     transition: all 0.3s ease;
 }
-.dropdown:hover .mega-menu{
+
+.dropdown:hover .mega-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-.category{
+
+.category {
     display: flex;
     height: 110px;
 }
+
 nav {
     justify-content: center;
     align-items: center;
@@ -183,32 +191,154 @@ nav a {
     overflow: hidden;
     background: #000;
 }
-.card img{
+
+.card img {
     width: 100%;
     height: 310px;
     object-fit: cover;
     display: block;
 }
-.card_title{
+
+.card_title {
     font-size: 18px;
     font-weight: bold;
     padding: 15px 0;
     border-top: 2px solid red;
     letter-spacing: 1px;
 }
-.shoes_container1{
+
+.shoes_container1 {
     background-repeat: inherit;
+    height: 390px;
+    padding-top: 30px;
+    background-color: white;
+    padding: 5px;
 }
+
 .shoes1 {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     padding: 40px 20px;
     /*flex-wrap: wrap; */
 }
-.shoe_card{
-    position: relative;
+
+.shoe_card_title {
+    background-color: whitesmoke;
 }
 
+.shoe_card_title h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 60px 20px 0px 80px;
+}
+
+.shoe_card_title p {
+    margin: 0px 20px 20px 80px;
+}
+
+.shoe_card_title a {
+    margin: 0px 20px 20px 80px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.shoe_card h4 {
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.shoe_card p {
+    color: red;
+}
+
+.shoe_card del {
+    color: gray;
+}
+
+.shoe_card {
+    background-color: rgb(11, 17, 17);
+    height: 255px;
+    width: 250px;
+}
+
+.shoe_card img {
+    height: 250px;
+    width: 250px;
+}
+
+.highlight-line {
+    height: 3px;
+    width: 60.5%;
+    position: relative;
+    left: 510px;
+    top: 10px;
+    margin-top: 20px;
+    /* Adjust as needed */
+}
+
+.highlight-line::before,
+.highlight-line::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    top: 0;
+}
+
+.highlight-line::before {
+    background-color: red;
+    width: 50%;
+    /* Red line portion */
+    left: 0;
+}
+
+.highlight-line::after {
+    background-color: black;
+    width: 50%;
+    /* Black line portion */
+    right: 0;
+}
+
+.img_template{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.img_template img{
+    width: 580px;
+    padding-bottom: 25px;
+}
+.newarrival{
+    background-color:black;
+    height: 350px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.text-newarrival{
+    margin-left: 50px;
+    margin-top: 80px;
+    font-weight: 700;
+    display: block;
+}
+.t1{
+    color: black;
+    font-size: 40px;
+    background-color: rgb(224, 39, 7);
+    /* margin-top: 10px; */
+
+}
+.text-newarrival h1{
+    color: #fff;
+    font-size: 100px;
+    /* margin-bottom: ; */
+}
+.text-newarrival button{
+    background-color:whitesmoke;
+    font-size: 20px;
+    border: none;
+}
 /*footer*/
 
 .footer {

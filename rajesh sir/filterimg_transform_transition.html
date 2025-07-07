@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main_title {
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            display: flex;
+            background-color: bisque;
+            margin-top: 10px;
+
+        }
+
+        .main_title h1 {
+            transition: 0.3s ease-in-out;
+        }
+
+        .main_title :hover {
+            transform: scale(1.2, 1.2);
+        }
+
+        .main_gallery {
+            margin-top: 10px;
+            justify-content: center;
+            display: flex;
+            gap: 30px;
+        }
+
+        .main_gallery img {
+            border: 2px solid black;
+            transition: 0.6s ease;
+            filter: blur(2px);
+
+        }
+
+        .main_gallery img:hover {
+            transform: scale(1.2, 1.2);
+            filter: drop-shadow(5px 5px 5px black);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main_title">
+            <h1>IMAGE GALLERY</h1>
+        </div>
+        <div class="main_gallery">
+            <img src="images/download.jpg" alt="">
+            <img src="images/images (1).jpg" alt="">
+            <img src="images/images.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
