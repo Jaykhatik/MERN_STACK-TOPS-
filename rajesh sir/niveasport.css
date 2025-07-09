@@ -63,9 +63,7 @@ body {
     width: 100%;
 }
 
-[class*="col-"] {
-    width: 100%;
-}
+
 
 .top_bar {
     background-color: black;
@@ -224,6 +222,7 @@ nav a {
 
 .shoe_card_title {
     background-color: whitesmoke;
+    width: 40%;
 }
 
 .shoe_card_title h2 {
@@ -267,6 +266,9 @@ nav a {
     height: 250px;
     width: 250px;
 }
+.shoe_card img:hover{
+    transform: scaleX(-1);
+}
 
 .highlight-line {
     height: 3px;
@@ -300,44 +302,148 @@ nav a {
     right: 0;
 }
 
-.img_template{
+.img_template {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
-.img_template img{
+
+.img_template img {
     width: 580px;
     padding-bottom: 25px;
 }
-.newarrival{
-    background-color:black;
+
+.textarrival_container {
     height: 350px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    background: #000;
+    display: flex;
 }
-.text-newarrival{
-    margin-left: 50px;
-    margin-top: 80px;
-    font-weight: 700;
-    display: block;
+
+.img_class {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 20px;
 }
-.t1{
+
+.img_class img {
+    height: 250px;
+    box-shadow: 2px 2px 10px white;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.img_class img:hover {
+    /* filter: drop-shadow(5px 5px 5px white); */
+    transform: scale(1.1);
+}
+
+.newarrival {
+    background-color: #000;
+    margin-top: 100px;
+    margin-left: 60px;
+}
+
+.newarrival span {
+    background-color: rgb(224, 35, 11);
     color: black;
     font-size: 40px;
-    background-color: rgb(224, 39, 7);
-    /* margin-top: 10px; */
+    font-weight: 700;
+}
+
+.newarrival hr {
+    height: 3px;
+    width: 60%;
+    background: rgb(224, 35, 11);
+    border: none;
+    margin-top: -2px;
+}
+
+h1 {
+    color: white;
+    font-size: 70px;
+}
+
+.newarrival button {
+    border: none;
+    height: 25px;
+    width: 140px;
+    font-weight: 800;
+}
+.container_img{
+    background-image:url(images/impact-banner-desktop.webp);
+    height: 300px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.association{
+    height: 300px;
+    margin-bottom: 10px;
+}
+.text-association{
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+    font-size: larger;
+}
+.text-association p{
+    font-size: 25px;
+}
+.logo-association{
+    justify-content: center;
+    display: flex;
+    margin-top: 30px;
+    gap: 30px;
+}
+.logo-association img{
+    
+    box-shadow: 2px 2px 10px black;
+}
+.videos{
+    height: max-content;
+    margin-bottom: 10px;
+}
+.text-videos{
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-instagram{
+    font-size: 45px;
+    font-weight: bold;
+    padding: 10px;
+}
+.video-videos{
+    display: flex;
+    gap: 10px;;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+.vid{
+    height: 400px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
 
 }
-.text-newarrival h1{
-    color: #fff;
-    font-size: 100px;
-    /* margin-bottom: ; */
+.vid video{
+        border-radius: 10px;
+        transition: 0.3s ease-in-out;
+
 }
-.text-newarrival button{
-    background-color:whitesmoke;
-    font-size: 20px;
-    border: none;
+.vid video:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 2px 20px black;
 }
 /*footer*/
 

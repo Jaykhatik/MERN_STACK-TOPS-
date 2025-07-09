@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: antiquewhite;
+        }
+
+        h1 {
+            background-color: blueviolet;
+            /* justify-content: center;
+            align-items: center; */
+            text-align: center;
+            border: 3px solid black;
+        }
+
+        .img_class {
+            justify-content: center;
+            display: flex;
+            margin-top: 50px;
+            gap: 30px;
+        }
+
+        .img_class img {
+            border: 3px solid black;
+            filter: blur(2px);
+        }
+
+        .img_class img:hover {
+            transition: 6s ease;
+            border-radius: 30px;
+            transform: scale(1.2,1.2);
+            filter: drop-shadow(5px 5px 25px black);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>IMAGE-HOVER</h1>
+        <div class="img_class">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKyvjcNO6pcdM75KcyaENmG4-tFtGKfAFm0g&s"
+                alt="">
+        </div>
+    </div>
+</body>
+
+</html>

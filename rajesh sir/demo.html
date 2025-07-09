@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        .textarrival_container{
+            height: 350px;
+            width: 100%;
+            background: #000;
+            display: flex;
+        }
+
+        .img_class {
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            padding: 20px;
+        }
+
+        .img_class img {
+            height: 250px;
+            box-shadow: 2px 2px 10px white;
+            border-radius: 20px;
+            transition: 0.3s ease-in-out;
+        }
+        .img_class img:hover{
+            /* filter: drop-shadow(5px 5px 5px white); */
+            transform: scale(1.1);
+        }
+
+        .newarrival {
+            background-color: #000;
+            margin-top: 100px;
+            margin-left: 60px;
+        }
+
+        .newarrival span {
+            background-color: rgb(224, 35, 11);
+            color: black;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .newarrival hr {
+            height: 3px;
+            width: 60%;
+            background:rgb(224, 35, 11);
+            border: none;
+            margin-top: -2px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 70px;
+        }
+        .newarrival button{
+            border: none;
+            height: 25px;
+            width: 140px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="textarrival_container">
+            <div class="col-4 newarrival">
+                <span>NEW</span><hr>
+                <h1>ARRIVALS</h1>
+                <button>EXPLORE NOW</button>
+            </div>
+            <div class="col-8 img_class">
+                <img src="images/Skyrush.webp" alt="">
+                <img src="images/Hy-Court_Badminton_Shoes_Desk_1_1.webp" alt="">
+                <img src="images/Ashtang_2.0_New_Launch_Desktop.jpg" alt="">
+                <img src="images/Safari_400x563_6d4dc825-ebc5-42e3-91d9-05226c6f5799.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
