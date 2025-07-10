@@ -161,13 +161,13 @@ nav a {
 
 /* main */
 
-.back_image img {
+.back_image_basketball img {
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
 
-.i1 {
+.i1_basketball {
     height: 200px;
     display: flex;
     justify-content: center;
@@ -176,29 +176,29 @@ nav a {
     margin-bottom: 20px;
 }
 
-.i1-img {
+.i1-img_basketball {
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
-.i1-img img {
-    height: 130px;
-    width: 120px;
+.i1-img_basketball img {
+    height: 140px;
+    width: 130px;
     border-radius: 20px;
     transition: 0.3s ease-in-out;
 
     box-shadow: 2px 2px 20px black;
 }
 
-.i1-img img:hover {
+.i1-img_basketball img:hover {
     transform: scale(1.1);
 }
 
-.main-football_container {
+.main-football_container_basketball {
     height: 400px;
 }
 
-.text-football p {
+.text-football_basketball p {
     margin-top: 20px;
     margin-bottom: -20px;
     font-weight: 700;
@@ -207,25 +207,25 @@ nav a {
     margin-left: 35px;
 }
 
-.card-football {
+.card-football_basketball {
     display: flex;
     gap: 20px;
     padding: 40px;
     margin-right: 25px;
 }
 
-.card-football img {
+.card-football_basketball img {
     height: 290px;
     width: 33%;
     box-shadow: 5px 5px 10px black;
 }
 
-.main1-football_container {
+.main1-football_container_basketball {
     height: 400px;
     margin-bottom: 10px;
 }
 
-.text-football1 p {
+.text-football1_basketball p {
     margin-top: 40px;
     margin-bottom: -34px;
     font-weight: 700;
@@ -234,15 +234,15 @@ nav a {
     margin-left: 35px;
 }
 
-.card-football1 {
+.card-football1_basketball {
     display: flex;
     gap: 35px;
     margin-top: 50px;
     justify-content: center;
 }
 
-.card-football1-t img {
-    height: 240px;
+.card-football1-t_basketball img {
+    height: 230px;
     width: 230px;
     display: flex;
     box-shadow: 5px 5px 10px black;
@@ -252,85 +252,26 @@ nav a {
     margin-bottom: 10px;
 }
 
-.card-football1-t img:hover {
+.card-football1-t_basketball img:hover {
     transform: scale(1.1);
 }
 
-.card-football1-t h5 {
+.card-football1-t_basketball h5 {
     font-size: 15px;
 }
 
-.card-football1-t p {
+.card-football1-t_basketball p {
     color: red;
 }
 
-.isl-banner {
+.isl-banner_basketball {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
 }
 
-.isl-banner img {
+.isl-banner_basketball img {
     width: 95%;
-}
-
-.lookimg-container {
-    height: 500px;
-    display: flex;
-    margin-bottom: 10px;
-    gap: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 20px;
-}
-
-.lookimg-text p {
-    font-weight: 700;
-    font-size: 25px;
-    font-style: bold;
-    margin-left: 35px;
-    margin-top: 30px;
-}
-
-.book1 {
-    background-color: red;
-    margin-left: 10px;
-    height: 460px;
-    width: 107%;
-    background-image: url(images/600_X_420.webp);
-    background-size: cover;
-    border-radius: 5px;
-}
-
-.book2 {
-    /* background-color: yellowgreen; */
-    height: 100%;
-    width: 100%;
-    /* padding: 0px 0px 20px 0px; */
-    border-radius: 5px;
-}
-
-.lookimg1,
-.lookimg2 {
-    height: 220px;
-    width: 600px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.lookimg1 {
-    background-color: beige;
-    background-image: url(images/2_e25f9f97-626d-43d3-a072-21c1240e36c1.webp);
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.lookimg2 {
-    background-color: blueviolet;
-    background-image: url(images/3_ffbe7b81-f755-4483-88c9-7fdec095d817.webp);
-    border-radius: 5px;
-   margin-top: 10px; 
 }
 .blogs{
     height: 550px;
