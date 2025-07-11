@@ -1,0 +1,388 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+
+
+.top_bar {
+    background-color: black;
+    color: white;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.header2 {
+    display: flex;
+    height: 60px;
+    background-color: whitesmoke;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.mega-menu {
+    position: fixed;
+    left: 50px;
+    top: 110px;
+    width: 90vw;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 50px;
+    display: grid;
+    gap: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translatey(20px);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.category {
+    display: flex;
+    height: 110px;
+}
+
+nav {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-grow: 0.80;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.logo img {
+    height: 60px;
+    width: 80px;
+    padding: 10px;
+}
+
+.one,
+.two,
+.three {
+    transition: 0.3s ease-in;
+}
+
+.one:hover {
+    transform: scale(1.5);
+}
+
+.two:hover {
+    transform: scale(1.5);
+}
+
+.three:hover {
+    transform: scale(1.5);
+}
+
+/* main */
+
+.back_image_badminton img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.i1_badminton {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.i1-img_badminton {
+    display: flex;
+    gap: 30px;
+}
+
+.i1-img_badminton img {
+    height: 130px;
+    width: 130px;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+
+    box-shadow: 2px 2px 20px black;
+}
+
+.i1-img_badminton img:hover {
+    transform: scale(1.1);
+}
+
+
+.main1-football_container_badminton {
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+.text-football1_badminton p {
+    margin-top: 40px;
+    margin-bottom: -34px;
+    font-weight: 700;
+    font-size: 25px;
+    font-style: bold;
+    margin-left: 35px;
+}
+
+.card-football1_badminton {
+    display: flex;
+    gap: 35px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.card-football1-t_badminton img {
+    height: 230px;
+    width: 230px;
+    display: flex;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+    transform: scaleX(-1);
+    margin-bottom: 10px;
+}
+
+.card-football1-t_badminton img:hover {
+    transform: scale(1.1);
+}
+
+.card-football1-t_badminton h5 {
+    font-size: 15px;
+}
+
+.card-football1-t_badminton p {
+    color: red;
+}
+.blogs_badminton{
+    height: 550px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.text-blogs_badminton{
+    font-weight: 700;
+    font-size: 25px;
+    font-style: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+.main-blogs_badminton{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+.content-blogs_badminton{
+    background-color: rgb(241, 240, 240);
+    border-radius: 5px;
+    
+}
+.content-blogs_badminton img{
+    height: 280px;
+    width: 420px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+}
+.content-blogs_badminton h5{
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.content-blogs_badminton span{
+    margin-left: 5px;
+    font-size: 13px;
+}
+
+.content-blogs_badminton p{
+    margin-left: 5px;
+    font-size: 10px;
+}
+.content-blogs_badminton a{
+    text-decoration: none;
+    color: black;
+    margin-left: 5px;
+}
+
+/*footer*/
+
+.footer {
+    background: #000;
+    color: white;
+    padding: 40px 60px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-signup h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.footer-signup h2 span {
+    color: #ffffff;
+}
+
+.email-input {
+    display: flex;
+    border-bottom: 1px solid #fff;
+    margin: 15px 0;
+}
+
+.email-input input {
+    background: transparent;
+    border: none;
+    color: white;
+    flex: 1;
+    padding: 10px;
+    outline: none;
+}
+
+.email-input button {
+    background: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons i {
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.footer-info h3,
+.footer-contact h3 {
+    margin-bottom: 10px;
+}
+
+.footer-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-info ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer-contact p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid red;
+    padding-top: 20px;
+    margin-top: 40px;
+}
+
+.logo img {
+    width: 80px;
+}
