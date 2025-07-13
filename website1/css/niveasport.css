@@ -375,7 +375,7 @@ h1 {
     font-weight: 800;
 }
 .container_img{
-    background-image:url(images/impact-banner-desktop.webp);
+    background-image:url(../images/impact-banner-desktop.webp);
     height: 300px;
     margin-top: 30px;
     margin-bottom: 30px;

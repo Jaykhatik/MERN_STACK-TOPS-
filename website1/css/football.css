@@ -297,7 +297,7 @@ nav a {
     margin-left: 10px;
     height: 460px;
     width: 107%;
-    background-image: url(images/600_X_420.webp);
+    background-image: url(../images/600_X_420.webp);
     background-size: cover;
     border-radius: 5px;
 }
@@ -321,14 +321,14 @@ nav a {
 
 .lookimg1 {
     background-color: beige;
-    background-image: url(images/2_e25f9f97-626d-43d3-a072-21c1240e36c1.webp);
+    background-image: url(../images/2_e25f9f97-626d-43d3-a072-21c1240e36c1.webp);
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
 .lookimg2 {
     background-color: blueviolet;
-    background-image: url(images/3_ffbe7b81-f755-4483-88c9-7fdec095d817.webp);
+    background-image: url(../images/3_ffbe7b81-f755-4483-88c9-7fdec095d817.webp);
     border-radius: 5px;
    margin-top: 10px; 
 }

@@ -178,6 +178,40 @@ nav a {
     font-weight: 400;
     font-size: 20px;
 }
+.sidebar-summary-option{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+hr{
+    margin-bottom: 10px;
+}
+.category-option a{
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.black {
+    background-color: black;
+}
+.blueviolet{
+    background-color: blueviolet;
+}
+.yellow {
+    background-color: yellow;
+}
+
+.grey {
+    background-color: gray;
+}
 /*footer*/
 
 .footer {
