@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zay shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"> -->
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col-12 topbar">
+                <div class="left-icon">
+                    <a href="">
+                        <i class="fa-solid fa-square-envelope"></i>
+                        info@company.com
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-phone"></i>
+                        010-020-0340
+                    </a>
+                </div>
+                <div class="right-icon">
+                    <a href="">
+                    <i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="row">
+                <div class="col-12 navbar">
+                    <div class="nav-logo">
+                        <a href="">
+                            <h2 style="font-size: larger;">Zay</h2>
+                        </a>
+                    </div>
+                    <div class="nav-anchor">
+                        <a href="" style="font-weight: 400;">Home</a>
+                        <a href="" style="font-weight: 400;">About</a>
+                        <a href="" style="font-weight: 400;">Shop</a>
+                        <a href="" style="font-weight: 400;">Contact</a>
+                    </div>
+                    <div class="nav-right">
+                        <a href="">
+                        <i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href=""><i class="fa-solid fa-cart-plus"></i></a>
+                        <a href=""><i class="fa-solid fa-user"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- slider -->
+        <div class="row">
+            <div class="col-12">
+                <div class="slider">
+                    <div class="slides" id="slides">
+                        <!-- Slide 1 -->
+                        <div class="slide">
+                            <div class="text">
+                                <h1>Repr in voluptate</h1>
+                                <h3>Ullamco laboris nisi ut</h3>
+                                <p>We bring you 100% free CSS templates for your websites. If you wish to support
+                                    TemplateMo, please make a small contribution via PayPal or tell your friends about
+                                    our website. Thank you.</p>
+                            </div>
+                            <div class="image">
+                                <img src="images/banner_img_01.jpg" alt="Lamp">
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <div class="text">
+                                <h1>Creative Ideas</h1>
+                                <h3>Design with passion</h3>
+                                <p>Discover elegant web layouts and seamless user experience using modern HTML, CSS, and
+                                    JavaScript practices in our designs.</p>
+                            </div>
+                            <div class="image">
+                                <img src="images/banner_img_02.jpg" alt="Design">
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide">
+                            <div class="text">
+                                <h1>Modern Designs</h1>
+                                <h3>Built for developers</h3>
+                                <p>Each layout is created with clean code and fully responsive elements to speed up your
+                                    front-end workflow.</p>
+                            </div>
+                            <div class="image">
+                                <img src="images/banner_img_03.jpg" alt="Modern">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrows -->
+                    <div class="arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+                    <div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+
+                    <!-- Dots -->
+                    <div class="dots">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                    </div>
+                </div>
+
+                <script>
+                    const slides = document.getElementById("slides");
+                    const dots = document.querySelectorAll(".dot");
+                    let index = 0;
+
+                    function showSlide(i) {
+                        index = i;
+                        slides.style.transform = `translateX(-${i * 100}vw)`;
+                        dots.forEach(dot => dot.classList.remove("active"));
+                        dots[i].classList.add("active");
+                    }
+
+                    function nextSlide() {
+                        index = (index + 1) % 3;
+                        showSlide(index);
+                    }
+
+                    function prevSlide() {
+                        index = (index - 1 + 3) % 3;
+                        showSlide(index);
+                    }
+
+                    function goToSlide(i) {
+                        showSlide(i);
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 content">
+                <h2>Categories of The Month</h2>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui</p>
+                <p>officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 card-container">
+                <div class="card">
+                    <div class="card-1">
+
+                    </div>
+                    <h2>Watches</h2>
+                    <button>GO SHOP</button>
+                </div>
+                <div class="card">
+                    <div class="card-2">
+
+                    </div>
+                    <h2>Shoes</h2>
+                    <button>GO SHOP</button>
+                </div>
+                <div class="card">
+                    <div class="card-3">
+
+                    </div>
+                    <h2>Accessories</h2>
+                    <button>GO SHOP</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 content3">
+                <h2>Featured Product</h2>
+                <p>Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla</p>
+                <p>pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 content1">
+                <div class="cart-main">
+                    <div class="cart-1">
+                        <div class="cart-img">
+                            <img src="images/feature_prod_01.jpg" alt="">
+                        </div>
+                        <div class="cart-content">
+                            <p style="color: yellow; font-size:20px;">★ ★ ★ ★ ★</p>
+                            <h2 style="margin-left: 10px; font-size: 20px;"><u>Gym Weight</u></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia
+                                deserunt.
+                            </p>
+                            <br>
+                            <br>
+                            <a href="" style="margin-left: 10px; text-decoration: none; color: gray;">Reviews→</a>
+                        </div>
+                    </div>
+                    <div class="cart-2">
+                        <div class="cart-img">
+                            <img src="images/feature_prod_02.jpg" alt="">
+                        </div>
+                        <div class="cart-content">
+                            <p style="color: yellow; font-size:20px;">★ ★ ★ ☆ ☆</p>
+                            <h2 style="margin-left: 10px; font-size: 20px;"><u>Cloud Nike Shoes</u></h2>
+                            <p>Aenean gravida dignissim finibus. Nullam<br>ipsum diam, posuere vitae pharetra sed,
+                                commodo ullamcorper.
+                            </p>
+                            <br>
+                            <br>
+                            <a href="" style="margin-left: 10px; text-decoration: none; color: gray;">Reviews→</a>
+                        </div>
+                    </div>
+                    <div class="cart-3">
+                        <div class="cart-img">
+                            <img src="images/feature_prod_03.jpg" alt="">
+                        </div>
+                        <div class="cart-content">
+                            <p style="color: yellow; font-size:20px;">★ ★ ★ ★ ★</p>
+                            <h2 style="margin-left: 10px; font-size: 20px;"><u>Summer Addides Shoes:</u></h2>
+                            <p>Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et
+                                scelerisque ipsum lobortis nec.
+                            </p>
+                            <br>
+                            <br>
+                            <a href="" style="margin-left: 10px; text-decoration: none; color: gray;">Reviews→</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="row">
+            <div class="col-12 footerbar">
+                <div class="footer">
+                    <div class="footer-section">
+                        <h2>Zay Shop</h2>
+                        <hr style="background-color: black;">
+                        <p><i class="fa-solid fa-location-dot"></i>123 Consectetur at ligula 10660</p>
+                        <p><i class="fa-solid fa-phone"></i>010-020-0340</p>
+                        <p><i class="fa-solid fa-envelope"></i>info@company.com</p>
+                    </div>
+                    <div class="footer-section">
+                        <h2>Products</h2>
+                        <hr style="background-color: black;">
+                        <ul>
+                            <a href="">
+                                <li>Luxury</li>
+                            </a>
+                            <a href="">
+                                <li>Sport's Wear</li>
+                            </a>
+                            <a href="">
+                                <li>Men's Shoes</li>
+                            </a>
+                            <a href="">
+                                <li>Women's Shoes</li>
+                            </a>
+                            <a href="">
+                                <li>Popular Dress</li>
+                            </a>
+                            <a href="">
+                                <li>Gym Accessories</li>
+                            </a>
+                            <a href="">
+                                <li>Sport Shoes</li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="footer-section ">
+                        <h2>Further Info</h2>
+                        <hr style="background-color: black;">
+                        <ul>
+                            <a href="">
+                                <li>Home</li>
+                            </a>
+                            <a href="">
+                                <li>About-Us</li>
+                            </a>
+                            <a href="">
+                                <li>Shop Locations</li>
+                            </a>
+                            <a href="">
+                                <li>FAQs</li>
+                            </a>
+                            <a href="">
+                                <li>Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <hr style="background-color: black; margin-left: 20px; margin-right: 20px;">
+                <div class="footer-2">
+                    <div class="footer-left">
+                        <div class="icon">
+                            <a href="">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <input type="search" placeholder="Email Address">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+                <div class="footer3">
+                    <p>Copyright © 2021 Company Name | Designed by TemplateMo</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

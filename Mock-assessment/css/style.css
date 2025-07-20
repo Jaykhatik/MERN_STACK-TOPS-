@@ -1,0 +1,1260 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.topbar {
+    background-color: black;
+    height: 40px;
+    /* margin: 10px; */
+    display: flex;
+    text-align: center;
+    gap: 780px;
+    padding: 10px;
+}
+
+.left-icon {
+    margin-left: 20px;
+    gap: 40px;
+    display: flex;
+    margin-left: 40px;
+}
+
+.left-icon a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.right-icon {
+    gap: 30px;
+    display: flex;
+}
+
+.right-icon a {
+    text-decoration: none;
+    color: whitesmoke;
+    transition: 0.4s ease-in-out;
+}
+
+.right-icon a:hover {
+    transform: scale(1.6, 1.6);
+}
+
+.right-icon a:nth-child(1):hover {
+    color: rgb(13, 118, 238);
+}
+
+.right-icon a:nth-child(2):hover {
+    color: rgb(199, 13, 152);
+}
+
+.right-icon a:nth-child(3):hover {
+    color: rgb(18, 167, 236);
+}
+
+.right-icon a:nth-child(4):hover {
+    color: rgb(108, 181, 230);
+}
+
+.navbar {
+    display: flex;
+    gap: 200px;
+    height: 80px;
+    background-color: yellowgreen;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo a {
+    text-decoration: none;
+    font-size: 30px;
+    color: whitesmoke;
+    margin-left: 20px;
+}
+
+.nav-anchor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+
+}
+
+.nav-anchor a {
+    text-decoration: none;
+    font-size: 20px;
+    color: whitesmoke;
+    font-weight: lighter;
+    /* margin-left: 40px; */
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    margin-right: 30px;
+    font-size: 25px;
+}
+
+.nav-right a {
+    color: whitesmoke;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-right a:hover {
+    transform: scale(1.4, 1.4);
+    color: black;
+}
+
+/* slider */
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+    background-color: #efeeee;
+}
+
+.slides {
+    display: flex;
+    width: 120%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    flex-shrink: 0;
+}
+
+.text {
+    max-width: 40%;
+    width: 200px;
+}
+
+.text h1 {
+    font-size: 30px;
+    margin-bottom: 1rem;
+    color: rgb(123, 200, 6);
+}
+
+.text h3 {
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.text p {
+    color: #333;
+    line-height: 1.6;
+}
+
+.image img {
+    max-width: 600px;
+    height: 500px;
+    margin-left: 300px;
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    color: #78c2a5;
+    user-select: none;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 30px;
+    height: 4px;
+    margin: 0 5px;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #78c2a5;
+}
+
+@media (max-width: 768px) {
+    .slide {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text,
+    .image {
+        max-width: 100%;
+    }
+
+    .image img {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+}
+
+/* /slider */
+.content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content h2 {
+    font-size: 40px;
+}
+
+.card-container {
+    display: flex;
+    height: 440px;
+    background-color: yellowgreen;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Horizontal centering */
+    justify-content: center;
+    /* Vertical centering */
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.4s ease-in-out;
+    box-shadow: 5px 5px 10px black;
+
+}
+
+.card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.card-1 {
+    background-color: rgb(36, 165, 165);
+    border-radius: 100%;
+    background-image: url(../images/category_img_01.jpg);
+    background-size: cover;
+    height: 280px;
+    width: 280px;
+}
+
+.card-2 {
+    background-color: rgb(36, 165, 165);
+    border-radius: 100%;
+    background-image: url(../images/category_img_02.jpg);
+    background-size: cover;
+    height: 280px;
+    width: 280px;
+}
+
+.card-3 {
+    background-color: rgb(36, 165, 165);
+    border-radius: 100%;
+    background-image: url(../images/category_img_03.jpg);
+    background-size: cover;
+    height: 280px;
+    width: 280px;
+}
+
+.card button {
+    height: 30px;
+    width: 90px;
+    border: none;
+    background-color: yellowgreen;
+    border-radius: 10px;
+}
+
+.card h2 {
+    font-size: medium;
+}
+
+.content3 {
+    text-align: center;
+}
+
+.content1 {
+    background-color: whitesmoke;
+    height: 650px;
+    margin-bottom: 20px;
+}
+
+.cart-main {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.cart-1 {
+    height: 560px;
+    width: 350px;
+    background-color: #fff;
+    margin-top: 30px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.cart-2 {
+    height: 560px;
+    width: 350px;
+    background-color: #fff;
+    margin-top: 30px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.cart-3 {
+    height: 560px;
+    width: 350px;
+    background-color: #fff;
+    margin-top: 30px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.cart-img {
+    height: 300px;
+    background-color: yellow;
+}
+
+.cart-img img {
+    height: 300px;
+    width: 350px;
+}
+
+.cart-content {
+    margin-top: 10px;
+}
+
+.cart-content p {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.footerbar {
+    height: max-content;
+    background-color: whitesmoke;
+}
+
+.footer {
+    display: flex;
+    gap: 200px;
+    max-width: 1500px;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    margin-top: 30px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-2 {
+    display: flex;
+    justify-content: center;
+    gap: 700px;
+}
+
+.footer-left {
+    display: flex;
+}
+
+.icon {
+    height: auto;
+    width: 50px;
+    background-color: whitesmoke;
+    margin-left: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.icon a {
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+
+}
+
+.icon a:hover {
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    transform: scale(1.2, 1.2);
+}
+
+.footer-right input {
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.footer-right button {
+    border: none;
+    width: 90px;
+    border-radius: 10px;
+    background-color: yellowgreen;
+}
+
+.footer3 {
+    height: 60px;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 18px;
+    margin: 20px 10px;
+    color: white;
+}
+
+/* ----------------------------- */
+/* Tablet Devices: 768px - 1200px */
+/* ----------------------------- */
+@media (min-width: 768px) and (max-width: 1200px) {
+
+    /* Topbar */
+    .topbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .left-icon,
+    .right-icon {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px 0;
+        gap: 20px;
+    }
+
+    .nav-logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-anchor {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .nav-right {
+        justify-content: center;
+        gap: 20px;
+        font-size: 22px;
+    }
+
+    /* Slider */
+    /* Slider for Tablet (Slides Horizontally One by One) */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .slider {
+            height: 95%;
+            /* Slightly increase height for better text visibility */
+        }
+
+        .slides {
+            /* Ensure smooth transition */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex-direction: column;
+            /* Stack text and image vertically */
+            padding: 20px 5%;
+            /* Add top/bottom padding, reduce horizontal */
+            justify-content: center;
+            /* Center content vertically */
+            align-items: center;
+            /* Center content horizontally */
+            height: 100%;
+            /* Ensure slide takes full height of slider */
+        }
+
+        .text {
+            max-width: 90%;
+            /* Allow text to take more width */
+            width: auto;
+            /* Remove fixed width */
+            text-align: center;
+            /* Center align text */
+            margin-bottom: 30px;
+            /* Increase space below text for better separation */
+            flex-shrink: 0;
+            /* Prevent text from shrinking unexpectedly */
+            padding: 0 15px;
+            /* Add some internal padding for text container */
+        }
+
+        .text h1 {
+            font-size: 2.2rem;
+            /* Slightly larger heading for impact */
+            margin-bottom: 0.8rem;
+            /* Reduce space below H1 */
+            line-height: 1.2;
+            /* Adjust line height for better readability */
+        }
+
+        .text h3 {
+            font-size: 1.2rem;
+            /* Clearer subtitle */
+            font-weight: 500;
+            /* Make it slightly bolder */
+            margin-bottom: 1.2rem;
+            /* Increase space below H3 */
+        }
+
+        .text p {
+            font-size: 0.95rem;
+            /* Ensure body text is very readable */
+            line-height: 1.7;
+            /* Improve line spacing for readability */
+            margin-bottom: 0;
+            /* Remove extra margin if any */
+        }
+
+        .image {
+            /* Ensure image doesn't take too much space */
+            max-width: 100%;
+            width: auto;
+            display: flex;
+            /* Use flex to center the image itself */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image img {
+            max-width: 70%;
+            /* Make image a good size, not too big */
+            height: auto;
+            /* Maintain aspect ratio */
+            margin-left: 0;
+            /* Remove fixed left margin */
+            display: block;
+            /* Ensures image behaves well in block flow */
+        }
+
+        /* Arrows */
+        .arrow {
+            font-size: 2rem;
+            /* Keep arrows a good size */
+            padding: 12px 18px;
+            /* Slightly more padding for easier tap target */
+            color: #fff;
+            /* Make arrows white for better contrast */
+            background: rgba(0, 0, 0, 0.4);
+            /* Darker background for visibility */
+        }
+
+        .arrow:hover {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .arrow-left {
+            left: 15px;
+        }
+
+        .arrow-right {
+            right: 15px;
+        }
+
+        /* Dots */
+        .dots {
+            bottom: 25px;
+            /* Adjust dot position for better visibility */
+        }
+
+        .dot {
+            width: 35px;
+            /* Slightly wider dots for easier tapping */
+            height: 5px;
+            margin: 0 6px;
+        }
+
+        .dot.active {
+            background: #78c2a5;
+            /* Keep the active color */
+        }
+    }
+
+    /* Category Cards */
+    .card-container {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 20px;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .card {
+        width: 40%;
+        margin: 10px;
+    }
+
+    .card-1,
+    .card-2,
+    .card-3 {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Featured Products */
+    .content1 {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .cart-main {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .cart {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-img {
+        height: auto;
+    }
+
+    .cart-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cart-content p {
+        font-size: 14px;
+    }
+
+    .cart-content h2 {
+        font-size: 18px;
+    }
+
+    /* Footer */
+    .footer {
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-2 {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-right input {
+        width: 300px;
+        text-align: center;
+    }
+
+    .footer-right button {
+        margin-left: 35%;
+    }
+
+    .footer3 {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* ----------------------------- */
+/* mobile Devices: 456px - 760px */
+/* ----------------------------- */
+
+@media (max-width: 760px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Topbar adjustments */
+    .topbar {
+        flex-direction: column;
+        /* Stack items vertically */
+        height: auto;
+        /* Adjust height based on content */
+        gap: 10px;
+        /* Reduce gap or remove if stacking */
+        padding: 10px;
+        align-items: center;
+        /* Center items when stacked */
+        justify-content: center;
+        /* Center items horizontally */
+    }
+
+    .left-icon,
+    .right-icon {
+        margin-left: 0;
+        /* Remove specific left margin */
+        gap: 15px;
+        /* Adjust spacing between icons */
+        justify-content: center;
+        /* Center icons */
+        width: 100%;
+        /* Take full width */
+    }
+
+    /* Navbar adjustments */
+    .navbar {
+        flex-direction: column;
+        /* Stack logo and navigation links */
+        height: auto;
+        /* Adjust height based on content */
+        gap: 10px;
+        /* Reduce gap between stacked items */
+        padding: 15px 0;
+        /* Add some vertical padding */
+        align-items: center;
+        /* Center items */
+    }
+
+    .nav-logo {
+        margin-bottom: 10px;
+        /* Space between logo and nav links */
+    }
+
+    .nav-anchor {
+        flex-direction: column;
+        /* Stack navigation links */
+        gap: 10px;
+        /* Adjust spacing between stacked links */
+        align-items: center;
+        /* Center navigation links */
+        width: 100%;
+        /* Take full width */
+    }
+
+    .nav-right {
+        margin-right: 0;
+        /* Remove specific right margin */
+        gap: 15px;
+        /* Adjust spacing between right icons */
+        justify-content: center;
+        /* Center icons */
+        width: 100%;
+        /* Take full width */
+        margin-top: 10px;
+        /* Space between nav links and right icons */
+    }
+
+    /* Slider adjustments */
+    .slider {
+        height: auto;
+        /* Allow height to adjust based on content */
+    }
+
+    .slides {
+        width: 100%;
+        /* Ensure slides take full width */
+    }
+
+    .slide {
+        flex-direction: column;
+        /* Stack text and image */
+        padding: 20px 5%;
+        /* Adjust padding for smaller screens */
+        text-align: center;
+        /* Center align text */
+    }
+
+    .text {
+        max-width: 90%;
+        /* Allow text to take more width */
+        width: auto;
+        /* Remove fixed width */
+        margin-bottom: 20px;
+        /* Space between text and image */
+    }
+
+    .text h1 {
+        font-size: 24px;
+        /* Adjust font size for better readability */
+    }
+
+    .text h3 {
+        font-size: 18px;
+        /* Adjust font size */
+    }
+
+    .text p {
+        font-size: 14px;
+        /* Adjust font size */
+    }
+
+    .image img {
+        max-width: 70%;
+        /* Ensure image scales down */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-left: 0;
+        /* Remove specific left margin */
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+        /* Smaller arrows */
+        padding: 8px 12px;
+        /* Smaller padding */
+    }
+
+    .dots {
+        bottom: 10px;
+        /* Adjust dot position */
+    }
+
+    .dot {
+        width: 20px;
+        /* Smaller dots */
+        height: 3px;
+        /* Thinner dots */
+        margin: 0 3px;
+        /* Reduce spacing between dots */
+    }
+
+    /* Content sections (Categories and Featured Products) */
+    .content h2 {
+        font-size: 32px;
+        /* Adjust heading size */
+    }
+
+    .content p {
+        font-size: 14px;
+        /* Adjust paragraph font size */
+        padding: 0 15px;
+        /* Add some horizontal padding */
+    }
+
+    /* Card container adjustments (Categories of the Month) */
+    .card-container {
+        flex-direction: column;
+        /* Stack cards vertically */
+        height: auto;
+        /* Allow height to adjust */
+        gap: 15px;
+        /* Reduce gap between cards */
+        margin-bottom: 15px;
+        /* Adjust margin */
+        padding: 15px;
+        /* Add padding to the container */
+    }
+
+    .card {
+        width: 90%;
+        /* Make cards take more width */
+        margin: 10px auto;
+        /* Center cards and add vertical margin */
+        padding: 15px;
+        /* Adjust card padding */
+    }
+
+    .card-1,
+    .card-2,
+    .card-3 {
+        height: 200px;
+        /* Adjust card image circle size */
+        width: 200px;
+        /* Adjust card image circle size */
+    }
+
+    /* Featured Products */
+    .content1 {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .cart-main {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .cart {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-img {
+        height: auto;
+    }
+
+    .cart-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cart-content p {
+        font-size: 14px;
+    }
+
+    .cart-content h2 {
+        font-size: 18px;
+    }
+
+    /* Footer adjustments */
+    .footerbar {
+        height: auto;
+        /* Adjust height based on content */
+    }
+
+    .footer {
+        flex-direction: column;
+        /* Stack footer sections */
+        gap: 30px;
+        /* Adjust gap between sections */
+        padding: 20px;
+        /* Add overall padding to footer */
+        margin-bottom: 10px;
+        /* Adjust margin */
+    }
+
+    .footer-section {
+        margin-top: 0;
+        /* Remove top margin if not needed */
+        text-align: center;
+        /* Center align text in footer sections */
+    }
+
+    .footer-section ul {
+        padding: 0;
+        /* Remove default list padding */
+    }
+
+    .footer-section li {
+        margin-bottom: 5px;
+        /* Space out list items */
+    }
+
+    .footer-2 {
+        flex-direction: column;
+        /* Stack footer left and right sections */
+        gap: 20px;
+        /* Adjust gap */
+        padding: 0 20px 20px;
+        /* Add padding to bottom */
+    }
+
+    .footer-left {
+        justify-content: center;
+        /* Center social icons */
+        width: 100%;
+        /* Take full width */
+    }
+
+    .icon {
+        margin: 0 5px;
+        /* Adjust spacing between icons */
+    }
+
+    .footer-right {
+        flex-direction: column;
+        /* Stack input and button */
+        align-items: center;
+        /* Center them */
+        width: 100%;
+        /* Take full width */
+    }
+
+    .footer-right input {
+        width: 80%;
+        /* Adjust input width */
+        margin-bottom: 10px;
+        /* Space between input and button */
+        padding: 8px;
+        /* Adjust padding */
+        text-align: center;
+        margin-left: 40px;
+    }
+
+    .footer-right button {
+        width: 120px;
+        /* Adjust button width */
+        padding: 8px;
+        /* Adjust padding */
+        margin-left: 40%;
+    }
+
+    .footer3 {
+        height: auto;
+        /* Adjust height based on content */
+        padding: 15px 10px;
+        /* Adjust padding */
+        margin: 10px;
+        /* Adjust margin */
+        font-size: 12px;
+        /* Smaller font size for copyright */
+    }
+}
+/* ----------------------------- */
+/* Specific adjustments for very small mobile screens (e.g., width less than 456px) */
+/* ----------------------------- */
+@media (max-width: 455px) {
+
+    .topbar .left-icon a,
+    .topbar .right-icon a {
+        font-size: 14px;
+        /* Slightly smaller font for top bar */
+    }
+
+    .nav-logo a h2 {
+        font-size: 24px !important;
+        /* Ensure logo is smaller */
+    }
+
+    .nav-anchor a {
+        font-size: 16px;
+        /* Smaller nav links */
+    }
+
+    .nav-right a {
+        font-size: 20px;
+        /* Smaller nav right icons */
+    }
+
+    .slide .text h1 {
+        font-size: 20px;
+    }
+
+    .slide .text h3 {
+        font-size: 16px;
+    }
+
+    .slide .image img {
+        max-width: 100%;
+        /* Allow image to be full width */
+        height: 100%;
+    }
+
+    .content h2 {
+        font-size: 28px;
+    }
+
+    .card {
+        padding: 10px;
+        /* Reduce card padding further */
+    }
+
+    .card-1,
+    .card-2,
+    .card-3 {
+        height: 150px;
+        /* Smaller circular images */
+        width: 150px;
+    }
+
+    /* Featured Products */
+    .content1 {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .cart-main {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .cart {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-img {
+        height: auto;
+    }
+
+    .cart-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cart-content p {
+        font-size: 14px;
+    }
+
+    .cart-content h2 {
+        font-size: 18px;
+    }
+
+    /* Footer */
+    .footer {
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-2 {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-right input {
+        width: 300px;
+        text-align: center;
+        margin-left: -1%;
+    }
+
+    .footer-right button {
+        margin-left: 2%;
+    }
+
+    .footer3 {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+}
