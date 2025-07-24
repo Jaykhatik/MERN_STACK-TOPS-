@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/download.jpg">
+</head>
+
+<body>
+    <div class="form-header">
+        <h1 style="text-align: center;">Student Registration Form</h1>
+    </div>
+    <div class="main">
+        <form action="">
+            <div class="form-group">
+                <label for="">First Name : </label>
+                <input type="text" pattern="[A-Za-z]{3,6}" required title="Only 3 to 6 alphabets allowed" placeholder="--- Enter your first name ---">
+            </div>
+            <div class="form-group">
+                <label for="">Last Name : </label>
+                <input type="text" pattern="[A-Za-z]{3,6}" required title="Only 3 to 6 alphabets allowed" placeholder="--- Enter your last name ---">
+            </div>
+            <div class="form-group">
+                <label for="">E-mail : </label>
+                <input type="email" required placeholder="--- Enter your e-mail ---">
+            </div>
+            <div class="form-group">
+                <label for="">Mobile : </label>
+                <input type="tel" pattern="[0-9]{10}" maxlength="10" required title="Enter exactly 10 digits">
+            </div>
+            <div class="form-group">
+                <label for="">Gender : </label>
+                <input type="radio" name="gender">Male
+                <input type="radio" name="gender">Female
+            </div>
+            <div class="form-group">
+                <label for="">Date Of Birth : </label>
+                <input type="date" required>
+            </div>
+            <div class="form-group">
+                <label for="">Address : </label>
+                <textarea name="" id="" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">City</label>
+                <select name="" id="" required>
+                    <option value="" hidden>---select city---</option>
+                    <option value="">Ahmedabad</option>
+                    <option value="">Surat</option>
+                    <option value="">Rajkot</option>
+                    <option value="">Kalol</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Area PIN : </label>
+                <input type="number" required>
+            </div>
+            <div class="form-group">
+                <label for="">State : </label>
+                <select name="" id="" required>
+                    <option value="" hidden>---select State---</option>
+                    <option value="">Gujarat</option>
+                    <option value="">Rajasthan</option>
+                    <option value="">MP</option>
+                    <option value="">UP</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Qualification : </label>
+                <select name="" id="" required>
+                    <option value="" hidden>---select Qualification---</option>
+                    <option value="">SSC</option>
+                    <option value="">HSC</option>
+                    <option value="">Post-Graduate</option>
+                    <option value="">Under-Graduate</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Specialization : </label><br>
+                <input type="checkbox">Computer Science <br>
+                <input type="checkbox">Information Technology <br>
+                <input type="checkbox">Computer Architecture <br>
+                <input type="checkbox">Tele Communication
+            </div>
+            <div class="form-group">
+                <label for="">Password : </label>
+                <input type="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Registered</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

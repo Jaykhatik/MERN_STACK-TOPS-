@@ -1,0 +1,97 @@
+body {
+    background-color: whitesmoke;
+    font-family: Arial, sans-serif;
+}
+
+.form-header h1 {
+    text-align: center;
+    margin-top: 20px;
+    background-color: rgb(230, 227, 227);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.main {
+    background-color: rgb(230, 227, 227);
+    width: 90%;
+    /* max-width: 800px; */
+    margin: 20px auto;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-group label {
+    width: 30%;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+    width: 60%;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 60px;
+    resize: vertical;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    /* margin-left: 30%; */
+}
+
+/* .form-group button:hover {
+            background-color: rgb(40, 117, 153);
+            color: black;
+            transition: all 1s ease;
+            font-weight: bold;
+        } */
+
+/* Responsive fix */
+@media (max-width: 600px) {
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label,
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .form-group button {
+        width: 100% !important;
+        margin-left: 0;
+    }
+}
