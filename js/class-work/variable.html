@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        Naming variables
+
+        Variable names are pretty flexible as long as you follow a few rules:
+
+            Start them with a letter(a-z), underscore _, or dollar sign $.
+            After the first letter, you can use numbers, as well as letters, underscores, or dollar signs.
+            Don’t use any of JavaScript’s reserved keywords (javscript inbuild function or any keyword)
+            Variable names are case-sensitive,  a   A
+            No space in variable name
+            
+            =====================================================
+            var camelCase = "lowercase word, then uppercase";
+            var dinner2Go = "pizza";
+            var I_AM_HUNGRY = true;
+            var _Hello_ = "what a nice greeting"
+            var $_$ = "money eyes";
+
+
+            var 12abc=   wrong (start with number)--this is wrong
+            var abc abc = no space --this is wrong
+
+            =======================================
+            there are two types of variable:
+            1)primitive
+            2)non-primitive
+            =======================================
+            primitive::
+            i)number->int,float(represents numeric values e.g. 100,101.098)
+            ii)string->represents sequence of characters e.g. "hello"
+            iii)boolean->represents boolean value either false or true
+            iv)undefined->represents undefined value
+            v)null->represents null i.e. no value at all	
+            vi)bigInt->for take the number in big format like phone number etc.
+            vii)symbol
+            =======================================
+            Non-primitive::
+            i)array:->colection of data and denoted with "[]" bracket
+            ii)object:->represents instance through which we can access members and denoted with "{key:value}" format
+            iii)RegExp:->represents regular expression
+            -->
+    <script>
+        // primitive
+        var num = 1250;  // int
+        document.write("<h1>" + num + "</h1>");
+
+        var point = 12.50; // float
+        document.write("<h1>" + point + "</h1>");
+
+        var name = "jay khatik"; // float
+        document.write("<h1>" + name + "</h1>");
+
+        var blank = null;
+        document.write("<h1>" + blank + "</h1>");
+
+
+        //Non-Primitive
+        //i)Array:->
+        var array = ["jay", "rahul", "prashant", "manish"];
+        document.write("<h1>" + array + "</h1>")
+        document.write("<h1>" + array[2] + "</h1>")
+
+
+        //ii)objects:->
+        //single-object
+        var student = { name: "jay", age: "20", lastname: "khatik" }
+        document.write("<h1>" + student.name + "</h1>")
+        //single-object with multiple index
+        var stu = [{ name: "jay", age: "20", lastname: "khatik", email: "jay@gmail.com" },
+            { name:"parshant", age:"23", lastname:"singh", email:"prashant@gmail.com"},
+            { name:"rahul", age:"21", lastname:"kamat", email:"rahul@gmail.com"}];
+            document.write(stu[0].email+"<br>")
+            document.write(stu[1].lastname+"<br>")
+            document.write(stu[2].name)
+    </script>
+
+
+</body>
+
+</html>

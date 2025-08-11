@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    conditional Statement
+			
+			i)if
+			ii)if else
+			iii)nested if
+			iv)if else if else(if-else ladder)
+			v)switch
+            vi)Ternary statement
+    -->
+    <h1 style="background-color: rgb(181, 119, 240); text-align: center; border: 1px solid black;">if Statement</h1>
+    <script>
+        //if:->Executes a block of code only if the condition is true.
+
+        var marks = 30;
+        if (marks >= 30) {
+            document.write('<h1 style="color:green">Hello I am pass</h1>');
+        }
+    </script>
+    <h1 style="background-color: rgb(181, 119, 240); text-align: center; border: 1px solid black;">if-else Statement
+    </h1>
+    <script>
+        //if() else:->Provides two paths: one when the condition is true, another when it’s false.
+
+        var marks = 50;
+        if (marks >= 55) {
+            document.write('<h1 style="color:green">Hello I am pass</h1>');
+        }
+        else {
+            document.write('<h1 style="color:red">Hello I am Fail</h1>');
+        }
+    </script>
+    <h1 style="background-color: rgb(181, 119, 240); text-align: center; border: 1px solid black;">if else-if else
+        Statement</h1>
+    <script>
+        //if elseif else:->Used when you have multiple conditions to check.
+        var name = "Rajesh";
+        if (name == "Raj") {
+            document.write("<b> Name is Raj </b>");
+        }
+        else if (name == "Darshan") {
+            document.write("<b> Name is Darshan </b>");
+        }
+        else if (name == "Kriti") {
+            document.write("<b> Name is Kriti </b>");
+        }
+        else {
+            document.write("<b> all above conditions false</b>");
+        }
+    </script>
+    <h1 style="background-color: rgb(181, 119, 240); text-align: center; border: 1px solid black;">nested-if Statement
+    </h1>
+    <script>
+        //nested if:->A nested if in JavaScript means you place one if statement inside another.
+        //It’s like saying: "If this is true, then check something else before deciding."
+
+
+        var email = 'raj@gmail.com';
+        var pass = '1234';
+
+        if (email == "raj@gmail.com") {
+            if (pass == "1234") {
+                document.write('<h1 style="color:green"> Login Success</h1>');
+            }
+            else {
+                document.write('<h1 style="color:red"> Wrong Password</h1>');
+            }
+        }
+        else {
+            document.write('<h1 style="color:red"> Email Does not Exist</h1>');
+        }
+    </script>
+    <h1 style="background-color: rgb(181, 119, 240); text-align: center; border: 1px solid black;">switch Statement</h1>
+    <script>
+        //switch:->Used when you want to compare the same value against multiple cases.
+        //(It’s like a menu — pick one item and ignore the rest.)
+        switch ('90') {
+            case '10':
+                document.write("<b> ans is  10</b>");
+                break;
+
+            case '20':
+                document.write("<b> ans is  20</b>");
+                break;
+
+            case '30':
+                document.write("<b> ans is  30</b>");
+                break;
+
+            case '40':
+                document.write("<b> ans is  40</b>");
+                break;
+
+            default:
+                document.write("<b> all condition false</b><br>");
+                break;
+        }
+    </script>
+    <h1 style="background-color: rgb(181, 119, 240); text-align: center; border: 1px solid black;">ternary Statement
+    </h1>
+    <script>
+        // Ternary operator (cond) ? 'yes' : 'No'
+        var age = 10;
+
+        var ans = (age > 18) ? '<b>Qualifies for driving</b>' : '<b> Not Qualifies for driving</b>';
+        document.write(ans);
+
+    </script>
+</body>
+
+</html>

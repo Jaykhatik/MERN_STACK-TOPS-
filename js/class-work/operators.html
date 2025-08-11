@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    In JavaScript, operators are special symbols used to perform operations on operands (values and variables).
+    ==========================================
+    i)Arithmetic opertaor:->
+        used for perform the mathmetical operation
+            |Operator| Description         | Example  | Result      |
+            | -------| ------------------- | -------- | ----------- |
+            | +      | Addition            | `5 + 2`  | `7`         |
+            | -      | Subtraction         | `5 - 2`  | `3`         |
+            | *      | Multiplication      | `5 * 2`  | `10`        |
+            | /      | Division            | `5 / 2`  | `2.5`       |
+            | %      | Modulus (Remainder) | `5 % 2`  | `1`         |
+            | **     | Exponentiation      | `2 ** 3` | `8`         |
+            | ++     | Increment           | `a++`    | `a = a + 1` |
+            | --     | Decrement           | `a--`    | `a = a - 1` |
+
+-->
+    <h1 style="text-align: center; background-color: palevioletred;">Arithmetic Operator</h1>
+    <script>
+        var a = 10;
+        var b = 3;
+        document.write("<h1>" + (a + b) + "</h1>")
+        document.write("<h1>" + (a - b) + "</h1>")
+        document.write("<h1>" + (a * b) + "</h1>")
+        document.write("<h1>" + (a / b) + "</h1>")
+        document.write("<h1>" + (a % b) + "</h1>")
+        document.write("<h1>" + 2 ** 3 + "</h1>")
+        a++;
+        document.write(a + "<br>")
+        b--;
+        document.write(b + "<br>")
+    </script>
+    <hr>
+    <!--
+    ii) Assignment Operators:->
+        Used to assign values to variables
+            | Operator | Example   | Equivalent to |
+            | -------- | --------- | ------------- |
+            | `=`      | `x = 5`   | `x = 5`       |
+            | `+=`     | `x += 3`  | `x = x + 3`   |
+            | `-=`     | `x -= 3`  | `x = x - 3`   |
+            | `*=`     | `x *= 3`  | `x = x * 3`   |
+            | `/=`     | `x /= 3`  | `x = x / 3`   |
+            | `%=`     | `x %= 3`  | `x = x % 3`   |
+            | `**=`    | `x **= 2` | `x = x ** 2`  |
+            -->
+    <h1 style="text-align: center; background-color: palevioletred;">Assignment Operator</h1>
+    <script>
+        var a = 10;
+        var b = 5;
+        a = b;
+        document.write(a)
+    </script>
+    <br>
+    <script>
+        var a = 10;
+        var b = 5;
+        a += b;// a = a + b
+        document.write(a + "<br>")
+        b += a;//b=b+a
+        document.write(b)
+    </script>
+    <br>
+    <script>
+        var a = 20;
+        var b = 15;
+        a -= b;// a = a - b
+        document.write(a + "<br>")
+        b -= a;//b=b-a
+        document.write(b)
+    </script>
+    <br>
+    <script>
+        var a = 20;
+        var b = 10;
+        a *= b;// a = a * b
+        document.write(a + "<br>")
+        b *= a;//b=b*a
+        document.write(b)
+    </script>
+    <br>
+    <script>
+        var a = 10;
+        var b = 5;
+        a /= b;// a = a / b
+        document.write(a + "<br>")
+        b /= a;//b=b/a
+        document.write(b)
+    </script>
+    <br>
+    <script>
+        var a = 10;
+        var b = 5;
+        a %= b;// a = a % b
+        document.write(a + "<br>")
+        b %= a;//b=b%a
+        document.write(b)
+    </script>
+    <br>
+    <script>
+        var a = 10;
+        var b = 5;
+        a **= b;// a = a ** b
+        document.write(a + "<br>")
+        b **= a;//b=b**a
+        document.write(b)
+    </script>
+    <hr>
+    <!--
+
+    iii)Comparison Operators:->
+        Used to compare values
+            | Operator | Description           | Example     | Result  |
+            | -------- | --------------------- | ----------- | ------- |
+            | `==`     | Equal to              | `5 == '5'`  | `true`  |
+            | `===`    | Strict equal to       | `5 === '5'` | `false` |
+            | `!=`     | Not equal to          | `5 != '5'`  | `false` |
+            | `!==`    | Strict not equal      | `5 !== '5'` | `true`  |
+            | `>`      | Greater than          | `5 > 3`     | `true`  |
+            | `<`      | Less than             | `5 < 3`     | `false` |
+            | `>=`     | Greater than or equal | `5 >= 5`    | `true`  |
+            | `<=`     | Less than or equal    | `5 <= 5`    | `true`  |
+-->
+    <h1 style="text-align: center; background-color: palevioletred;">Comparison Operator</h1>
+    <script>
+        var a = 20;
+        var b = 20;
+        if (a == b) {
+            document.write("a equal to b");
+        }
+        else {
+            document.write("a not equal to b")
+        }
+    </script>
+    <br>
+    <script>
+        var a = "12";
+        var b = 13;
+        if (a === b) {
+            document.write('a equal to b with same data type')
+        }
+        else {
+            document.write("a not equal to b")
+        }
+    </script>
+    <br>
+    <script>
+        var a = "30";
+        var b = 30;
+        if (a != b) {
+            document.write("a is NOT equal to b<br>");
+        } else {
+            document.write("a is equal to b<br>");
+        }
+    </script>
+    <br>
+    <script>
+        var a = "30";
+        var b = 30;
+        if (a !== b) {
+            document.write("a is NOT equal to b<br>");
+        } else {
+            document.write("a is equal to b<br>");
+        }
+    </script>
+    <hr>
+
+    <!--
+
+    iv)Logical Operators:->
+        Used with Boolean values
+            | Operator | Description | Example         | Result     |        
+            | -------- | ----------- | --------------- | ---------- | 
+            | `&&`     | Logical AND | `true && false` | `false`    |      
+            | `!`      | Logical NOT | `!true`         | `false`    |  
+-->
+    <h1 style="text-align: center; background-color: palevioletred;">Logical Operator</h1>
+
+    <script>
+        var a = 10;
+        var b = 20;
+
+        // 1. Logical AND (&&)
+        if (a > 5 && b > 15) {
+            document.write("Both conditions are true<br>");
+        } else {
+            document.write("At least one condition is false<br>");
+        }
+
+        // 2. Logical OR (||)
+        if (a > 15 || b > 15) {
+            document.write("At least one condition is true<br>");
+        } else {
+            document.write("Both conditions are false<br>");
+        }
+
+        // 3. Logical NOT (!)
+        if (!(a > b)) {
+            document.write("a is NOT greater than b<br>");
+        } else {
+            document.write("a is greater than b<br>");
+        }
+    </script>
+    <hr>
+    <!--    
+
+    v) Bitwise Operators:->
+        Operate on binary representations
+            | Operator | Description          | Example   |     |     |
+            | -------- | -------------------- | --------- | --- | --- |
+            | `&`      | AND                  | `a & b`   |     |     |
+            | `^`      | XOR                  | `a ^ b`   |     |     |
+            | `~`      | NOT                  | `~a`      |     |     |
+            | `<<`     | Left shift           | `a << 2`  |     |     |
+            | `>>`     | Right shift          | `a >> 2`  |     |     |
+            | `>>>`    | Unsigned right shift | `a >>> 2` |     |     |
+-->
+    <h1 style="text-align: center; background-color: palevioletred;">Bitwise Operator</h1>
+    <script>
+        var a = 5;   // 0101 in binary
+        var b = 3;   // 0011 in binary
+
+        // 1. Bitwise AND (&)
+        if ((a & b) != 0) {
+            document.write("Result is " + (a & b) + "<br>");
+        } else {
+            document.write("Result is 0<br>");
+        }
+
+        // 2. Bitwise OR (|)
+        if ((a | b) != 0) {
+            document.write("Result is " + (a | b) + "<br>");
+        } else {
+            document.write("Result is 0<br>");
+        }
+
+        // 3. Bitwise XOR (^)
+        if ((a ^ b) != 0) {
+            document.write("Result is " + (a ^ b) + "<br>");
+        } else {
+            document.write("Result is 0<br>");
+        }
+
+        // 4. Bitwise NOT (~)
+        document.write("Result is " + (~a) + "<br>");
+        document.write("Result is " + (~b) + "<br>");
+
+        // 5. Left Shift (<<)
+        document.write("Result is " + (a << 1) + "<br>");
+
+        // 6. Right Shift (>>)
+        document.write("Result is " + (a >> 1) + "<br>");
+
+        // 7. Unsigned Right Shift (>>>)
+        document.write("Result is " + (a >>> 1) + "<br>");
+    </script>
+    <hr>
+    <!--
+
+    vi)Ternary Operator:->
+        Shortcut for if...else
+           : condition ? valueIfTrue : valueIfFalse;
+
+           example:
+           let result = (age >= 18) ? "Adult" : "Minor";
+-->
+    <h1 style="text-align: center; background-color: palevioletred;">Ternary/conditional Operator</h1>
+    <script>
+        var age = 18;
+        var message = (age >= 18) ? "Adult" : "Minor";
+        document.write(message);
+    </script>
+    <hr>
+
+    <!--
+  
+    vii)Type Operators:->
+        | Operator     | Description        | Example                  |
+        | ------------ | ------------------ | ------------------------ |
+        | `typeof`     | Returns type       | `typeof 42` → `"number"` |
+        | `instanceof` | Checks object type | `obj instanceof Array`   |
+    -->
+    <h1 style="text-align: center; background-color: palevioletred;">Type Operator</h1>
+    <script>
+        var a = 42;         // number
+        var b = "Hello";    // string
+
+        // Check type of a
+        if (typeof a === "number") {
+            document.write("a is a number<br>");
+        } else {
+            document.write("a is NOT a number<br>");
+        }
+
+        // Check type of b
+        if (typeof b === "string") {
+            document.write("b is a string<br>");
+        } else {
+            document.write("b is NOT a string<br>");
+        }
+
+        // Example with boolean
+        var c = true;
+        if (typeof c === "boolean") {
+            document.write("c is a boolean<br>");
+        } else {
+            document.write("c is NOT a boolean<br>");
+        }
+
+        // Example with object
+        var d = { name: "Jay" };
+        if (typeof d === "object") {
+            document.write("d is an object<br>");
+        } else {
+            document.write("d is NOT an object<br>");
+        }
+    </script>
+</body>
+
+</html>

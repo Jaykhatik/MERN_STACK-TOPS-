@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- For printing js in body section -->
+    <script>
+        document.write("jay");
+        document.write("<h1>hello</h1>")
+        document.write(4 + 4);
+        var a = 5;
+        var b = 10;
+        var c = a + b;
+        document.write("<h2>sum of a nad b :" + c + "</h2>")
+        //2nd way which is used in programming language most
+        document.write(`sum of a and b: ${c}`)
+    </script>
+    <!-- html manipulation -->
+    <h1 id="test">heelo i am html language</h1>
+    <script>
+        document.getElementById("test").innerHTML = "hello i am javascript";
+    </script>
+    <!-- css manipulation -->
+    <h1 id="test2" style="background-color: red; color: whitesmoke; text-align: center; border: 1px solid #000;;">hello
+    </h1>
+    <script>
+        document.getElementById("test2").style.backgroundColor = "pink";
+        document.getElementById("test2").style.color = "red";
+
+    </script>
+    <!-- dynamic programing -->
+    <script>
+
+        var age = 19;
+        if (age > 18) {
+            document.write("<h1>Elegible For Driving </h1>");
+        }
+        else {
+            document.write("<h1>Not Elegible For Driving </h1>");
+        }
+
+    </script>
+</body>
+
+</html>

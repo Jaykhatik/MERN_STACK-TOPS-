@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        There are following loops in js:
+        i)for loop
+-->
+    <h1
+        style="background-color: rgb(223, 207, 190); text-align: center; border: 1px solid black; border-radius: 10px; padding: 10px;">
+        for loop</h1>
+    <script>
+        for (var i = 1; i <= 10; i++) {
+            document.write(i + "</br>");
+        }
+        //2nd example
+        for (var i = 1; i <= 10; i++) {
+            if (i == 6 || i == 8) {
+                continue;//it will skip the numbers that we mentioned in if condition
+            }
+            document.write(i + "</br>");
+        }
+    </script>
+    <!--
+        ii)while loop
+-->
+    <h1
+        style="background-color: rgb(223, 207, 190); text-align: center; border: 1px solid black; border-radius: 10px; padding: 10px;">
+        while loop</h1>
+    <script>
+        var i = 1;
+        while (i <= 10) {
+            document.write("<h1>" + i + " : Jay</h1>");
+            i++;
+        }
+        //2nd example
+        var i = 1;
+        while (i <= 10) {
+            if (i == 6) {
+                break;
+            }
+            document.write(i + "</br>");
+            i++;
+        }
+    </script>
+    <!--
+        iii)do-while loop
+-->
+    <h1
+        style="background-color: rgb(223, 207, 190); text-align: center; border: 1px solid black; border-radius: 10px; padding: 10px;">
+        do-while loop</h1>
+    <script>
+        var i = 1;
+        do {
+            document.write(i + "</br>");
+            i++;
+        } while (i <= 10);
+    </script>
+    <!--
+        iv)for...in loop
+-->
+    <h1
+        style="background-color: rgb(223, 207, 190); text-align: center; border: 1px solid black; border-radius: 10px; padding: 10px;">
+        for...in loop</h1>
+    <script>
+        var person = { name: "Jay khatik", age: 20, city: "Ahmedabad" };
+
+        for (let i in person) {
+            document.write(i + ": " + person[i] + "<br>");
+        }
+    </script>
+    <!--
+        v)for...of loop
+-->
+    <h1
+        style="background-color: rgb(223, 207, 190); text-align: center; border: 1px solid black; border-radius: 10px; padding: 10px;">
+        for...of loop</h1>
+    <script>
+        var fruits = ["apple", "banana", "mango"];
+
+        for (let fal of fruits) {
+            document.write(fal + "<br>");
+        }
+    </script>
+</body>
+
+</html>
