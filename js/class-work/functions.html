@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Function:-
+
+        Block of code , JavaScript functions are used to perform operations. 
+        We can call JavaScript function many times to reuse the code.
+
+        Advantage of JavaScript function
+        There are mainly two advantages of JavaScript functions.
+
+        Code reusability: We can call a function several times so it save coding.
+        Less coding: It makes our program compact. 
+        We don’t need to write many lines of code each time to perform a common task. 
+    -->
+    <!-- syntax:->
+
+        <script>
+            function function_name(parameter){
+
+            }
+        </script>
+         -->
+    <script>
+        //simple function
+        function greet() {
+            document.write("hello" + "<br>");
+        }
+        greet();
+
+        //function with parameter simple
+            //1st way
+            function hello(name) {
+                document.write("hello" + " " + name + "<br>")
+            }
+            hello("jay");
+            //2nd way
+                function sub(a, b) {
+                    var sum = a - b;
+                    document.write("sub of a & b are : " + sum + "<br>");
+                }
+                sub(10, 20);
+                sub(15, 8);
+                sub(10, 10);
+                sub(2, 20);
+        //function with return value
+            //1st way
+            function jay(x, y) {
+                return x + y;
+            }
+            var result = jay(5, 10);
+            document.write(result+"<br>");
+           //2nd way
+           function sum(){
+			 var a=10;
+			 var b=20;
+			 var sum=a+b;
+			 return("sum of a & b are : " + sum+"<br>");
+		}
+		document.write(sum());
+        //default parameters
+        function multiply(a, b = 2) {
+            return a * b;
+        }
+        document.write(multiply(5)+"<br>");    // Output: 10
+        document.write(multiply(5, 4)); // Output: 20
+    </script>
+</body>
+
+</html>
