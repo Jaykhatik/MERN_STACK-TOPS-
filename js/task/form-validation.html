@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            height: max-content;
+            background: linear-gradient(135deg, #fff4e6, #ffe0b2);
+            /* Soft gradient */
+            width: 70%;
+            margin: 20px auto;
+            border: none;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            gap: 30px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .form-group label {
+            width: 10%;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 15px;
+            margin-left: 25px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group select,
+        .form-group textarea {
+            width: 75%;
+            height: 35px;
+            padding: 5px 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input[type="file"] {
+            width: 75%;
+            height: 35px;
+            padding: 10px 10px 0px 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            margin-left: 10px;
+            margin-right: 5px;
+            accent-color: #ff9800;
+            /* Modern orange accent */
+        }
+
+        /* Hover & focus effects */
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover,
+        .form-group input[type="file"]:hover {
+            border-color: #ff9800;
+            box-shadow: 0 0 8px rgba(255, 152, 0, 0.4);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #ff9800;
+            box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
+        }
+
+        /* Button styling */
+        .form-group button {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            margin-left: 30px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(245, 124, 0, 0.4);
+        }
+
+        .form-group button:hover {
+            background: linear-gradient(135deg, #f57c00, #ef6c00);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(245, 124, 0, 0.6);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <h1 style="text-align: center;  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); margin-bottom: 30px; background-color:  #fca728; padding: 10px; border: 1px solid gray; border-radius: 20px;">Register Form</h1>
+            <div class="form-group">
+                <label for="">User name : </label>
+                <input type="text" placeholder="enter your User name" name="username">
+            </div>
+            <div class="form-group">
+                <label for="">Password : </label>
+                <input type="password" placeholder="enter your password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="">E-mail : </label>
+                <input type="email" placeholder="enter your email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="">Gender : </label>
+                <input type="radio" name="Gender">Male
+                <input type="radio" name="Gender">Female
+            </div>
+            <div class="form-group">
+                <label for="">Hobby : </label>
+                <input type="checkbox" name="Hobby">Cricket
+                <input type="checkbox" name="Hobby">Singing
+                <input type="checkbox" name="Hobby">Reading
+                <input type="checkbox" name="Hobby">Dancing
+            </div>
+            <div class="form-group">
+                <label for="">Country : </label>
+                <select name="" id="">
+                    <option value="" hidden>-------select country--------</option>
+                    <option value="">India</option>
+                    <option value="">Australia</option>
+                    <option value="">New-York</option>
+                    <option value="">South-africa</option>
+                    <option value="">England</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Address :</label>
+                <textarea name="Address" id="" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Profile Pic : </label>
+                <input type="file" name="img" required>
+            </div>
+            <div class="form-group">
+                <label for="">Resume-Pdf : </label>
+                <input type="file" name="pdf" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Registered</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
