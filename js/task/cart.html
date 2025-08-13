@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="text-align: center; margin: 100px auto;">
+        <button onclick="plus()">+</button>
+        <h1 id="number">0</h1>
+        <button onclick="sub()">-</button>
+    </div>
+    <script>
+        function plus() {
+            var sum = document.getElementById('number').innerText;
+            sum++;
+            document.getElementById('number').innerText = sum;
+        }
+        function sub() {
+            var minus = document.getElementById('number').innerText;
+            minus--;
+            if (minus >= 0) {
+                document.getElementById('number').innerText = minus;
+            }
+        }
+    </script>
+    <!-- <div align="center">
+        <button onclick="plus1()">+</button>
+        <input type="text" id="num1" value="0" size="1" />
+        <button onclick="minus1()">-</button>
+    </div>
+    <script>
+        function plus1() {
+            var num1 = document.getElementById('num1').value;
+            num1++;
+            if (num1 <= 10) {
+                document.getElementById('num1').value = num1;
+            }
+        }
+        function minus1() {
+            var num1 = document.getElementById('num1').value;
+            num1--;
+            if (num1 >= 0) {
+                document.getElementById('num1').value = num1;
+            }
+        }
+    </script> -->
+
+</body>
+
+</html>
