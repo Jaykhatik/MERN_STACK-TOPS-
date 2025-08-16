@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: max-content;
+            background: linear-gradient(135deg, #fff4e6, #ffe0b2);
+            /* Soft gradient */
+            width: 70%;
+            margin: 20px auto;
+            border: none;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            gap: 30px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .form-group label {
+            width: 10%;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 17px;
+            margin-left: 25px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            width: 75%;
+            height: 35px;
+            padding: 5px 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+
+        /* Hover & focus effects */
+        .form-group input:hover {
+            border-color: #ff9800;
+            box-shadow: 0 0 8px rgba(255, 152, 0, 0.4);
+        }
+
+        .form-group input:focus {
+            border-color: #ff9800;
+            box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            margin-left: 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(245, 124, 0, 0.4);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #f57c00, #ef6c00);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(245, 124, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p id="msg" style="color: rebeccapurple;"></p>
+        <form name="jayform" method="get" action="" onsubmit="return validation3(this)">
+            <div class="form-group">
+                <label for="">First-name : </label>
+                <input type="text" name="ufn" id="ufn" placeholder="enter your first name">
+            </div>
+            <div class="form-group">
+                <label for="">Last-name : </label>
+                <input type="text" name="lfn" id="lfn" placeholder="enter your last name">
+            </div>
+            <div class="form-group">
+                <label for="">E-mail : </label>
+                <input type="email" name="email" id="email" placeholder="enter your email">
+            </div>
+            <button type="submit" id="message">SUBMIT</button>
+        </form>
+    </div>
+    <!-- 1st validation using id  -->
+    <!-- <script>
+        
+        // function validation1(){
+        //     var ufn=document.getElementById('ufn').value;
+        //     if(ufn==""){
+        //         alert("first field is required");
+        //         return false;
+        //     }
+        //      var lfn=document.getElementById('lfn').value;
+        //     if(lfn==""){
+        //         alert("last field is required");
+        //         return false;
+        //     }
+        //     var email=document.getElementById('email').value;
+        //     if(email==""){
+        //         alert("email id is required");
+        //         return false;
+        //     }
+        // }
+        </script> -->
+    <!-- 2nd validation using form name -->
+    <!-- <script>
+        function validation2() {
+            var ufn = document.forms['jayform']['ufn'].value;
+            if (ufn == "") {
+                alert("first name daal");
+                return false;
+            }
+            var lfn = document.forms['jayform']['lfn'].value;
+            if (lfn == "") {
+                alert("last name daal");
+                return false;
+            }
+            var email = document.forms['jayform']['email'].value;
+            if (email == "") {
+                alert("email daal");
+                return false;
+            }
+            alert("Form submitted successfully!");
+            return true;
+            // var ufn = document.forms['jayform']['ufn'].value;
+            // var lfn = document.forms['jayform']['lfn'].value;
+            // var email = document.forms['jayform']['email'].value;
+            // if (ufn && lfn && email != "") {
+            //     alert("Form submitted successfully!");
+            //     return true;
+            // }
+        }
+    </script> -->
+    <!-- 3rd validation using arguments -->
+    <script>
+        function validation3(args) {
+            var ufn = args.ufn.value;
+            if (ufn == "") {
+                document.getElementById('msg').innerHTML = 'ufn Field is required';
+                args.ufn.focus();
+                return false;
+            }
+            var lfn = args.lfn.value;
+            if (lfn == "") {
+                document.getElementById('msg').innerHTML = 'lfn Field is required';
+                args.lfn.focus();
+                return false;
+            }
+            var email = args.email.value;
+            if (email == "") {
+                document.getElementById('msg').innerHTML = 'email Field is required';
+                args.email.focus();
+                return false;
+            }
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</body>
+
+</html>
