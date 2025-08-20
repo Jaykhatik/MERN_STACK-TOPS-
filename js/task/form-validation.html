@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 0;
             margin: 0;
         }
+
         .container {
             height: max-content;
             background: linear-gradient(135deg, #fff4e6, #ffe0b2);
@@ -118,11 +119,14 @@
 
 <body>
     <div class="container">
-        <form action="">
-            <h1 style="text-align: center;  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); margin-bottom: 30px; background-color:  #fca728; padding: 10px; border: 1px solid gray; border-radius: 20px;">Register Form</h1>
+        <h4 id="msg1"></h4>
+        <form action="" name="myform" method="get" onsubmit="return reg_form(this)">
+            <h1
+                style="text-align: center;  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); margin-bottom: 30px; background-color:  #fca728; padding: 10px; border: 1px solid gray; border-radius: 20px;">
+                Register Form</h1>
             <div class="form-group">
                 <label for="">User name : </label>
-                <input type="text" placeholder="enter your User name" name="username">
+                <input type="text" placeholder="enter your User name" name="username" id="uname">
             </div>
             <div class="form-group">
                 <label for="">Password : </label>
@@ -157,21 +161,35 @@
             </div>
             <div class="form-group">
                 <label for="">Address :</label>
-                <textarea name="Address" id="" required></textarea>
+                <textarea name="Address" id=""></textarea>
             </div>
             <div class="form-group">
                 <label for="">Profile Pic : </label>
-                <input type="file" name="img" required>
+                <input type="file" name="img">
             </div>
             <div class="form-group">
                 <label for="">Resume-Pdf : </label>
-                <input type="file" name="pdf" required>
+                <input type="file" name="pdf">
             </div>
             <div class="form-group">
                 <button type="submit">Registered</button>
             </div>
         </form>
     </div>
+    <script>
+        function reg_form(arg) {
+            if (arg.uname.value == "") {
+                document.getElementById("msg1").innerHTML = "! Please enter Some Value in User Name";
+                arg.uname.focus();
+                return false;
+            }
+            if (!arg.uname.value.match(/^[a-zA-Z]{1,}$/)) {
+                document.getElementById("msg1").innerHTML = "! Please enter Only Character Value";
+                arg.uname.focus();
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>
