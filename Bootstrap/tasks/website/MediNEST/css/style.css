@@ -2,6 +2,28 @@ body {
     overflow-x: hidden;
 }
 
+.nav-colour {
+    background-color: #dee5e6;
+}
+
+.text-colour,
+.text-colour a {
+    color: #024747;
+}
+
+#navbar-button {
+    background-color: #024747;
+    color: #dee5e6;
+}
+
+#navbar-button:hover {
+    background-color: transparent;
+    color: #024747;
+    border: 1px solid #024747;
+    transform: translateY(-5px);
+    transition: all 0.5s ease-in-out;
+}
+
 .hero-section {
     background: #f8fdff;
     padding: 50px 0;
@@ -12,18 +34,10 @@ body {
     max-width: 80%;
     transform: rotate(-2deg);
     transition: 0.3s ease-in-out;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
 }
 
 .doctor_img:hover {
     transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
 }
 
 .info-card {
@@ -444,8 +458,313 @@ body {
     transition: all 0.4s ease;
 }
 
-.footer-last,
+.footer-last {
+    background-color: #dee5e6;
+    color: #024747;
+}
+
 .footer-last a {
+    color: gray;
+}
+
+/* doctors page css start*/
+.home-text {
+    color: #024747;
+}
+
+.current {
+    color: red;
+}
+
+.current::before {
+    content: "/";
+    display: inline-block;
+    padding-right: 15px;
+    color: #000;
+}
+
+.btn-search1 {
     background-color: #024747;
+    color: #dee5e6;
+    border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-search1:hover {
+    background-color: transparent;
+    color: #024747;
+}
+
+.doctor-card {
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+}
+
+.filter-btn.active {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* doctor natalia section */
+.profile-card1 {
+    background-color: #dee5e6;
+    padding: 15px;
+    border-radius: 3%;
+    box-shadow: 5px 5px 10px;
+
+}
+
+.upper-badges .first {
+    background-color: #099aa7;
+    color: #ffffff;
+    border: 1px solid color-mix(in srgb, #099aa7, transparent 20%);
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.upper-badges .second,
+.upper-badges .third {
+    background-color: color-mix(in srgb, var(#099aa7), transparent 0%);
+    color: #099aa7;
+    border: 1px solid color-mix(in srgb, #099aa7, transparent 5%);
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.lower-buttons .btn-appointment {
+    background-color: #099aa7;
+    color: #ffffff;
+    border: 1px solid color-mix(in srgb, #099aa7, transparent 20%);
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.middle-li i {
+    color: #099aa7;
+}
+
+.lower-buttons .soft {
+    background-color: color-mix(in srgb, var(#099aa7), transparent 92%);
+    color: #099aa7;
+    border: 1px solid color-mix(in srgb, #099aa7, transparent 75%);
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* minimal card */
+.minimal-card {
+    background: white;
+    border: 1px solid rgb(205, 202, 202);
+    border-radius: 15px;
+    padding: 14px 10px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.minimal-card:hover {
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+}
+
+.minimal-card .avatar {
+    width: 68px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid color-mix(in srgb, #099aa7, transparent 60%);
+}
+
+/* doctors profile(Dr. Henry James) */
+.profile-card2 {
+    background-color: #dee5e6;
+    padding: 25px;
+    border-radius: 5%;
+    box-shadow: 5px 5px 10px;
+
+}
+
+.profile-card2 span {
+    color: #024747;
+    background-color: whitesmoke;
+    border: 1px solid #024747;
+}
+
+.nb button {
     color: whitesmoke;
+    background-color: #024747;
+    margin-right: 5px;
+    border-radius: 25px;
+}
+
+.profile-card-lower a {
+    background-color: #024747;
+    color: #dee5e6;
+}
+
+#lower2 {
+    background-color: #dee5e6;
+    color: #024747;
+}
+
+.lowertext-profilecard-section {
+    height: max-content;
+    background-color: #dee5e6;
+    padding: 20px 0;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px;
+}
+
+/* doctor page css end */
+
+/* contact page css start */
+.info-box1 {
+    color: #363f40;
+    background: #ffffff;
+    padding: 30px;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+
+}
+
+.info-box1:hover {
+    transform: translateY(-10px);
+}
+
+.icon-back {
+    height: 60px;
+    width: 60px;
+    background-color: #dee5e6;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+
+}
+
+.icon-back i {
+    color: #024747;
+}
+
+.send-message-button {
+    background: #024747;
+    border: 0;
+    padding: 12px 34px;
+    color: #dee5e6;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.social-links a {
+    display: inline-flex;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #dee5e6;
+    color: #024747;
+    font-size: 18px;
+    box-shadow: 5px 5px 5px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-10px);
+    background-color: #024747;
+    color: #dee5e6;
+    transition: all 0.4s ease-in-out;
+}
+
+/* service page css start */
+.service-card {
+    background: red;
+    border-radius: 25px;
+    padding: 0;
+    height: 100%;
+    transition: all 0.4s ease;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-header {
+    padding: 25px 25px 15px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #099aa7, color-mix(in srgb, #099aa7, #007acc 50%));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.service-category {
+    background:
+        color-mix(in srgb, #099aa7, transparent 90%);
+    color: #099aa7;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.service-body {
+    padding: 0 25px 15px;
+    text-align: center;
+}
+
+.service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.service-features .feature-badge {
+    background: color-mix(in srgb, #363f40, transparent 95%);
+    color: color-mix(in srgb, #363f40, transparent 20%);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.service-footer {
+    padding: 0 25px 25px;
+    margin-top: auto;
 }
