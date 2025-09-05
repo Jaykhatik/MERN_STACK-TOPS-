@@ -702,7 +702,7 @@ body {
 
 /* service page css start */
 .service-card {
-    background: red;
+    background: #dee5e6;
     border-radius: 25px;
     padding: 0;
     height: 100%;
@@ -710,32 +710,30 @@ body {
     border: 3px solid transparent;
     position: relative;
     overflow: hidden;
+    box-shadow: 5px 5px 10px #024747;
 }
-
 .service-header {
-    padding: 25px 25px 15px;
-    flex-direction: column;
+    padding: 25px;
+    display: flex; 
     align-items: center;
-    text-align: center;
-    gap: 15px;
+    gap: 45%; /* spacing between icon and text */
 }
 
 .service-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #099aa7, color-mix(in srgb, #099aa7, #007acc 50%));
+    color: #dee5e6;
+    background-color: #024747;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
 .service-category {
-    background:
-        color-mix(in srgb, #099aa7, transparent 90%);
-    color: #099aa7;
-    padding: 6px 15px;
+    background: #024747;
+    color: #dee5e6;
+    padding: 6px 6px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
@@ -743,9 +741,10 @@ body {
     letter-spacing: 0.5px;
 }
 
+
+
 .service-body {
     padding: 0 25px 15px;
-    text-align: center;
 }
 
 .service-features {
@@ -756,8 +755,8 @@ body {
 }
 
 .service-features .feature-badge {
-    background: color-mix(in srgb, #363f40, transparent 95%);
-    color: color-mix(in srgb, #363f40, transparent 20%);
+    background: color-mix(in srgb, #363f40, transparent 85%);
+    color: #024747;
     padding: 4px 12px;
     border-radius: 12px;
     font-size: 11px;
@@ -767,4 +766,61 @@ body {
 .service-footer {
     padding: 0 25px 25px;
     margin-top: auto;
+}
+
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    background: #024747;
+    border: 1px solid transparent;  /* 🔹 Keep border fixed */
+    border-radius: 25px;
+    color: #dee5e6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+.service-btn:hover {
+    background-color: #dee5e6;
+    color: #024747;
+    transform: translateX(8px);
+    border: 1px solid #024747;   /* 🔹 Only change color */
+    box-shadow: 5px 5px 10px #024747;
+}
+.service-stats{
+    background-color: #dee5e6;
+    color: #024747;
+    border-radius: 20px;
+    padding: 50px 0;
+    margin-bottom: 50px;
+    /* box-shadow: 5px 5px 10px black; */
+}
+.stat-item{
+    text-align: center;
+    padding: 0 20px;
+    align-items: center;
+}
+.cta-section {
+  background-color: #024747;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 5px 5px 10px #024747;
+}
+
+/* Buttons hover effect */
+.cta-btn {
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
