@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*      JavaScript Objects
+             A javaScript object is an entity having state and behavior (properties and method). 
+             For example: car, pen, bike, chair, glass, keyboard, monitor etc.
+
+             JavaScript is an object-based language. Everything is an object in JavaScript.
+
+             JavaScript is template based not class based. Here, we don't create class to 
+             get the object. But, we direct create objects.
+
+         Creating Objects in JavaScript
+         There are 3 ways to create objects.*/
+
+
+        /* 1)By object literal
+
+         2)By creating instance of Object directly (using new keyword)
+         3)By using an object constructor (using new keyword)*/
+
+
+        // 1)By object literal
+        //What is an Object Literal in JavaScript?
+
+        //An object literal is the easiest way to create an object in JavaScript.
+        //It’s written using curly braces {}, where we define the object’s properties as key–value pairs.
+
+        /* Key Points
+
+         *Object literals are quick and readable for creating objects.
+         *Keys are always strings (even if you don’t use quotes).
+         *Values can be any data type (string, number, boolean, array, function, object).
+         *You can add or change properties later:*/
+
+        // Object with multiple properties
+        let person = {
+            name: "Jay",
+            age: 22,
+            isStudent: true
+        };
+
+        // Accessing values
+        document.write(person.name + "<br>");   // Jay
+        document.write(person["age"] + "<br>"); // 22
+
+
+        // single object 
+        var single_obj = { id: 102, name: "Shyam Kumar", salary: 40000 };
+
+        document.write(single_obj.id + " " + single_obj.name + " " + single_obj.salary + "<br>");
+
+        for (property in single_obj) {
+            document.write(property + single_obj[property] + "<br>");
+        }
+        //multiple-object
+
+        var multi_obj = [
+            { id: 101, name: "Shyam Kumar", salary: 40000 },
+            { id: 102, name: "Ram Kumar", salary: 45000 },
+            { id: 103, name: "karan Kumar", salary: 50000 }
+        ];
+
+        document.write(multi_obj[0].id + " " + multi_obj[1].name + " " + multi_obj[2].salary + "<br>");
+
+        for (value of multi_obj) {
+            document.write(value.id + " " + value.name + " " + value.salary + "<br>");
+        }
+
+        //2) By creating instance of Object directly (using new keyword)
+        /*When to use?
+        Object literal {} is shorter and more common.
+        new Object() is rarely used, unless you need to create an object in a more explicit, constructor-like style.*/
+        var emp = new Object();
+        emp.id = 101;
+        emp.name = "Ravi Malik";
+        emp.salary = 50000;
+
+        document.write(emp.id + " " + emp.name + " " + emp.salary);
+
+
+        //3) By using an object constructor (using new keyword)
+
+        /*What is an Object Constructor?
+
+           > A constructor function is a regular function in JavaScript that is used to create multiple objects with the same structure (properties/methods).
+           > We use the new keyword with it.
+           > By convention, constructor function names start with a capital letter.*/
+
+        function emp(id, name, salary) {
+            this.userid = id;
+            this.username = name;
+            this.usersalary = salary;
+        }
+        obj = new emp(103, "Vimal Jaiswal", 30000);
+        obj1 = new emp(102, "Raj Jaiswal", 30000);
+
+        document.write(obj.userid + " " + obj.username + " " + obj.usersalary);
+        document.write(obj1.userid + " " + obj1.username + " " + obj1.usersalary);
+
+
+    </script>
+</body>
+
+</html>

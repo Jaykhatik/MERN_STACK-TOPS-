@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box" style="border: 2px solid black;">
+        <p>Existing Paragraph</p>
+    </div>
+    <script>
+        /*What is insertAdjacentHTML()?
+            ->It’s a DOM method in JavaScript.
+            ->It allows you to insert HTML code (as a string) directly into the DOM at a specified position relative to an element.
+            
+            syntex:
+            element.insertAdjacentHTML(position, text);
+
+            Parameters
+
+            i)"beforebegin"
+            Before the element. Only valid if the element is in the DOM tree and has a parent element.
+
+            ii)"afterbegin"
+            Just inside the element, before its first child.
+
+            iii)"beforeend":
+            Just inside the element, after its last child.
+
+            iv)"afterend"
+            After the element. Only valid if the element is in the DOM tree and has a parent element.
+
+            */
+           //example
+
+        let box = document.getElementById("box");
+
+        // 1. Before the element
+        box.insertAdjacentHTML("beforebegin", "<h2>Before Box</h2>");
+
+        // 2. At the beginning of the element
+        box.insertAdjacentHTML("afterbegin", "<p>First Child</p>");
+
+        // 3. At the end of the element
+        box.insertAdjacentHTML("beforeend", "<p>Last Child</p>");
+
+        // 4. After the element
+        box.insertAdjacentHTML("afterend", "<h2>After Box</h2>");
+    </script>
+
+</body>
+
+</html>
