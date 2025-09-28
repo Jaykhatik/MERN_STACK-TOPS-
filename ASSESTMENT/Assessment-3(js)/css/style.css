@@ -1,0 +1,122 @@
+/* General Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header (Sticky) */
+header {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Form Card */
+.form-card {
+  background: #fff;
+  color: #333;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.form-card:hover { transform: scale(1.02); }
+.form-card h2 { text-align: center; margin-bottom: 15px; color: #764ba2; }
+label { font-weight: 600; margin-top: 10px; display: block; }
+
+/* Inputs, Select, Textarea */
+input, textarea, select {
+  width: 100%; 
+  padding: 10px; 
+  margin: 6px 0 15px;
+  border: 1px solid #ccc; 
+  border-radius: 8px;
+  font-size: 14px;
+}
+textarea { resize: none; height: 100px; }
+select { background: #fff; cursor: pointer; }
+
+/* Buttons */
+.btn {
+  background: #667eea;
+  color: #fff;
+  padding: 10px 16px;
+  border: none; border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn:hover { background: #764ba2; }
+.secondary { background: #aaa; }
+.link-btn { margin-top: 20px; display: inline-block; }
+
+/* Message Box */
+.message-box {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+}
+.success { background: #4CAF50; color: #fff; }
+.error { background: #f44336; color: #fff; }
+
+/* Table */
+.styled-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #fff;
+  color: #333;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+.styled-table th {
+  background: #667eea;
+  color: #fff;
+}
+.styled-table tr:hover { background: #f2f2f2; }
+
+/* Search */
+.search-bar {
+  text-align: center;
+  margin: 20px;
+}
+.search-bar input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* No Data */
+.no-data {
+  text-align: center;
+  margin: 20px;
+  display: none;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Interaction Form</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>🚗 Customer Support - Tecocraft</h1>
+    <!-- password is admin123 -->
+  </header>
+
+  <main>
+    <form id="customerForm" class="form-card">
+      <h2>Submit Your Complaint</h2>
+      
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      
+      <label for="phone">Phone Number</label>
+      <input type="number" id="phone" name="phone" placeholder="10-digit phone number" required>
+      
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="vehicle">Vehicle Model</label>
+      <select id="vehicle" name="vehicle" required>
+        <option value="">-- Select Vehicle Model --</option>
+        <option value="Toyota Corolla">Toyota Corolla</option>
+        <option value="Honda Civic">Honda Civic</option>
+        <option value="Ford Focus">Ford Focus</option>
+        <option value="Hyundai Elantra">Hyundai Elantra</option>
+        <option value="Maruti Suzuki Swift">Maruti Suzuki Swift</option>
+        <option value="Tata Nexon">Tata Nexon</option>
+        <option value="Mahindra XUV700">Mahindra XUV700</option>
+      </select>
+      
+      <label for="complaint">Complaint/Issue</label>
+      <textarea id="complaint" name="complaint" placeholder="Describe your issue..." required></textarea>
+      
+      <button type="submit" class="btn">Submit</button>
+      <button type="reset" class="btn secondary">Clear</button>
+    </form>
+
+    <div id="messageBox" class="message-box"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Tecocraft</p>
+    <a href="view.html" class="btn link-btn">View Submissions</a>
+  </footer>
+
+  <script src="js/form.js"></script>
+</body>
+</html>
