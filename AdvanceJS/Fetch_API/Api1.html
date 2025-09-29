@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    fetch() → Built-in JavaScript function to request data from an API (network request).
+            .then() → Handles success (what to do after fetch response).
+            .catch() → Handles errors (e.g., wrong URL, no internet).
+
+
+            syntax:
+                /*
+                fetch("api_link_url")
+                .then(function(res){})// resp json
+                .then(function(object){})// resp object.
+                .catch(function(arr){}) // if api wrong 
+                */
+
+             -->
+
+    <!-- we can access data from api using 3 methods
+     1.From using simple url
+     2.using id 
+     3.using particular column -->
+
+     <script>
+        //1.using simple url to get all data from api
+
+        fetch('https://jsonplaceholder.typicode.com/posts')
+	  .then(response => response.json())
+	  .then(obj => console.log(obj))
+
+      //2.using id to get data
+
+       fetch('https://jsonplaceholder.typicode.com/posts/5')
+	  .then(response => response.json())
+	  .then(obj => console.log(obj))
+
+      //3.using particular column to get data
+
+      fetch('https://jsonplaceholder.typicode.com/posts?userId=5')
+	  .then(response => response.json())
+	  .then(obj => console.log(obj))
+	
+     </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" id="data">
+        <tr>
+            <th>ID</th>
+            <th>User Id</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+    </table>
+    <script>
+        fetch("https://jsonplaceholder.typicode.com/posts?userId=1")
+            .then((res) => res.json())
+            .then((obj) => {
+                showdata(obj)
+            })
+        var mydata = document.getElementById("data");
+        function showdata(myarr) {
+            for (value in myarr) {
+                var html = `<tr>
+                    <td>${value.id}</td>
+				<td>${value.userId}</td>
+				<td>${value.title}</td>
+				<td>${value.body}</td>
+                    </tr>`;
+                mydata.insertAdjacentHTML('beforeend', html);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
