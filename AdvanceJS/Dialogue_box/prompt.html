@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    Used to take input from the user.
+
+    👉 Returns:
+        String value entered by user
+        null if user clicks Cancel
+    -->
+    <input type="submit" value="prompt-box" onclick="prompt_func()">
+    <script>
+        function prompt_func() {
+            var data = prompt("enter your pass/code/otp");
+            if (data == 1234) {
+                alert('pay/delete Success');
+                // window.location = 'alert.html';
+            }
+            else {
+                alert('pay/delete Failed');
+                return false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

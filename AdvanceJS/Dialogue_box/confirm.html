@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    Asks the user to confirm an action with OK (true) or Cancel (false). 
+    👉 Use cases:
+
+        Logout confirmations
+        Deleting data
+        Submitting forms
+    -->
+    <input type="submit" value="confirm-box" onclick="data_delete()">
+    <script>
+        function data_delete() {
+            var data = confirm('Are you sure want to pay/delete ?');
+            if (data) {
+                alert('pay/delete Success');
+                // window.location = 'alert.html';
+            }
+            else {
+                alert('pay/delete Failed');
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
