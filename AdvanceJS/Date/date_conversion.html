@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADV-JS DATE-CONVERSION-METHOD</title>
+</head>
+
+<body>
+    <!-- 🌍 Date Conversion Methods:
+
+        The Date object in JavaScript can be converted into different string representations (human-readable format).
+        👉 These methods are important for displaying dates to the user in different formats.
+
+        Convert date into strings:
+        | Method                 | Example Output                        |
+        | ---------------------- | ------------------------------------- |
+        | `toString()`           | `"Sat Sep 27 2025 10:30:00 GMT+0530"` |
+        | `toDateString()`       | `"Sat Sep 27 2025"`                   |
+        | `toTimeString()`       | `"10:30:00 GMT+0530"`                 |
+        | `toUTCString()`        | `"Sat, 27 Sep 2025 05:00:00 GMT"`     |
+        | `toISOString()`        | `"2025-09-27T05:00:00.000Z"`          |
+        | `toLocaleDateString()` | `"27/9/2025"` (depends on locale)     |
+        | `toLocaleTimeString()` | `"10:30:00 am"`                       |
+-->
+    <script>
+        // 🔹 1. toString()
+
+        // Definition:
+        // Converts the Date object into a full string including day, month, date, time, timezone, and year.
+
+        // Syntax:
+        // date.toString();
+        document.writeln("<h1>Date Conversion Methods into Strings:</h1>")
+
+        let d1 = new Date();
+        document.writeln("<h3>Current Date:</h3>" + d1.toString());
+
+        // 🔹 2. toDateString()
+
+        // Definition:
+        // Returns only the date part of the Date object(ignores time).
+
+        // Syntax:
+        // date.toDateString();
+
+        let d2 = new Date();
+        document.writeln("<h3>Only Date:</h3>" + d2.toDateString());
+
+        // 🔹 3. toTimeString()
+
+        // Definition:
+        // Returns only the time part of the Date object(ignores date).
+
+        // Syntax:
+        // date.toTimeString();
+
+        let d3 = new Date();
+        document.writeln("<h3>Current Time:</h3>" + d3.toTimeString());
+
+        // 🔹 4. toUTCString()
+
+        // Definition:
+        // Converts the date to a string in UTC(Coordinated Universal Time) format.
+        //Returns date in UTC.
+
+        // Syntax:
+        // date.toUTCString();
+
+        let d4 = new Date();
+        document.writeln("<h3>Date in UTC format:</h3>" + d4.toUTCString());
+
+        // 🔹 5. toISOString()
+
+        // Definition:
+        // Converts the date to a string in ISO 8601 format(standard international format).
+
+        // Syntax:
+        // date.toISOString();
+
+        let d5 = new Date();
+        document.writeln("<h3>Date in ISOS format:</h3>" + d5.toISOString());
+
+        // 🔹 6. toLocaleDateString()
+
+        // Definition:
+        // Converts the date to a localized date string(depends on your system’s language / region).
+
+        // Syntax:
+        // date.toLocaleDateString([locale], [options]);
+
+        let d6 = new Date();
+        document.writeln("<h3>Loaclized Data</h3>" + d6.toLocaleDateString());
+        document.writeln("<h3>Loaclized Data</h3>(US FORMAT)" + d6.toLocaleDateString("en-US")); // US format
+        document.writeln("<h3>Loaclized Data</h3>(UK FORMAT)" + d6.toLocaleDateString("en-GB")); // UK format
+
+        // 🔹 7. toLocaleTimeString()
+
+        // Definition:
+        // Converts the time portion to a localized time string.
+
+        // Syntax:
+        // date.toLocaleTimeString([locale], [options]);
+
+        let d7 = new Date();
+        document.writeln("<h3>Local Time:</h3>" + d7.toLocaleTimeString());
+        document.writeln("<h3>Local Time(US-FORMAT):</h3>" + d7.toLocaleTimeString("en-US"));
+
+        // 🔹 8. toLocaleString()
+
+        // Definition:
+        // Converts the date to a localized string containing both date and time.
+
+        // Syntax:
+        // date.toLocaleString([locale], [options]);
+
+        let d8 = new Date();
+        document.writeln("<h3>Date And Time:</h3>" + d.toLocaleString());
+        document.writeln("<h3>Date And Time:</h3>" + d.toLocaleString("en-US"));
+        document.writeln("<h3>Date And Time:</h3>" + d.toLocaleString("en-GB"));
+    </script>
+</body>
+
+</html>
