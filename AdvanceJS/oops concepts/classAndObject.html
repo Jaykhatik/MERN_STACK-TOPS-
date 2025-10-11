@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oops-concept(class and object)</title>
+</head>
+
+<body>
+    <!-- 
+    🏗️ 1. What is a Class in JavaScript?
+            ->A class is a blueprint or template used to create multiple objects that share similar properties and behaviors.
+            ->It defines:
+                ➤Properties (Variables) → Data about the object.
+                ➤Methods (Functions) → Behavior or actions the object can perform.
+                    💡 Classes were introduced in ES6 (2015) — before that, JS used prototypes to create objects.
+                        🧩 Syntax of a Class:-
+                            class ClassName {
+                            constructor(parameters) {
+                                // initialize object properties
+                            }
+
+                            method1() {
+                                // behavior 1
+                            }
+
+                            method2() {
+                                // behavior 2
+                            }
+                            }
+            What is an Object?
+
+                ->An object is an instance of a class — it represents a real-world entity created from the class template.
+                ->Each object has its own copy of properties, but can share methods defined in the class.
+
+                🏭 Example:
+                    Class → "Car" (blueprint)
+                    Object → "BMW", "Audi" (actual cars built from that blueprint)
+
+                🧱 Example: Basic Class and Object:->-->
+    <script>
+        class Car {
+            constructor(name, color) {
+                this.name = name;   // property
+                this.color = color; // property
+            }
+
+            start() {
+                document.write(`${this.name} is starting...` + "<br>");
+                document.write(`${this.color} BMW is Fabulous...` + "<br><br>");
+            }
+
+            stop() {
+                document.write(`${this.name} has stopped.`+ "<br>");
+                document.write(`${this.color} Audi is Average...` + "<br><br>");
+            }
+        }
+
+        // Creating objects (instances)
+        const car1 = new Car("BMW", "Black");
+        const car2 = new Car("Audi", "White");
+
+        // Accessing methods and properties
+        car1.start();   // BMW is starting...
+        car2.stop();    // Audi has stopped.
+    </script>
+
+</body>
+
+</html>
