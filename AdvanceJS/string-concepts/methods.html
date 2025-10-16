@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING-METHODS IN ADVANCE-JS</title>
+</head>
+
+<body>
+    <!-- 
+    🧠 STRING METHODS IN JAVASCRIPT
+    | Method                        | Purpose                |
+    | ----------------------------- | ---------------------- |
+    | `length`                      | Find string length     |
+    | `toUpperCase()`               | Convert to uppercase   |
+    | `toLowerCase()`               | Convert to lowercase   |
+    | `charAt()` / `at()`           | Get character at index |
+    | `slice()` / `substring()`     | Extract substring      |
+    | `replace()` / `replaceAll()`  | Replace text           |
+    | `split()`                     | Convert to array       |
+    | `trim()`                      | Remove spaces          |
+    | `includes()`                  | Check substring        |
+    | `indexOf()` / `lastIndexOf()` | Find position          |
+    | `startsWith()` / `endsWith()` | Check start or end     |
+    | `padStart()` / `padEnd()`     | Add padding            |
+    | `concat()`                    | Join strings           |
+    | `match()` / `search()`        | Use regex              |
+    | `repeat()`                    | Repeat string          |
+    | `localeCompare()`             | Compare alphabetically |
+
+    -->
+    <script>
+        //1. length
+        //Returns the number of characters in the string.
+        let str = "JavaScript";
+        document.write("length of this string is : " + str.length + "<br><br>");  // 10
+
+
+        //2. toUpperCase() and toLowerCase()
+        //Convert a string to uppercase or lowercase.
+        let str1 = "Hello World";
+        document.write(str.toUpperCase() + "<br>"); // "HELLO WORLD"
+        document.write(str.toLowerCase() + "<br><br>"); // "hello world"
+
+        //3. charAt(index)
+        //Returns the character at the specified index.
+        let str2 = "JavaScript";
+        document.write(str2.charAt(4) + "<br>"); // "S"
+        document.writeln(str2.charAt() + "<br>");//print first character  
+        document.writeln(str2.charAt(str.length - 4) + "<br><br>")//print the character from the last "r"
+
+
+        //4. charCodeAt(index)
+        //Returns the Unicode (ASCII) value of the character at the given index.
+        document.write("A".charCodeAt(0) + "<br><br>"); // 65
+
+        //5. at(index) (ES2022)
+        //Works like charAt(), but supports negative indexing.
+        let str3 = "Hello";
+        document.write(str3.at(-1) + "<br><br>"); // "o"
+
+        //6. slice(start, end)
+        //Extracts a part of the string and returns it as a new string.
+        let str4 = "JavaScript";
+        document.write(str4.slice(0, 4) + "<br>"); // Here:
+                                                    //start = 0 → extraction starts at index 0 (the first character "J").
+                                                    // end = 4 → extraction stops before index 4.
+        document.write(str4.slice(-6) + "<br><br>");   // "Script"//slice(-6) means:
+                                                                    // Start 6 characters from the end,
+                                                                    // and continue till the end of the string.
+
+
+    </script>
+</body>
+
+</html>
