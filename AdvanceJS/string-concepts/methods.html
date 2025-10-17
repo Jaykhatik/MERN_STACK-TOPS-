@@ -36,13 +36,13 @@
         let str = "JavaScript";
         document.write("length of this string is : " + str.length + "<br><br>");  // 10
 
-
+        //=======================================================================================================
         //2. toUpperCase() and toLowerCase()
         //Convert a string to uppercase or lowercase.
         let str1 = "Hello World";
         document.write(str.toUpperCase() + "<br>"); // "HELLO WORLD"
         document.write(str.toLowerCase() + "<br><br>"); // "hello world"
-
+        //=======================================================================================================
         //3. charAt(index)
         //Returns the character at the specified index.
         let str2 = "JavaScript";
@@ -50,25 +50,213 @@
         document.writeln(str2.charAt() + "<br>");//print first character  
         document.writeln(str2.charAt(str.length - 4) + "<br><br>")//print the character from the last "r"
 
-
+        //=======================================================================================================
         //4. charCodeAt(index)
         //Returns the Unicode (ASCII) value of the character at the given index.
         document.write("A".charCodeAt(0) + "<br><br>"); // 65
-
+        //=======================================================================================================
         //5. at(index) (ES2022)
         //Works like charAt(), but supports negative indexing.
         let str3 = "Hello";
         document.write(str3.at(-1) + "<br><br>"); // "o"
-
+        //=======================================================================================================
         //6. slice(start, end)
         //Extracts a part of the string and returns it as a new string.
         let str4 = "JavaScript";
         document.write(str4.slice(0, 4) + "<br>"); // Here:
-                                                    //start = 0 → extraction starts at index 0 (the first character "J").
-                                                    // end = 4 → extraction stops before index 4.
+        //start = 0 → extraction starts at index 0 (the first character "J").
+        // end = 4 → extraction stops before index 4.
         document.write(str4.slice(-6) + "<br><br>");   // "Script"//slice(-6) means:
-                                                                    // Start 6 characters from the end,
-                                                                    // and continue till the end of the string.
+        // Start 6 characters from the end,
+        // and continue till the end of the string.
+        //=======================================================================================================
+        //7. substring(start, end)
+        //Similar to slice(), but does not support negative indexes.
+        let str5 = "JavaScript";
+        document.write(str5.substring(0, 4) + "<br>"); // "Java"
+
+        var str6 = "Javatpoint";
+        document.writeln(str6.substr(5, 5) + "<br>");//"point"
+
+        var str7 = "Javatpoint";
+        document.writeln(str7.substr(5) + "<br>");//"point"
+
+        var filename = "download.png";
+        var ext = filename.substr(filename.lastIndexOf('.') + 1);
+        if (!(ext == 'png')) {
+            document.write('Not valid image');
+        }
+        else {
+            document.write("image valid" + "<br><br>");
+        }
+        //=======================================================================================================
+        //8. concat()
+        //Joins two or more strings.
+        let str8 = "Hello";
+        let str9 = "World";
+        document.write(str8.concat(" ", str9) + "<br>"); // "Hello World"
+
+        var x = "Javatpoint";
+        var y = ".com";
+        document.writeln(x.concat(y) + "<br>");//Javatpoint.com
+        document.writeln((x) + (y) + "<br>")//Javatpoint.com
+        document.writeln((x) + " hi hello" + "<br><br>")//Javatpoint hi hello
+        //=======================================================================================================
+        //9. trim(), trimStart(), trimEnd()
+        //Removes whitespace from both ends, or start/end.
+        let str10 = "   Hello JS   ";
+        document.write(str10.trim() + "<br>");      // "Hello JS"
+        document.write(str10.trimStart() + "<br>"); // "Hello JS   "
+        document.write(str10.trimEnd() + "<br><br>");   // "   Hello JS"
+        //=======================================================================================================
+        //10.repeat(n)
+        //Repeats the string n times.
+        let str11 = "Hi ";
+        document.write(str11.repeat(3) + "<br><br>"); // "Hi Hi Hi "
+        //=======================================================================================================
+        //11.replace(search, newValue) and replaceAll()
+        //Replaces part(s) of a string.
+        let str12 = "I love cats. Cats are cute!";
+        document.write(str12.replace("cats", "dogs") + "<br>");      // "I love dogs. Cats are cute!"
+        document.write(str12.replaceAll("Cats", "Dogs") + "<br>");   // "I love cats. Dogs are cute!"
+
+        var str13 = "Javatpoint";
+        document.writeln(str13.replace("tpoint", "Script") + "<br>");
+
+        // globaly find & replace
+        var str14 = " Learn Node.js on Javatpoint. Node.js is a well-known JavaScript framework.";
+        document.writeln(str14.replace(/Node.js/g, "AngularJS") + "<br>");
+
+
+        // globaly find & replace cae insensitive
+        var str15 = " Learn Node.js on Javatpoint. Node.js is a well-known JavaScript framework.";
+        document.writeln(str15.replace(/Node.JS/gi, "AngularJS") + "<br><br>");
+
+        //=======================================================================================================
+        //12.split(separator)
+        //Splits a string into an array based on a separator.
+        let str16 = "apple,banana,grapes";
+        document.write(str16.split(",") + "<br><br>"); // ["apple", "banana", "grapes"]
+        //=======================================================================================================
+        //13.includes(substring)
+        //Checks if a string contains the given substring → returns true/false.
+        let str17 = "Hello JavaScript";
+        document.write(str17.includes("Java") + "<br>"); // true
+
+        let str18 = "Hello JavaScript";
+        document.write(str18.includes("python") + "<br><br>"); // false
+
+        //=======================================================================================================
+        //14.startsWith(substring) and endsWith(substring)
+        //Checks if a string starts or ends with the given text.
+        let str19 = "JavaScript";
+        document.write(str19.startsWith("Java") + "<br>"); // true
+        document.write(str19.endsWith("Script") + "<br><br>"); // true
+        //=======================================================================================================
+        //15.indexOf(substring) and lastIndexOf(substring)
+        //Finds the position (index) of substring in a string.
+        let str20 = "Hello World Hello";
+        document.write(str20.indexOf("Hello") + "<br>");     // 0
+        document.write(str20.lastIndexOf("Hello") + "<br>"); // 12
+
+        var web = "Learn JavaScript on Javatpoint";
+        document.write(web.indexOf('a') + "<br>");  //print the position of a single character.
+        document.write(web.indexOf('a', 3) + "<br>");  //value from where the search starts.
+
+        // lastIndexOf() position of a char value from last
+        document.write(web.lastIndexOf('a') + "<br><br>");
+        //=======================================================================================================
+        //16.match() and matchAll()
+        //Used with regular expressions to find matches.
+        let text = "The rain in SPAIN stays mainly in the plain";
+        document.write(text.match(/ain/g) + "<br>"); // ["ain", "ain", "ain"]
+
+        //check from start 
+        var str21 = "heloJavatpoint";
+        document.writeln(str21.match("Java") + "<br>");
+
+        // g for global flag & i for cae insesnsitive
+        var str22 = "HelloJavatpointjava";
+        document.writeln(str22.match(/java/gi) + "<br><br>");
+        //=======================================================================================================
+        //17.search()
+        //Searches a string for a regex pattern, returns index of first match.
+        var str23 = "JavaScript is a scripting language. Scripting languages are often interpreted";
+        document.writeln(str23.search("scripting") + "<br>");
+
+        //check from  anywhere
+        var str24 = "JavaScript is a scripting language. Scripting languages are often interpreted";
+        document.writeln(str24.search(/Scripting/) + "<br>");
+
+
+        // case insesnsitive 
+
+        var str25 = "JavaScript is a scripting language. Scripting languages are often interpreted";
+        document.writeln(str25.search(/Scripting/i) + "<br><br>");
+
+
+        //=======================================================================================================
+        //18.padStart(targetLength, padString) and padEnd()
+        //Pads the string with given characters to reach a specific length.
+        let str26 = "5";
+        document.write(str26.padStart(4, "0") + "<br>"); // "0005"
+        document.write(str26.padEnd(4, "*") + "<br><br>");   // "5***"
+
+        //====================================================================================================
+        //19.toString() and valueOf()
+        //Convert string objects to string primitives.
+        let strObj = new String("Hello");
+        document.write(strObj.valueOf() + "<br>"); // "Hello"
+        document.write(strObj.toString() + "<br><br>"); // "Hello"
+
+
+        //===================================================================================================
+        //20.localeCompare()
+        //Compares two strings alphabetically (returns -1, 0, or 1).
+        let a = "apple";
+        let b = "banana";
+        document.write(a.localeCompare(b) + "<br><br>"); // -1 (means 'a' < 'b')
+
+
+        //==================================================================================================
+        //21.fromCharCode() (Static Method)
+        //Converts Unicode values to characters.
+        document.write(String.fromCharCode(72, 69, 76, 76, 79) + "<br><br>"); // "HELLO"
+
+
+        //=====================================================================================================
+        //22.raw() (for Template Literals)
+        //Returns the raw string (ignores escape sequences).
+        let str27 = String.raw`Hello\nWorld`;
+        document.write(str27 + "<br><br>"); // "Hello\nWorld"
+
+
+        //===============================================================================================
+        //23.Template Literals ( )
+        //Used with backticks, allows multi-line strings and variable embedding.
+        let name = "Jay";
+        let greet = `Hello ${name}, Welcome to JS!`;
+        document.write(greet + "<br><br>");
+
+
+        //================================================================================================
+        //24.replaceAll() (ES2021)
+        //Replaces all occurrences of a substring.
+        let str28 = "hi hi hi";
+        document.write(str28.replaceAll("hi", "hello")); // "hello hello hello"
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </script>
