@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Methods (JavaScript Demo)</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f4f7fb;
+      color: #333;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2b3a67;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #444;
+    }
+
+    section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #1a237e;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    code {
+      background: #eef2ff;
+      padding: 3px 6px;
+      border-radius: 4px;
+      color: #d63384;
+    }
+
+    ul {
+      margin-top: 8px;
+    }
+
+    #container, #list, #fruits {
+      margin-top: 10px;
+      background: #f9f9ff;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧩 JavaScript DOM Manipulation Demo</h1>
+
+  <!-- 🧠 Introduction -->
+  <section>
+    <h2>What is DOM Manipulation?</h2>
+    <p>
+      DOM (Document Object Model) Manipulation allows JavaScript to interact with and modify HTML elements in real time. 
+      You can <b>change text</b>, <b>add new elements</b>, <b>remove elements</b>, or <b>update styles dynamically</b>.
+    </p>
+
+    <p>Here are five essential DOM manipulation methods:</p>
+    <ul>
+      <li><code>innerHTML</code> → Set or get HTML content</li>
+      <li><code>textContent</code> → Set or get plain text safely</li>
+      <li><code>createElement()</code> → Create new HTML elements dynamically</li>
+      <li><code>appendChild()</code> → Add new child elements to the DOM</li>
+      <li><code>removeChild()</code> → Remove elements from the DOM</li>
+    </ul>
+  </section>
+
+  <!-- 1️⃣ innerHTML -->
+  <section>
+    <h2>1️⃣ innerHTML – Modify HTML Content</h2>
+    <p>
+      The <code>innerHTML</code> property gets or sets the HTML markup inside an element.
+      It replaces the existing content with new HTML code and can interpret tags.
+    </p>
+    <div id="demo1">Hello <b>World</b></div>
+    <button onclick="changeHTML()">Change Content</button>
+  </section>
+
+  <!-- 2️⃣ textContent -->
+  <section>
+    <h2>2️⃣ textContent – Modify Plain Text</h2>
+    <p>
+      The <code>textContent</code> property is used to get or set only the text within an element.
+      Unlike <code>innerHTML</code>, it treats HTML tags as plain text (does not render them).
+    </p>
+    <div id="demo2">Hello <b>World</b></div>
+    <button onclick="changeText()">Change Text</button>
+  </section>
+
+  <!-- 3️⃣ createElement() -->
+  <section>
+    <h2>3️⃣ createElement() – Create New Elements</h2>
+    <p>
+      The <code>createElement()</code> method creates new HTML elements using JavaScript.
+      These elements are not visible until you insert them into the DOM using a method like <code>appendChild()</code>.
+    </p>
+    <button onclick="addElement()">Add Paragraph</button>
+    <div id="container"></div>
+  </section>
+
+  <!-- 4️⃣ appendChild() -->
+  <section>
+    <h2>4️⃣ appendChild() – Add New Child Elements</h2>
+    <p>
+      The <code>appendChild()</code> method adds a new element as the last child of a parent node.
+      You typically use it after creating an element with <code>createElement()</code>.
+    </p>
+    <ul id="list">
+      <li>Apple</li>
+    </ul>
+    <button onclick="addItem()">Add Item</button>
+  </section>
+
+  <!-- 5️⃣ removeChild() -->
+  <section>
+    <h2>5️⃣ removeChild() – Remove Existing Elements</h2>
+    <p>
+      The <code>removeChild()</code> method deletes a specific child element from its parent.
+      You must specify both the parent and the child nodes.
+    </p>
+    <ul id="fruits">
+      <li id="apple">Apple</li>
+      <li id="banana">Banana</li>
+    </ul>
+    <button onclick="removeApple()">Remove Apple</button>
+  </section>
+
+  <script>
+    // For Changing Text by innerHTML:
+    function changeHTML() {
+      document.getElementById("demo1").innerHTML = 
+        "This text is modified by <code>innerHTML</code> — it allows <b>HTML tags</b> inside!";
+    }
+
+    // For Changing text by textContent:
+    function changeText() {
+      document.getElementById("demo2").textContent = 
+        "This text is modified by <code>textContent</code> — tags are treated as plain text!";
+    }
+
+    // For Adding para using createElement():
+    function addElement() {
+      let newPara = document.createElement("p");
+      newPara.textContent = "✨ This is a new paragraph created dynamically using createElement()!";
+      document.getElementById("container").appendChild(newPara);
+    }
+
+    // For Appending New child Element using appendChild():
+    function addItem() {
+      let li = document.createElement("li");
+      li.textContent = "Banana";
+      document.getElementById("list").appendChild(li);
+    }
+
+    // For Removing Existing Element using removeChild():
+    function removeApple() {
+      let parent = document.getElementById("fruits");
+      let child = document.getElementById("apple");
+      if (child) {
+        parent.removeChild(child);
+      } else {
+        alert("🍎 Apple is already removed!");
+      }
+    }
+  </script>
+
+</body>
+</html>

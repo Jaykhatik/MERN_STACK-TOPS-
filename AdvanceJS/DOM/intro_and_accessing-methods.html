@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Introduction Project</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f6fa;
+      margin: 30px;
+      color: #2f3640;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #273c75;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    pre, code {
+      background-color: #f1f2f6;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+      display: inline-block;
+      color: #192a56;
+    }
+
+    .note {
+      background-color: #dff9fb;
+      border-left: 5px solid #22a6b3;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .comment {
+      color: #718093;
+      font-style: italic;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 5px 0;
+      font-weight: 500;
+    }
+
+    .menu:hover {
+      background-color: #dcdde1;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🧠What is the DOM? -->
+  <section>
+    <h1>🧠 What is the DOM?</h1>
+    <div class="note">
+      The DOM (Document Object Model) is a tree-like representation of an HTML document.
+      It allows JavaScript to interact with, manipulate, and change a webpage dynamically.
+    </div>
+
+    <ul>
+      <li>✅ Browser converts HTML → DOM Tree</li>
+      <li>✅ JavaScript accesses and updates DOM nodes.</li>
+    </ul>
+
+    <pre>
+DOM Tree (Structure):
+Document
+ └── html
+     └── body
+         ├── h1
+         └── p
+    </pre>
+  </section>
+
+  <!-- 🧩 Accessing Elements in DOM -->
+  <section>
+    <h2>🧩 Accessing Elements in DOM</h2>
+    <p>→ To manipulate anything, first we need to access elements.</p>
+
+    <div class="note">
+      🔹 Common Selection Methods:
+    </div>
+
+    <pre>
+| Method | Description | Example |
+| ------------------------------------------ | --------------------------------------------- | ----------------------------------------- |
+| `document.getElementById("id")`            | Select element by **ID**                      | `document.getElementById("title")`        |
+| `document.getElementsByClassName("class")` | Select elements by **class name**             | `document.getElementsByClassName("item")` |
+| `document.getElementsByTagName("tag")`     | Select elements by **tag name**               | `document.getElementsByTagName("p")`      |
+| `document.querySelector("selector")`       | Select **first** element using a CSS selector | `document.querySelector(".item")`         |
+| `document.querySelectorAll("selector")`    | Select **all** elements using a CSS selector  | `document.querySelectorAll("p")`          |
+    </pre>
+  </section>
+
+  <!-- 1. document.getElementById("id") -->
+  <section>
+    <p class="comment">
+      1. document.getElementById("id")<br>
+      👉 Selects one element by its ID (unique for each element).
+    </p>
+
+    <h1 id="title">Welcome to JavaScript DOM</h1>
+
+    <script>
+      let heading = document.getElementById("title");
+      heading.style.color = "blue"; // Changes the text color to blue
+    </script>
+  </section>
+
+  <!-- 2. document.getElementsByClassName("class") -->
+  <section>
+    <p class="comment">
+      2. document.getElementsByClassName("class")<br>
+      👉 Selects multiple elements by their class name.<br>
+      Returns an HTMLCollection (like an array, but not exactly).
+    </p>
+
+    <p class="item">Apple</p>
+    <p class="item">Banana</p>
+    <p class="item">Cherry</p>
+
+    <script>
+      let fruits = document.getElementsByClassName("item");
+
+      // Change color of all elements
+      for (let i = 0; i < fruits.length; i++) {
+        fruits[i].style.color = "green";
+      }
+    </script>
+  </section>
+
+  <!-- 3. document.getElementsByTagName("tag") -->
+  <section>
+    <p class="comment">
+      3. document.getElementsByTagName("tag")<br>
+      👉 Selects elements by their HTML tag name (e.g., div, p, span, etc.)<br>
+      Returns an HTMLCollection.
+    </p>
+
+    <h4>First paragraph</h4>
+    <h4>Second paragraph</h4>
+
+    <script>
+      let para = document.getElementsByTagName("h4");
+      para[1].style.color = "red"; // Makes the second heading bold
+      document.write(para.length); // Output: 2
+    </script>
+  </section>
+
+  <!-- 4. document.querySelector("selector") -->
+  <section>
+    <p class="comment">
+      4. document.querySelector("selector")<br>
+      👉 Selects the first element that matches a CSS selector.
+    </p>
+
+    <div class="container">
+      <p class="item1">First</p>
+      <p class="item1">Second</p>
+    </div>
+
+    <script>
+      let firstItem = document.querySelector(".item1");
+      firstItem.style.backgroundColor = "yellow";
+    </script>
+  </section>
+
+  <!-- 5. document.querySelectorAll("selector") -->
+  <section>
+    <p class="comment">
+      5. document.querySelectorAll("selector")<br>
+      👉 Selects all elements that match a CSS selector.<br>
+      Returns a NodeList (can use forEach() on it).
+    </p>
+
+    <ul>
+      <li class="menu">Home</li>
+      <li class="menu">About</li>
+      <li class="menu">Contact</li>
+    </ul>
+
+    <script>
+      let menuItems = document.querySelectorAll(".menu");
+      menuItems.forEach(item => {
+        item.style.color = "green";
+      });
+    </script>
+  </section>
+
+</body>
+</html>
