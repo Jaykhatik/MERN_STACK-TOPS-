@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPORT & EXPORT IN REACT</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #eef3ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            margin-top: 25px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0052cc;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background: #1f1f1f;
+            color: #00ff9d;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #0052cc;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background: #e9f3ff;
+            border-left: 5px solid #0052cc;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            padding: 12px;
+            background: #0052cc;
+            color: #fff;
+            border-radius: 0 0 12px 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h1>IMPORT & EXPORT IN REACT</h1>
+
+        <!-- 
+    ✅ Import & Export in React JS (ES6 Modules)
+        ->React uses JavaScript ES6 Module System, which means you can split code 
+        into different files and reuse it by exporting and importing.
+
+    🧠 Why Export & Import?
+
+        ->Makes code modular, clean, and organized.
+        ->Helps reuse components/functions in multiple files.
+        ->Each file can choose what it wants to share (export) and use (import).
+    
+    ✅ Types of Export
+        ->React/ES6 supports two types of exports:
+        | Export Type        | Import Syntax                       | When to Use                                        |
+        | ------------------ | ----------------------------------- | -------------------------------------------------- |
+        | **Named Export**   | import { Component } from "./file"; | When exporting **multiple things** from same file. |
+        | **Default Export** | import Component from "./file";     | When exporting **only one thing** from a file.     |
+
+        -->
+
+        <div class="info-box">
+            ✅ React uses <strong>ES6 Modules</strong> → helps split code into reusable files.
+        </div>
+
+        <!-- Type Table Display (designed for readability but your content is untouched) -->
+        <table>
+            <tr>
+                <th>Export Type</th>
+                <th>Import Syntax</th>
+                <th>When to Use</th>
+            </tr>
+            <tr>
+                <td><strong>Named Export</strong></td>
+                <td>import { Component } from "./file";</td>
+                <td>Exporting multiple things from same file</td>
+            </tr>
+            <tr>
+                <td><strong>Default Export</strong></td>
+                <td>import Component from "./file";</td>
+                <td>Exporting only one thing from file</td>
+            </tr>
+        </table>
+
+
+        <!-- 
+        ✅1. Named Export
+            ➤ Syntax (Export)
+
+            // file: mathUtils.js
+                export const add = (a, b) => a + b;
+                export const subtract = (a, b) => a - b;
+
+            ➤ Syntax (Import)
+
+            import { add, subtract } from "./mathUtils";
+
+            ➡️ Use { } when importing
+            ➡️ The names must match exactly.
+        -->
+
+        <h2>✅ Named Export Example</h2>
+        <pre>
+// file: mathUtils.js
+export const add = (a, b) => a + b;
+export const subtract = (a, b) => a - b;
+    </pre>
+
+        <pre>
+import { add, subtract } from "./mathUtils";
+    </pre>
+
+
+        <!-- 
+        ✅ 2. Default Export
+                ➤ Syntax (Export)
+
+                // file: message.js
+                    const message = "Hello React!";
+                    export default message;
+
+                ➤ Syntax (Import)
+
+                import message from "./message";
+
+                ➡️ No { }
+                ➡️ You can rename it while importing : import msg from "./message";
+
+        -->
+
+        <h2>✅ Default Export Example</h2>
+        <pre>
+// file: message.js
+const message = "Hello React!";
+export default message;
+    </pre>
+
+        <pre>import message from "./message";</pre>
+
+    </div>
+
+    <footer>© Import & Export in React | Learning Project</footer>
+
+</body>
+
+</html>
