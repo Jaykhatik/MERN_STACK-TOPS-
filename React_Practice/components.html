@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Components - Complete Guide</title>
+
+    <!-- ✅ Added Beautiful Styling -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background: #f4f7ff;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        h1, h2, h3 {
+            color: #1a237e;
+        }
+        h1 {
+            text-align: center;
+            background: #303f9f;
+            padding: 12px;
+            color: white;
+            border-radius: 10px;
+        }
+        pre {
+            background: #0d1117;
+            color: #e0e0e0;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            border: 1px solid #4d4d4d;
+        }
+        code {
+            font-size: 16px;
+        }
+        ul li {
+            background: white;
+            padding: 8px 12px;
+            margin: 4px 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<h1>React Components (Basic ➝ Advanced)</h1>
+
+<div class="section">
+<h2>1️⃣ Functional Component (Modern Way ✅)</h2>
+<pre><code>function ComponentName() {
+  return (
+    <h2>This is a Functional Component</h2>
+  );
+}
+export default ComponentName;</code></pre>
+
+<h3>➡ Arrow Function Syntax</h3>
+<pre><code>const ComponentName = () => {
+  return <h2>This is a Functional Component</h2>;
+};</code></pre>
+
+<h3>Example:</h3>
+<pre><code>function Welcome() {
+  return <h1>Hello from Functional Component!</h1>;
+}
+export default Welcome;</code></pre>
+</div>
+
+<div class="section">
+<h2>2️⃣ Class Component (Older Way ❌)</h2>
+<pre><code>import React, { Component } from "react";
+
+class ComponentName extends Component {
+  render() {
+    return (
+      <h2>This is a Class Component</h2>
+    );
+  }
+}
+export default ComponentName;</code></pre>
+</div>
+
+<div class="section">
+<h2>3️⃣ Props (Passing data from Parent ➝ Child)</h2>
+<h3>App.js</h3>
+<pre><code>import Student from "./Student";
+
+function App() {
+  return (
+    <>
+      <Student name="John" age={22} />
+      <Student name="Ram" age={20} />
+    </>
+  );
+}
+export default App;</code></pre>
+
+<h3>Student.jsx</h3>
+<pre><code>function Student(props) {
+  return (
+    <h3>Name: {props.name}, Age: {props.age}</h3>
+  );
+}
+export default Student;</code></pre>
+</div>
+
+<div class="section">
+<h2>4️⃣ State in React Components</h2>
+<pre><code>import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <h3>Count: {count}</h3>
+      <!-- <button onClick={() => setCount(count + 1)}>Increase</button> -->
+    </>
+  );
+}
+export default Counter;</code></pre>
+</div>
+
+<div class="section">
+<h2>5️⃣ Event Handling in Components</h2>
+<pre><code>function ClickEvent() {
+  const handleClick = () => {
+    alert("Button Clicked!");
+  };
+  return <button onClick={handleClick}>Click Me</button>;
+}</code></pre>
+</div>
+
+<div class="section">
+<h2>6️⃣ Reusable Components</h2>
+<pre><code>function Card({ title, desc }) {
+  return (
+    <div className="card">
+      <h3>{title}</h3>
+      <p>{desc}</p>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Card title="React Component" desc="Reusable UI Block" />
+      <Card title="Props Concept" desc="Passing data to components" />
+    </>
+  );
+}</code></pre>
+</div>
+
+<div class="section">
+<h2>7️⃣ Conditional Rendering</h2>
+<pre><code>function User({ isLoggedIn }) {
+  return isLoggedIn ? <h2>Welcome User</h2> : <h2>Please Login</h2>;
+}</code></pre>
+</div>
+
+<div class="section">
+<h2>8️⃣ Loop / List Rendering</h2>
+<pre><code>function List() {
+  const fruits = ["Apple", "Banana", "Mango"];
+
+  return (
+    <ul>
+      {fruits.map((fruit, index) => (
+        <li key={index}>{fruit}</li>
+      ))}
+    </ul>
+  );
+}</code></pre>
+</div>
+
+<div class="section">
+<h2>9️⃣ Component Lifecycle (Class Components)</h2>
+<pre><code>class Demo extends React.Component {
+  componentDidMount() {
+    console.log("Component Mounted");
+  }
+
+  render() {
+    return <h2>Class Component Lifecycle</h2>;
+  }
+}</code></pre>
+</div>
+
+<div class="section">
+<h2>🔟 API Call using useEffect</h2>
+<pre><code>import { useEffect, useState } from "react";
+
+function Users() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(data => setUsers(data));
+  }, []);
+
+  return (
+    <ul>
+      {users.map(user => <li key={user.id}>{user.name}</li>)}
+    </ul>
+  );
+}
+export default Users;</code></pre>
+</div>
+
+<div class="section">
+<h2>📌 Summary</h2>
+<ul>
+    <li>Component = Reusable UI</li>
+    <li>Props = Pass data from parent ➝ child</li>
+    <li>State = Changing data inside component</li>
+    <li>Hooks = useState(), useEffect()</li>
+</ul>
+</div>
+
+</body>
+</html>
