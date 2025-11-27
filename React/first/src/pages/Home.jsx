@@ -19,6 +19,8 @@ function Home() {
     <p>This container has a blue background color and a white text, and some extra padding and margins.</p>
   </div>
 </div>
+
+
 <Footer/>
 
 </>

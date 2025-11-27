@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Props In React</title>
+</head>
+<body>
+    <!-- 
+===========================================================================================================
+
+                                                ✯ THEORY
+
+=============================================================================================================
+
+        🌱 What are Props?
+                ->Props (short for “Properties”) are used to pass data from one component to another.
+                  Data flows from Parent → Child.
+                ->Props make components dynamic and reusable
+                ->Props are read-only (immutable)
+
+        🌱Theory:-
+            ⬤ Definition: 
+                ->Props (short for properties) are a special keyword in React that 
+                  represents the arguments passed into a component. They are essentially 
+                  a JavaScript object that holds the data.
+            ⬤ Data Flow: 
+                ->Props facilitate a unidirectional (one-way) data flow, always 
+                moving down the component hierarchy (from parent to child).
+            ⬤ Immutability: 
+                ->Props are read-only. A child component must not modify the 
+                props it receives from its parent. This is a core concept that 
+                keeps the UI predictable. If a component needs to change a value, it 
+                should manage it internally using State.
+            ⬤ Analogy: 
+                ->Think of a component as a JavaScript function. The props are the 
+                arguments you pass to that function.
+
+
+
+============================================================================================================
+
+                                            📜RULES OF PROPS
+
+============================================================================================================
+    
+
+1. Read-Only (Immutable)
+    ⬤ Rule: 
+        ->Props are strictly read-only inside the child component. The child 
+          component must not attempt to modify the props it receives.
+    ⬤ Theory: 
+        ->This immutability ensures a unidirectional data flow (parent-to-child), which 
+          is key to React's predictable state management and makes debugging 
+          easier. If a component needs to change a value, it should manage it as 
+          its own state or call a function passed down as a prop from the parent 
+          to update the parent's state.
+
+2. Parent-to-Child Flow
+    ⬤ Rule: 
+        ->Data always flows down the component tree, from the parent to the child. A child 
+        component cannot directly pass props up to its parent or across to a sibling component.
+
+    ⬤ Theory: 
+        ->This rigid hierarchy reinforces the unidirectional data flow. To communicate 
+        up, the parent passes down a callback function as a prop, and the child calls that function.
+
+3. Data Type Flexibility
+    ⬤ Rule: Props can be any valid JavaScript data type, including:
+            ->Primitives (strings, numbers, booleans)
+            ->Objects and arrays
+            ->Functions
+            ->React elements (e.g., other components)
+
+
+*summary of rules of props:-
+
+        | Rule                                        | Description                                             |
+        | ------------------------------------------- | ------------------------------------------------------- |
+        | Props are immutable                         | Child component **cannot modify props**, only use them. |
+        | Props are passed **from Parent to Child**   | Data flows downward only.                               |
+        | Props allow component **reusability**       | Same component, different data.                         |
+        | Can pass values, objects, arrays, functions | Props can be anything.                                  |
+
+
+
+==========================================================================================================================
+
+                                    💻 BASIC SYNTAX AND EXAMPLES
+
+===========================================================================================================================
+    
+1. Passing Props (The Parent Component):
+    ->You pass props to a child component just like you would add attributes to a standard 
+      HTML tag. You can pass any JavaScript data type, including strings, numbers, 
+      objects, arrays, and functions.
+    ->Syntax:
+
+        <ChildComponent propName={value} anotherProp="StringValue" />
+
+    ->Example (Parent Component):
+
+        // ParentComponent.js
+            import React from 'react';
+            import Greeting from './Greeting';
+
+            function App() {
+            const userName = "Alex";
+            const userAge = 30;
+
+            return (
+                <div>
+                <Greeting 
+                    name={userName} 
+                    age={userAge} 
+                    isLoggedIn={true}
+                />
+                </div>
+            );
+            }
+
+            export default App;
+
+
+2. Receiving and Using Props (The Child Component)
+    ->In a functional component, props are received as the first argument to the function.
+    ->Syntax:
+                function ChildComponent(props) {
+                    // Use props.propName
+                }
+    ->Example (Functional Child Component):
+        // Greeting.js
+            import React from 'react';
+
+            function Greeting(props) {
+            // Accessing props using dot notation
+            return (
+                <div>
+                <h2>Hello, {props.name}!</h2>
+                <p>You are {props.age} years old.</p>
+                {props.isLoggedIn && <p>Status: Logged In</p>}
+                </div>
+            );
+            }
+
+            export default Greeting;
+-->
+</body>
+</html>

@@ -1,0 +1,692 @@
+
+    <!-- 
+=======================================================================================================================
+
+                                                    THEORY
+
+=======================================================================================================================
+
+
+    🌱 What is JSX?
+        👉 JSX is stand for JavaScript XML(Extensible Markup Language)
+        👉 JSX allows us to write HTML inside JavaScript.
+        👉 It is used inside React to build UI elements.
+        Example:
+                const element = <h1>Hello React</h1>;
+
+                ⬤ Looks like HTML, but is actually JavaScript behind the scenes.
+                ⬤ Makes React code easy to write, easy to understand, and maintainable.
+
+
+
+======================================================================================================================
+
+
+                                        📝 Essential Rules of JSX in React
+
+
+=======================================================================================================================
+    ->JSX (JavaScript XML) has a strict set of rules that distinguish it from standard 
+      HTML. Adhering to these rules is crucial for writing valid React code.
+
+     1. Single Root Element:
+
+            ->Every JSX block must return a single root element. You cannot 
+              have two top-level elements adjacent to each other.
+
+            ❌ Incorrect:
+                    return (
+                        <h1>Title</h1>
+                        <p>Content</p>
+                        );
+
+            ✅ Correct (Using a <div>):
+                    return (
+                    <div>
+                        <h1>Title</h1>
+                        <p>Content</p>
+                    </div>
+                    );
+
+            ->Use the shorthand Fragment syntax (<>...</>) to group elements 
+              without adding an extra node to the DOM.
+
+                    return (
+                        <>
+                            <h1>Title</h1>
+                            <p>Content</p>
+                        </>
+                        );
+
+
+    2. Case and Naming Conventions
+
+        ⬤ HTML Tags vs. Components
+            HTML Tags (lowercase): 
+            Standard HTML tags must be written in lowercase (e.g., <div>, <span>, <img>).
+
+            Custom Components (Capitalized): 
+            React custom components must start with a capital letter (e.g., <MyComponent>, <UserProfile>). React treats lowercase tags as standard HTML/SVG elements.
+
+        ⬤ Attribute Naming
+            ->Attributes are written in camelCase, following JavaScript conventions, not kebab-case (like in HTML).
+
+                👉class becomes className: 
+                    ->This is the most common difference, as class is a reserved keyword in JavaScript.
+                👉for becomes htmlFor: 
+                    ->Used for associating labels with form elements.
+                👉onclick becomes onClick.
+                👉tabindex becomes tabIndex.
+
+    
+
+    3. Closing Tags
+            ->All tags must be explicitly closed. This applies to both parent tags and self-closing tags.
+            
+            ❌ Incorrect (Self-closing tags):
+                    <img src="path/to/image.jpg">
+                    <br>
+
+            ✅ Correct (Self-closing tags): Self-closing tags must end with a forward slash (/).
+                    <img src="path/to/image.jpg" alt="Description" />
+                    <br />
+
+            ✅ Correct (Paired tags): Standard tags must have an opening and a closing pair.
+                    <button>Click Me</button>
+
+
+    4. Embedding JavaScript Expressions
+            ->You can embed any valid JavaScript expression inside JSX by wrapping it in curly braces ({}).
+
+            ⬤ Expressions Only: 
+                    ->You can use variables, function calls, arithmetic operations, and object properties.
+            ⬤ No Statements: 
+                    ->You cannot use JavaScript statements like if...else blocks or for loops directly inside JSX. You must use 
+                      ternary operators, logical operators, or map functions instead.
+
+
+                    const user = { name: 'Alice', age: 30 };
+                    const isLoggedIn = true;
+
+                    return (
+                    <div>
+                        {/* Embedding a variable */}
+                        <h1>Hello, {user.name}!</h1>
+
+                        {/* Embedding an arithmetic operation */}
+                        <p>The total is: {5 + 3}</p>
+
+                        {/* Embedding a conditional expression (Ternary Operator) */}
+                        <p>Status: {isLoggedIn ? 'Logged In' : 'Logged Out'}</p>
+                    </div>
+                    );
+
+    5. Comments
+
+        ->JSX treats everything outside of curly braces as static text. To add a 
+        comment inside the JSX element structure, you must wrap the standard 
+        JavaScript comment syntax (/* ... */) within curly braces.
+
+            ⬤ Inside child elements:
+                    <div>
+                    {/* This is a single-line comment */}
+                    <p>Content</p>
+                    {/*
+                        This is a multiline
+                        comment block.
+                    */}
+                    </div>  
+                    
+            ⬤ Inside attributes (not common):
+                    <input
+                    type="text"
+                    // The comment must be on a new line when inside attributes
+                    placeholder="Enter your name"
+                    />
+
+    6. Attribute Values
+
+        ->String Literals: Use double quotes for static string values.
+                <button id="my-button" type="submit">Send</button>
+        ->JavaScript Expressions: Use curly braces ({}) to pass any non-string values (numbers, booleans, 
+        objects,functions, variables). Do not use quotes around the curly braces.
+                const count = 10;
+                const handleClick = () => alert('Clicked');
+
+                <MyComponent
+                count={count}           /* Number variable */
+                isActive={true}         /* Boolean literal */
+                onClick={handleClick}   /* Function reference */
+                style={{ color: 'red', fontSize: '16px' }} /* Object for inline styles */
+                />
+
+===========================================================================================================
+
+                                                Basic Concepts
+
+===========================================================================================================
+
+    ✅ Embedding JavaScript Expressions in JSX:-
+            ->If you want to print or calculate something inside JSX, wrap it in { }.
+
+                function App() {
+                const name = "Jay";
+                const num1 = 10;
+                const num2 = 20;
+
+                return (
+                    <div>
+                    <h2>Hello {name}</h2>
+                    <p>Sum = {num1 + num2}</p>
+                    </div>
+                );
+                }
+
+    ✅ Using Attributes in JSX:-
+            ->JSX attributes look like HTML but follow camelCase.
+
+                | HTML Attribute | JSX Alternative |
+                | -------------- | --------------- |
+                | `class`        | `className`     |
+                | `onclick`      | `onClick`       |
+                | `tabindex`     | `tabIndex`      |
+
+            ->example:
+
+                function App() {
+                return (
+                    <button className="btn" onClick={() => alert("Clicked!")}>
+                    Click Me
+                    </button>
+                );
+                }
+
+    ✅ Conditional Rendering in JSX:-
+            ->Example 1: Ternary operator
+                    function App() {
+                    const isLoggedIn = true;
+
+                    return (
+                        <h2>{isLoggedIn ? "Welcome User" : "Please Login"}</h2>
+                    );
+                    }
+            ->Example 2: Logical AND (&&)
+                    function App() {
+                    const showMessage = true;
+
+                    return (
+                        <div>
+                        {showMessage && <p>Hello JSX!</p>}
+                        </div>
+                    );
+                    }
+
+    ✅ Inline Styling in JSX
+            🔹 Style in JSX uses an object, not a string.
+            🔹 Keys must be camelCase.
+
+                    function App() {
+                    const myStyle = {
+                        color: "white",
+                        backgroundColor: "purple",
+                        padding: "10px",
+                        borderRadius: "10px"
+                    };
+
+                    return <h2 style={myStyle}>Styled with JSX</h2>;
+                    }
+
+    ✅ List Rendering in JSX (Looping with map())
+            function App() {
+            const fruits = ["Apple", "Mango", "Banana"];
+
+            return (
+                <ul>
+                {fruits.map((item, index) => (
+                    <li key={index}>{item}</li>
+                ))}
+                </ul>
+            );
+            }
+
+    ✅ JSX with Components
+            ->Parent to Child Props Example
+                function Card(props) {
+                return <h2>Hello {props.name}</h2>;
+                }
+
+                function App() {
+                return (
+                    <div>
+                    <Card name="Jay" />
+                    <Card name="React" />
+                    </div>
+                );
+                }
+
+======================================================================================================================
+
+                                                Advance Concepts
+
+=======================================================================================================================
+
+
+🔹 JSX with Fragment + map() + Conditional Rendering (combined example)
+                function App() {
+                const users = [
+                    { id: 1, name: "Jay", age: 22 },
+                    { id: 2, name: "Rahul", age: 17 }
+                ];
+
+                return (
+                    <>
+                    <h2>Users List</h2>
+
+                    {users.map((user) => (
+                        <p key={user.id}>
+                        {user.name} — {user.age >= 18 ? "Adult" : "Minor"}
+                        </p>
+                    ))}
+                    </>
+                );
+                }
+
+
+===============================================================================================================
+
+                                                Key Benefits
+
+===================================================================================================================
+
+            | Benefit                        | Explanation                     |
+            | ------------------------------ | ------------------------------- |
+            | Cleaner & readable code        | Mix HTML + JS                   |
+            | Faster development             | Faster UI building              |
+            | Avoids mixing string templates | JSX is structured and type-safe |
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFO About JSX in REACT</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #eef1f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 92%;
+            max-width: 1350px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+        h1, h2, h3 {
+            color: #4b0082;
+            font-weight: 600;
+        }
+        .section {
+            margin-bottom: 40px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        pre {
+            background: #1e1e1e;
+            color: #fff;
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 15px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+        code { font-family: Consolas, monospace; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        th { background: #4b0082; color: white; }
+
+        /* Syntax Highlighting */
+        .keyword { color: #00eaff; }
+        .tag { color: #ff9800; }
+        .attr { color: #35ff69; }
+        .comment { color: #7c7c7c; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="section">
+<h1>🌱 What is JSX?</h1>
+</div>
+<pre>
+=======================================================================================================================
+
+                                                    THEORY
+
+=======================================================================================================================
+
+
+    🌱 What is JSX?
+        👉 JSX is stand for JavaScript XML(Extensible Markup Language)
+        👉 JSX allows us to write HTML inside JavaScript.
+        👉 It is used inside React to build UI elements.
+        Example:
+                const element = &lt;h1&gt;Hello React&lt;/h1&gt;;
+
+                ⬤ Looks like HTML, but is actually JavaScript behind the scenes.
+                ⬤ Makes React code easy to write, easy to understand, and maintainable.
+
+
+
+======================================================================================================================
+
+
+                                        📝 Essential Rules of JSX in React
+
+
+=======================================================================================================================
+    ->JSX (JavaScript XML) has a strict set of rules that distinguish it from standard 
+      HTML. Adhering to these rules is crucial for writing valid React code.
+
+     1. Single Root Element:
+
+            ->Every JSX block must return a single root element. You cannot 
+              have two top-level elements adjacent to each other.
+
+            ❌ Incorrect:
+                    return (
+                        <!-- <h1>Title</h1> -->
+                        &lt;h1&gt;Title&lt;/h1&gt;
+                        <!-- <p>Content</p> -->
+                        &lt;p&gt;Content&lt;/p&gt;
+                        );
+
+            ✅ Correct (Using a &lt;div&gt;):
+                    return (
+                    <div>
+                        <!-- <h1>Title</h1> -->
+                        &lt;h1&gt;Title&lt;/h1&gt;
+                        <!-- <p>Content</p> -->
+                        &lt;p&gt;Content&lt;/p&gt;
+                    </div>
+                    );
+
+            ->Use the shorthand Fragment syntax (<>...&lt;/&gt;) to group elements 
+              without adding an extra node to the DOM.
+
+                    return (
+                        <>
+                            <!-- <h1>Title</h1> -->
+                        &lt;h1&gt;Title&lt;/h1&gt;
+                        <!-- <p>Content</p> -->
+                        &lt;p&gt;Content&lt;/p&gt;
+                        <!-- </> -->
+                         &lt;/&gt;
+                        );
+
+
+    2. Case and Naming Conventions
+
+        ⬤ HTML Tags vs. Components
+            HTML Tags (lowercase): 
+            Standard HTML tags must be written in lowercase (e.g. &lt;div&gt;,&lt;span&gt;,&lt;img&gt;).
+
+            Custom Components (Capitalized): 
+            React custom components must start with a capital letter (e.g.,&lt;MyComponent&gt;,&lt;UserProfile&gt;). React treats 
+            lowercase tags as standard HTML/SVG elements.
+
+        ⬤ Attribute Naming
+            ->Attributes are written in camelCase, following JavaScript conventions, not kebab-case (like in HTML).
+
+                👉class becomes className: 
+                    ->This is the most common difference, as class is a reserved keyword in JavaScript.
+                👉for becomes htmlFor: 
+                    ->Used for associating labels with form elements.
+                👉onclick becomes onClick.
+                👉tabindex becomes tabIndex.
+
+    
+
+    3. Closing Tags
+            ->All tags must be explicitly closed. This applies to both parent tags and self-closing tags.
+            
+            ❌ Incorrect (Self-closing tags):
+                    &lt;img src="path/to/image.jpg">
+                    <br>
+
+            ✅ Correct (Self-closing tags): Self-closing tags must end with a forward slash (/).
+                    &lt;img src="path/to/image.jpg" alt="Description" />
+                    <br />
+
+            ✅ Correct (Paired tags): Standard tags must have an opening and a closing pair.
+                    &lt;button&gt;Click Me&lt;/button&gt;
+
+
+    4. Embedding JavaScript Expressions
+            ->You can embed any valid JavaScript expression inside JSX by wrapping it in curly braces ({}).
+
+            ⬤ Expressions Only: 
+                    ->You can use variables, function calls, arithmetic operations, and object properties.
+            ⬤ No Statements: 
+                    ->You cannot use JavaScript statements like if...else blocks or for loops directly inside JSX. You must use 
+                      ternary operators, logical operators, or map functions instead.
+
+
+                    const user = { name: 'Alice', age: 30 };
+                    const isLoggedIn = true;
+
+                    return (
+                    &lt;div&gt;
+                        {/* Embedding a variable */}
+                        &lt;h1&gt;Hello, {user.name}!&lt;/h1&gt;
+
+                        {/* Embedding an arithmetic operation */}
+                        &lt;p&gt;The total is: {5 + 3}&lt;/p&gt;
+
+                        {/* Embedding a conditional expression (Ternary Operator) */}
+                        &lt;p&gt;Status: {isLoggedIn ? 'Logged In' : 'Logged Out'}&lt;/p&gt;
+                    &lt;/div&gt;
+                    );
+
+    5. Comments
+
+        ->JSX treats everything outside of curly braces as static text. To add a 
+        comment inside the JSX element structure, you must wrap the standard 
+        JavaScript comment syntax (/* ... */) within curly braces.
+
+            ⬤ Inside child elements:
+                    &lt;div&gt;
+                    {/* This is a single-line comment */}
+                    &lt;p&gt;Content&lt;/p&gt;
+                    {/*
+                        This is a multiline
+                        comment block.
+                    */}
+                    &lt;/div&gt;  
+                    
+            ⬤ Inside attributes (not common):
+                    &lt;input
+                    type="text"
+                    // The comment must be on a new line when inside attributes
+                    placeholder="Enter your name"
+                    />
+
+    6. Attribute Values
+
+        ->String Literals: Use double quotes for static string values.
+                &lt;button id="my-button" type="submit">Send&lt;/button&gt;
+        ->JavaScript Expressions: Use curly braces ({}) to pass any non-string values (numbers, booleans, 
+          objects,functions, variables). Do not use quotes around the curly braces.
+                const count = 10;
+                const handleClick = () => alert('Clicked');
+
+                &lt;MyComponent
+                count={count}           /* Number variable */
+                isActive={true}         /* Boolean literal */
+                onClick={handleClick}   /* Function reference */
+                style={{ color: 'red', fontSize: '16px' }} /* Object for inline styles */
+                />
+
+===========================================================================================================
+
+                                                Basic Concepts
+
+===========================================================================================================
+
+    ✅ Embedding JavaScript Expressions in JSX:-
+            ->If you want to print or calculate something inside JSX, wrap it in { }.
+
+                function App() {
+                const name = "Jay";
+                const num1 = 10;
+                const num2 = 20;
+
+                return (
+                    &lt;div&gt;
+                    &lt;h2&gt;Hello {name}&lt;/h2&gt;
+                    &lt;p&gt;Sum = {num1 + num2}&lt;/p&gt;
+                    &lt;/div&gt;
+                );
+                }
+
+    ✅ Using Attributes in JSX:-
+            ->JSX attributes look like HTML but follow camelCase.
+
+                | HTML Attribute | JSX Alternative |
+                | -------------- | --------------- |
+                | `class`        | `className`     |
+                | `onclick`      | `onClick`       |
+                | `tabindex`     | `tabIndex`      |
+
+            ->example:
+
+                function App() {
+                return (
+                    &lt;button className="btn" onClick={() => alert("Clicked!")}>
+                    Click Me
+                    &lt;/button&gt;
+                );
+                }
+
+    ✅ Conditional Rendering in JSX:-
+            ->Example 1: Ternary operator
+                    function App() {
+                    const isLoggedIn = true;
+
+                    return (
+                        &lt;h2&gt;{isLoggedIn ? "Welcome User" : "Please Login"}&lt;/h2&gt;
+                    );
+                    }
+            ->Example 2: Logical AND (&&)
+                    function App() {
+                    const showMessage = true;
+
+                    return (
+                        &lt;div&gt;
+                        {showMessage && &lt;p&gt;Hello JSX!&lt;/p&gt;}
+                        &lt;/div&gt;
+                    );
+                    }
+
+    ✅ Inline Styling in JSX
+            🔹 Style in JSX uses an object, not a string.
+            🔹 Keys must be camelCase.
+
+                    function App() {
+                    const myStyle = {
+                        color: "white",
+                        backgroundColor: "purple",
+                        padding: "10px",
+                        borderRadius: "10px"
+                    };
+
+                    return &lt;h2 style={myStyle}>Styled with JSX&lt;/h2&gt;;
+                    }
+
+    ✅ List Rendering in JSX (Looping with map())
+            function App() {
+            const fruits = ["Apple", "Mango", "Banana"];
+
+            return (
+                &lt;ul&gt;
+                {fruits.map((item, index) => (
+                    &lt;li key={index}>{item}&lt;/li&gt;
+                ))}
+                &lt;/ul&gt;
+            );
+            }
+
+    ✅ JSX with Components
+            ->Parent to Child Props Example
+                function Card(props) {
+                return &lt;h2&gt;Hello {props.name}&lt;/h2&gt;;
+                }
+
+                function App() {
+                return (
+                    &lt;div&gt;
+                    &lt;Card name="Jay" />
+                    &lt;Card name="React" />
+                    &lt;/div&gt;
+                );
+                }
+
+======================================================================================================================
+
+                                                Advance Concepts
+
+=======================================================================================================================
+
+
+🔹 JSX with Fragment + map() + Conditional Rendering (combined example)
+                function App() {
+                const users = [
+                    { id: 1, name: "Jay", age: 22 },
+                    { id: 2, name: "Rahul", age: 17 }
+                ];
+
+                return (
+                    <>
+                    &lt;h2&gt;Users List&lt;/h2&gt;
+
+                    {users.map((user) => (
+                        &lt;p key={user.id}>
+                        {user.name} — {user.age >= 18 ? "Adult" : "Minor"}
+                        &lt;/p&gt;
+                    ))}
+                    &lt;/&gt;
+                );
+                }
+
+
+===============================================================================================================
+
+                                                Key Benefits
+
+===================================================================================================================
+
+            | Benefit                        | Explanation                     |
+            | ------------------------------ | ------------------------------- |
+            | Cleaner & readable code        | Mix HTML + JS                   |
+            | Faster development             | Faster UI building              |
+            | Avoids mixing string templates | JSX is structured and type-safe |
+
+            </pre>
+</body>
+</html>
