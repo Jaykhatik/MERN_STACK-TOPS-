@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Programs</title>
+</head>
+
+<body>
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">Reverse a string
+    </h1>
+    <script>
+        //built-in
+        const reverseString1 = str => str.split("").reverse().join("");
+        document.writeln(reverseString1("hello i am built-in-method") + "<br>");
+
+        //custom 
+
+        function reverseString(str) {
+            let reversed = "";
+
+            for (let i = str.length - 1; i >= 0; i--) {
+                reversed += str[i];
+            }
+
+            return reversed;
+        }
+
+        document.writeln(reverseString("hello i am custom method"));
+
+        /* react logic
+
+            function ReverseString() {
+                const str = "hello";
+                const reversed = str.split("").reverse().join("");
+
+                return <h3>{reversed}</h3>;
+                }
+
+        */
+
+    </script>
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">Check palindrome
+    </h1>
+    <p>
+        Definition : A palindrome is a word that reads the same forwards and backwards.
+    </p>
+    <strong>Output :</strong>
+    <br>
+    <script>
+        //built-in
+        const isPalindrome = str =>
+            str === str.split("").reverse().join("");
+
+        document.writeln(isPalindrome("madam") + "<br>");
+
+        //custom
+        function isPalindromeone(str) {
+            let start = 0;
+            let end = str.length - 1;
+
+            while (start < end) {
+                if (str[start] !== str[end]) return false;
+                start++;
+                end--;
+            }
+            return true;
+        }
+        document.writeln(isPalindromeone("jay"));
+
+        //react logic
+        /*
+        function Palindrome() {
+            const word = "madam";
+            const result = word === word.split("").reverse().join("");
+
+            return <h3>{result ? "Palindrome" : "Not Palindrome"}</h3>;
+            }
+
+        */
+
+
+    </script>
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">Largest of 3
+        Numbers
+    </h1>
+    <strong>Output :</strong>
+    <br>
+    <script>
+        //built-in
+        document.writeln(Math.max(10, 20, 15) + "<br>");
+        //custom
+        function largest(a, b, c) {
+            let max = a;
+            if (b > max) {
+                max = b
+            };
+            if (c > max) {
+                max = c
+            };
+            return max;
+        }
+        document.writeln(largest(10, 18, 92));
+
+        //react logic
+        /*
+        function Largest() {
+            const max = Math.max(10, 20, 15);
+            return <h3>{max}</h3>;
+            }
+
+        */
+
+    </script>
+
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">Fibonacci Series
+    </h1>
+    <p>Definition : The Fibonacci series is a sequence of numbers where each number is the sum of the two numbers before
+        it.</p>
+    <strong>Output :</strong>
+    <br>
+    <script>
+        // Built-in (Array)
+        const fibonacci = n => {
+            let arr = [0, 1];
+            for (let i = 2; i < n; i++) {
+                arr.push(arr[i - 1] + arr[i - 2]);
+            }
+            return arr;
+        };
+
+        document.writeln(fibonacci(5) + "<br>");
+
+        //custom
+        function fibonacci1(n) {
+            let a = 0, b = 1;
+            for (let i = 0; i < n; i++) {
+                console.log(a);
+                [a, b] = [b, a + b];
+            }
+        }
+        document.writeln(fibonacci(10));
+
+        //react logic
+
+        /*
+        function Fibonacci() {
+            const fib = [0, 1];
+            for (let i = 2; i < 5; i++) {
+                fib.push(fib[i - 1] + fib[i - 2]);
+            }
+
+            return <p>{fib.join(", ")}</p>;
+            }
+            */
+
+
+    </script>
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">Factorial
+    </h1>
+    <p>Definition : 5! = 5×4×3×2×1</p>
+    <strong>Output :</strong>
+    <br>
+    <script>
+        function factorial(n) {
+            let fact = 1;
+
+            for (let i = 1; i <= n; i++) {
+                fact *= i;
+            }
+
+            return fact;
+        }
+
+        document.writeln(factorial(4)); // 120
+
+    </script>
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">PRIME NUMBER CHECK
+    </h1>
+    <strong>Output :</strong>
+    <br>
+    <script>
+        //built-in
+        let num1 = 7;
+
+        let isPrime =
+            num1 > 1 &&
+            Array.from({ length: num1 - 2 }, (_, i) => i + 2)
+                .every(n => num1 % n !== 0);
+
+        document.writeln("Prime: " + isPrime + "<br>");
+
+        //custom
+        let num2 = 4;
+        let prime = true;
+
+        if (num2 <= 1) prime = false;
+
+        for (let i = 2; i < num2; i++) {
+            if (num2 % i === 0) {
+                prime = false;
+                break;
+            }
+        }
+
+        document.writeln("Prime: " + prime);
+
+
+        //react
+        /*
+        function Prime() {
+            const num = 7;
+            let prime = true;
+
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) prime = false;
+            }
+
+            return <h3>{prime ? "Prime" : "Not Prime"}</h3>;
+            }
+            export default Prime;
+
+        */
+    </script>
+
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">COUNT VOWELS IN
+        STRING
+    </h1>
+    <strong>Output :</strong>
+    <br>
+    <script>
+        //built-in
+        let str4 = "JavaScript";
+        let count4 = str4.match(/[aeiou]/gi)?.length || 0;
+
+        document.writeln("Vowels: " + count4);
+
+        //custom
+
+        let str5 = "JavaScrsaaaipt";
+        let vowels = "aeiouAEIOU";
+        let count5 = 0;
+
+        for (let ch of str5) {
+            if (vowels.includes(ch)) count5++;
+        }
+
+        document.writeln("Vowels: " + count5);
+
+        //react
+
+        /*
+        function Vowels() {
+          const text = "JavaScript";
+          const count = text.match(/[aeiou]/gi)?.length || 0;
+        
+          return <h3>Vowels: {count}</h3>;
+        }
+        export default Vowels;
+        
+        */
+    </script>
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">REMOVE DUPLICATES
+        FROM ARRAY
+    </h1>
+    <strong>Output :</strong>
+    <br>
+    <script>
+        //buit-in
+        let arr2 = [1, 2, 2, 3, 3, 2, 6, 4, 4];
+        let unique = [...new Set(arr2)];
+
+        document.writeln(unique + "<br>");
+
+        //custom
+
+        let arr3 = [1, 2, 2, 3, 4, 4];
+        let result = [];
+
+        for (let i of arr3) {
+            if (!result.includes(i)) result.push(i);
+        }
+
+        document.writeln(result);
+
+        //react
+        /*
+        
+        function RemoveDuplicates() {
+          const arr = [1, 2, 2, 3, 4];
+          const unique = [...new Set(arr)];
+        
+          return <h3>{unique.join(", ")}</h3>;
+        }
+        export default RemoveDuplicates;
+        */
+    </script>
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">FIND SUM
+        OF ARRAY
+    </h1>
+    <strong>Output :</strong>
+    <br>
+    <script>
+        //built-in
+        let arr4 = [1, 2, 3, 5, 4];
+        let sum1 = arr4.reduce((a, b) => a + b, 0);
+
+        document.writeln("Sum: " + sum1 + "<br>");
+
+        //custom
+        let arr5 = [100, 2, 3, 4];
+        let sum2 = 0;
+
+        for (let n of arr5) {
+            sum2 += n;
+        }
+
+        document.writeln("Sum: " + sum2);
+
+        //react
+
+        /*
+        
+        function SumArray() {
+          const arr = [1, 2, 3, 4];
+          const sum = arr.reduce((a, b) => a + b, 0);
+        
+          return <h3>Sum: {sum}</h3>;
+        }
+        export default SumArray;
+        */
+    </script>
+    <h1 style="background-color: gainsboro; text-align: center; padding: 10px; border-radius: 10px;">SWAP TWO NUMBERS
+    </h1>
+    <strong>Output :</strong>
+    <br>
+    <script>
+        //built-in
+        let a1 = 15, b1 = 20;
+        [a1, b1] = [b1, a1];
+
+        document.writeln(a1 + " " + b1 + "<br>");
+
+        //custom
+        let a = 1, b = 2;
+        let temp = a;
+        a = b;
+        b = temp;
+
+        document.writeln(a + " " + b);
+
+        //react
+        /*
+        function Swap() {
+            let a = 5, b = 10;
+            [a, b] = [b, a];
+
+            return <h3>{a} {b}</h3>;
+            }
+            export default Swap;
+
+        */
+    </script>
+</body>
+
+</html>
