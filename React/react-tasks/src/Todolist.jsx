@@ -6,58 +6,48 @@ function Todolist() {
     const [todos, setTodos] = useState([]);
 
     const addTodo = () => {
-        if (task.trim() === "") return;
-        setTodos([...todos, { text: task, completed: false }]);
+        if (task === "") return;
+
+        setTodos([...todos, { text: task, done: false }]);
         setTask("");
-    }
-
-    const toggleComplete = (index) => {
-        const updatedTodos = todos.map((todo, i) =>
-            i === index ? { ...todo, completed: !todo.completed } : todo
-        );
-        setTodos(updatedTodos);
     };
 
-    const deleteTodo = (index) => {
-        const updatedTodos = todos.filter((_, i) => i !== index);
-        setTodos(updatedTodos);
+    const toggleDone = (index) => {
+        const newTodos = [...todos];
+        newTodos[index].done = !newTodos[index].done;
+        setTodos(newTodos);
     };
-    
+
+     const deleteTodo = (index) => {
+    const newTodos = todos.filter((_, i) => i !== index);
+    setTodos(newTodos);
+  };
     return (
 
         <>
-            <h2>Todo List</h2>
+            <h3>Todo</h3>
 
             <input
-                type="text"
                 value={task}
                 onChange={(e) => setTask(e.target.value)}
-                placeholder="Enter task"
+                placeholder="Add task"
             />
             <button onClick={addTodo}>Add</button>
 
-            <ul>
-                {todos.map((todo, index) => (
-                    <li key={index}>
-                        <input
-                            type="checkbox"
-                            checked={todo.completed}
-                            onChange={() => toggleComplete(index)}
-                        />
+            {todos.map((todo, index) => (
+                <div key={index}>
+                    <input
+                        type="checkbox"
+                        checked={todo.done}
+                        onChange={() => toggleDone(index)}
+                    />
 
-                        <span
-                            style={{
-                                textDecoration: todo.completed ? "line-through" : "none",
-                                marginLeft: "8px",
-                            }}
-                        >
-                            {todo.text}
-                        </span>
-
-                        <button onClick={() => deleteTodo(index)}>❌</button>
-                    </li>
-                ))}
-            </ul>
+                    <span style={{ textDecoration: todo.done ? "line-through" : "none" }}>
+                        {todo.text}
+                    </span>
+                     <button onClick={() => deleteTodo(index)}>Delete</button>
+                </div>
+            ))}
         </>
     )
 }
