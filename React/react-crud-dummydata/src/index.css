@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: azure;
+}
+.custom-table{
+    border: 1px solid black;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+.custom-table th{
+    background-color: black;
+    color: whitesmoke;
+    padding: 10px;
+}
+.custom-table tbody tr td{
+    background-color: gainsboro;
+    padding: 20px;
+    border: 2px solid gray;
+    width: 10%;
+}
+.custom-table tbody tr td button:first-child{
+    background-color:blue ;
+    color: whitesmoke;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    width: 60px;
+    cursor: pointer;
+}
+.custom-table tbody tr td button:last-child{
+    background-color:red ;
+    color: whitesmoke;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    width: 60px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.custom-table tbody tr td button:hover{
+    color: black;
+    background-color: gray;
+}

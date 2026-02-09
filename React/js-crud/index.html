@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud in JS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <table class="main-table">
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div class="form-group">
+                        <label for="">Name : </label>
+                        <input type="text" name="fullname" id="fullname" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="">Emp Code : </label>
+                        <input type="text" name="empcode" id="empcode" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="">Salary : </label>
+                        <input type="text" name="salary" id="salary">
+                    </div>
+                    <div class="form-group">
+                        <label for="">City : </label>
+                        <input type="text" name="city" id="city">
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="emplist">
+                    <thead>
+                        <tr>
+                            <th>Emp Name</th>
+                            <th>Emp Code</th>
+                            <th>Salary</th>
+                            <th>City</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>

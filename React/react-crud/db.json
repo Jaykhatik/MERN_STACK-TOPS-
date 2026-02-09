@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "2",
+      "name": "rahul kamat2",
+      "email": "rahul@gmail.com",
+      "phone": "87377777777",
+      "website": "wwwjchj"
+    },
+    {
+      "id": "3",
+      "name": "parshant",
+      "email": "prashant@gmail.com",
+      "phone": "8738777777",
+      "website": "000oojchj"
+    },
+    {
+      "id": "4",
+      "name": "kunal",
+      "email": "kk@gmail.com",
+      "phone": "5465454654"
+    },
+    {
+      "id": "5",
+      "name": "usha",
+      "email": "khhh@gmail.com",
+      "phone": "9879879879"
+    },
+    {
+      "id": "ce3b",
+      "name": "gtyh",
+      "email": "g@gmail.com",
+      "phone": "1254789632"
+    }
+  ]
+}
