@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Required Foundation for oops </title>
+</head>
+
+<body>
+    <!-- 
+    =>For undertsnding the Oops concepts first we have to know about this topics so we clearly understrand the oops concepts easily.
+    ==>1)Object Literal
+    ==>2)Factory Functions
+    ==>3)Constructor Functions
+    ==>4)class syntax(ES6)
+    -->
+    <script>
+        //object literal
+        let user = {
+            name: "Jay",
+            age: 22,
+            greet() {
+                console.log("Hello " + this.name);
+            }
+        };
+
+        user.greet();
+        console.log(user)///this is the simple way to create object using object literal ///here the greet is method and this refer the name of the object
+        //here the main problem is that when we have to create the multiple obj for multi students then we have to create the multi obj for it.
+        //but then there is factory functions that remove this drawback.
+
+
+
+        //Factory Functions :- in this we create the factory functipn with parameter so we can use this for multi students
+        function myStudent(name, age, role) {
+            return {
+                name: name,
+                age: age,
+                role,//here you can akso write role one time because the parameter and the key name is same
+                fullname: function () {
+                    console.log(`my name is ${this.name} and i am ${this.age} years old`)
+                }
+            }
+        }
+        let s1 = myStudent("jay", 21, "mern");
+        console.log(s1);
+        console.log(s1.fullname());
+        let s2 = myStudent("Rahul", 20, "mern-stack");
+        console.log(s2);
+        console.log(s2.fullname());
+        let s3 = myStudent("prashant", 22, "angular");
+        console.log(s3);
+        console.log(s3.fullname());
+
+
+
+        //IMP : but the js is prototype based language so here the Factory function is used for multi data and Factory functions can use prototypes, but usually they don’t by default.so thats why we avoid the factory functions.
+
+
+
+        //constructor function
+        //->in this we use "new" keyword so the new keyword store new memory to that particular obj.
+
+        function newUser(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        let s4 = new newUser("jay", 20)
+        console.log(s4);//so here in console it display like //newUser{name:"jay",age:21}//means we create the obj using newUser cionstructor
+        let s5 = new newUser("hardik", 22)
+        console.log(s5);
+
+
+        //IMP :- and the Array is constructor and with the help of this we create the objects.simply
+
+
+
+        //class(ES6)
+        //class is similar as constructor just we have to craete class and wrap the constructor in it
+        class Employee {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            introduce() {
+                console.log(`${this.name},${this.age}`)//we can also create methods in class in this style and use them anywhere
+            }
+        }
+        let e1 = new Employee("jj", 30);
+        console.log(e1)
+        console.log(e1.introduce())
+
+
+
+
+        //full example of classes that how to use this and also how to use that class methoods
+        class Cars {
+            constructor(name, color, milege) {
+                this.name = name;
+                this.color = color;
+                this.milege = milege;
+            }
+            start() {
+                console.log(`${this.name} is started....`);
+            }
+            stop() {
+                console.log(`${this.name} is stopped....`);
+            }
+        }
+
+        let bmw = new Cars("BMW", "Dark_Blue", 45);
+        console.log(bmw)
+        console.log(bmw.start())
+        console.log(bmw.stop());
+
+
+        let Buggati = new Cars("Buggati", "Brown", 5);
+        console.log(Buggati)
+        console.log(Buggati.start())
+        console.log(Buggati.stop());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic of OOPS</title>
+</head>
+
+<body>
+    <!-- 
+    OOP :-
+    =>OOP is a programming style where you structure code using objects and classes to model real-world entities.
+    =>Core Concepts of OOP
+            1)Encapsulation
+            2)Abstraction
+            3)Inheritance
+            4)Polymorphism
+    -->
+    <script>
+        /*
+        Abstraction
+        ->Abstraction : hides the complexity of code //Show only necessary details, hide internal logic.
+       
+
+        */
+
+        class Cars {
+            fuel = 100;
+            burnFuel() {
+                this.fuel = this.fuel - 10;
+            }
+            start() {
+                this.burnFuel();
+                console.log('starting......')
+            }
+
+        }
+        let c1 = new Cars();
+        console.log(c1.start())//here we store all the details in one method so thats why it called abstraction
+        console.log(c1)
+        c1.fuel = 100000;//here we directlr access the methods of the cars so thats the drawback of abstraction
+        console.log(c1.fuel);
+
+
+
+        // ->Encapsulation :-Wrapping data and methods into a single unit. and also like if we have to not show the details it provides it unlike the abstarction
+        class Cars1 {
+            #fuel = 100;
+            #burnFuel() {
+                this.#fuel = this.#fuel - 10;
+            }
+            start() {
+                this.#burnFuel();
+                console.log('starting......')
+            }
+
+        }
+        let c2 = new Cars1();
+        console.log(c2.start())//here we store all the details in one method so thats why it called abstraction
+        console.log(c2)
+        // console.log(c2.#burnFuel())//it it also a private 
+        // c2.#fuel=1000;//here it gives error because the fuelis private thats the benefit of encapsulation which wrap the details that we have to not share to others
+        // console.log(c2)
+
+
+
+        //Inheritance :- One class inherits properties of another.
+
+        //simple
+        class Animal {
+            speak() {
+                console.log("Animal makes sound");
+            }
+        }
+
+        class Dog extends Animal {
+            bark() {
+                console.log("Dog barks");
+            }
+        }
+
+        let d = new Dog();
+        d.speak();
+        d.bark();
+
+
+
+        //using super keyword
+        // Parent Class
+        class Animal1 {
+            constructor(name) {
+                this.name = name;
+            }
+
+            speak() {
+                console.log(this.name + " makes a sound");
+            }
+        }
+
+        // Child Class
+        class Dog1 extends Animal1 {
+            constructor(name, breed) {
+                // Call parent constructor
+                super(name);
+
+                this.breed = breed;
+            }
+
+            bark() {
+                console.log(this.name + " is barking");
+            }
+
+            // Method overriding
+            speak() {
+                super.speak(); // calling parent method
+                console.log(this.name + " barks loudly");
+            }
+        }
+
+        let d1 = new Dog1("Tommy", "Labrador");
+
+        // Calling methods
+        d1.speak();
+        d1.bark();
+
+
+
+
+
+
+        //Polymorphism :-Same method, different behavior
+        class Animalx {
+            speak() {
+                console.log("Animal sound");
+            }
+        }
+
+        class Dogx extends Animalx {
+            speak() {
+                console.log("Bark");
+            }
+        }
+
+        class Catx extends Animalx {
+            speak() {
+                console.log("Meow");
+            }
+        }
+        let o1 = new Dogx();
+        console.log(o1.speak())//so here the parent class is override by the child class and print bark
+        let o2=new Catx();
+        console.log(o2.speak()) //here also it overide the parent class and print meow
+
+
+    </script>
+</body>
+
+</html>

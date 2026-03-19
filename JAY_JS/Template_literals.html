@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //🔹 What is Template Literal ? :-  Template literals are modern strings in JavaScript written using backticks ( ).
+
+        let name = "Jay";
+        console.log(`Hello ${name}`);
+        //🔹 Why Use Template Literals ?
+        // Before :
+
+        let name1 = "Jay";
+        console.log("Hello1 " + name1);
+
+        //After:
+
+        console.log(`Hello2 ${name1}`);
+
+        //🔹 Syntax :-  `string text ${expression}`
+
+
+
+
+        //🧠 CORE CONCEPTS
+        //  1️⃣ Variable Interpolation
+        let name2 = "Jay";
+        let city2 = "Ahmedabad";
+        console.log(`My name is ${name2} and I live in ${city2}`);
+
+        //2️⃣ Expressions Inside ${ }
+        let a = 10;
+        let b = 20;
+        console.log(`Sum is ${a + b}`);
+
+        //3️⃣ Multi - line String
+        let text = `
+    This is line 1
+This is line 2
+This is line 3
+`;
+
+        console.log(text);
+
+        // 4️⃣ Function Inside Template
+        function greet(name) {
+            return `Hello ${name}`;
+        }
+        console.log(`${greet("Jay")}, Welcome!`);
+
+        // 5️⃣ Conditional Rendering
+        let age = 17;
+        console.log(`You are ${age >= 18 ? "Adult" : "Minor"}`);
+
+        //     6️⃣ Loop with Template
+        let users = ["Jay", "Raj", "Amit"];
+
+        users.forEach(user => {
+            console.log(`User: ${user}`);
+        });
+
+
+
+
+
+        //example
+        let products = [
+            { name: "Laptop", price: 50000 },
+            { name: "Mobile", price: 20000 },
+            { name: "Tablet", price: 15000 }
+        ];
+
+        let html = "";
+
+        products.forEach(product => {
+            html += `
+        <div style="border:1px solid black; margin:10px; padding:10px;">
+        <h2>${product.name}</h2>
+        <p>Price: ₹${product.price}</p>
+        </div>
+    `;
+        });
+
+        document.body.innerHTML = html;
+    </script>
+</body>
+
+</html>
