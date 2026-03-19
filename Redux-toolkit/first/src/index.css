@@ -1,0 +1,92 @@
+/* ===== PAGE BACKGROUND ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* ===== CENTER CONTAINER ===== */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: white;
+  padding: 40px 35px;
+  border-radius: 20px;
+  width: 340px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== TITLE ===== */
+.title {
+  margin-bottom: 10px;
+  color: #444;
+  font-weight: 600;
+}
+
+/* ===== COUNT NUMBER ===== */
+.count {
+  font-size: 50px;
+  margin: 20px 0;
+  color: #4facfe;
+  font-weight: bold;
+}
+
+/* ===== BUTTON GROUP ===== */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== INPUT FIELD ===== */
+.btn-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  transition: 0.2s;
+}
+
+.btn-group input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 5px rgba(79, 172, 254, 0.4);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #4facfe;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+.btn.success {
+  background: #28a745;
+}
+
+.btn.danger {
+  background: #dc3545;
+}

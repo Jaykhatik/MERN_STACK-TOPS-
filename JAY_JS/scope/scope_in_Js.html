@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope In JS</title>
+</head>
+
+<body>
+    <script>
+        /*
+        ★ Scope in JavaScript: 
+            -> Scope determines where a variable can be accessed in a program.
+            ->  In simple words we can say that the Scope defines the visibility and accessibility of variables in different parts of the code.
+
+
+        ★ Types of Scope in JavaScript
+            ● Global Scope
+            ● Function Scope
+            ● Block Scope
+        */
+
+
+        /*
+        ➤ Global Scope :-
+            ->Variables declared outside any function or block belong to the global scope.
+            ->They can be accessed anywhere in the program.
+
+            ✗ Disadvantages :-
+                -> increase memory usage
+                -> Name conflicts
+                -> Hard to debug
+                -> should be avoided when possible
+        */
+
+        let name = "jay";
+        function greet() {
+            return "hello " + name;
+        }
+        console.log(greet())
+
+
+
+        /*
+       ➤ Function Scope :-
+           ->Variables declared inside a function are accessible only inside that function.
+           ->Variables declared with var, let and const are quite similar when declared inside a function.
+           ->Function scope protects variables from outside access.
+       */
+
+        function demo() {
+            let x = 10;
+            var y = 20;
+            const z = 30;
+            console.log(x, y, z);
+        }
+        demo()
+        //console.log(x);//it will give error because it is outside of the function
+
+
+        /*
+      ➤ Block Scope :-
+          ->Variables declared inside {} using let and const are bolck scoped.
+          ->Block include :
+                   ● if
+                   ● for
+                   ● while 
+                   ● switch
+                   ● {}         
+      */
+        if (true) {
+            let a = 5;
+            const b = 10;
+            var c = 30;
+            console.log(a)//5
+            console.log(b)//10
+            console.log(c)//30
+        }
+        console.log(a)//error
+        console.log(b)//error
+        console.log(c)//30
+
+
+    
+    </script>
+</body>
+
+</html>

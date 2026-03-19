@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Maps
+    </title>
+</head>
+
+<body>
+    <script>
+        /*
+        Definition : 
+        ->A JavaScript Map is an object that can store collections of key-value pairs, similar to a dictionary in other programming languages.
+        ->Maps differ from standard objects in that keys can be of any data type.
+        */
+
+
+        //creating map
+
+        const fruits = new Map();
+        console.log(fruits)
+        fruits.set("name", "mango");//for add the key and value we have to use set method
+        fruits.set("color", "orange")
+        console.log(fruits)
+
+        //now if we give another value but with same key then the value of that key must be the new value which we write
+
+        fruits.set("color", "yellow")
+        console.log(fruits)
+
+        //but if we write new key with same value then it creates new data
+        fruits.set("semi-color", "yellow")
+        console.log(fruits)
+
+        //access the value from the key using get() method in map
+        console.log(fruits.get("name"))
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTypes of JS</title>
+</head>
+
+<body>
+    <!-- 
+    DataTypes in js:
+    ->Basically the datatype of variable defines that what type of value the variable is stored.
+    ->There are two type of datatypes
+        (i)Primitive 
+        (ii)Non-Primitive
+
+            ★ Primitive: ➜ Primitive datatypes stored single values and they are immutable.
+                         ➜ There are 7 primitive types:
+                                ● String
+                                ● Number
+                                ● Boolean
+                                ● Undefined
+                                ● Null
+                                ● BigInt
+                                ● Symbol
+
+            ★ Non-Primitive:  ➜ Non-Primitve datatypes stored multiple values abd they are stored by memory values(reference).
+                              ➜ There are 3 main reference types:
+                                ● Array
+                                ● Object
+                                ● Function
+    -->
+    <button onclick="greet()">click me for function example</button>
+    <br>
+    <script>
+        //string :- A sequence of characters used to represent text.
+        let name = "Jay";
+        let city = 'Ahmedabad'
+        let msg = `hello ${name}`;
+        document.writeln(msg + "<br>");
+
+        //Number :- Represents both integer and floating-point numbers.
+        let a = 10;
+        let b = 5;
+
+        document.writeln(a + b + "<br>"); // 15
+        document.writeln(a / b); // 2
+
+        //Boolean :- Represents logical values: true or false.
+        let isLoggedIn = true;
+        let isAdmin = false;
+
+        //Undefined :- A variable declared but not assigned a value.
+        let x;
+
+        //Null :- Represents intentional empty value.
+        let user = null;
+        console.log(user); // null
+
+        //BigInt :- Used to represent very large integers beyond Number limit.
+        let bigNumber = 123456789012345678901234567890n;
+
+        //Symbol :- Used to create unique identifiers.
+        let id = Symbol("id");
+        let user1 = {
+            name: "Khatik",
+            [Symbol("id")]: 123
+        };
+
+        //Array :- Special type of object used to store multiple values.
+        let fruits = ['banana', 'apple', 'mango'];
+        console.log(fruits);//access full array 
+        console.log(fruits[2])//accessing using index
+
+        //object :-Collection of key-value pairs.
+        let student = {
+            name: "Jay",
+            age: 21
+        };
+        console.log(student.name); // Jay
+        student.age = 30;//update
+        console.log(student["age"]); // 21
+        student.city = "surat";//add
+        console.log(student);
+        delete student.age;
+        console.log(student);
+
+        //Function :- Reusable block of code.
+        function greet() {
+            alert("hello document");
+        }
+
+
+    </script>
+</body>
+
+</html>

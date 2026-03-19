@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <!-- 
+    Events :-
+    ->An event is an action or occurrence detected by the browser.
+    ->It can be Trigger by :
+            User interaction ,
+            Browser activity ,
+            systems events
+
+
+    -> Examples of Events :-
+        | Event     | Description              |
+        | --------- | ------------------------ |
+        | click     | User clicks element      |
+        | dblclick  | Double click             |
+        | mouseover | Mouse moves over element |
+        | keydown   | Key pressed              |
+        | submit    | Form submitted           |
+        | change    | Input value changed      |
+        | scroll    | Page scrolling           |
+        | load      | Page finished loading    |
+
+
+
+        Event Handling :-
+        ->Event Handling is the process of detecting and responding to events.
+                example : <button onclick="sayHello()">Click</button>
+                ->here click → event
+                        sayHello() → event handler
+
+
+        Event Handler :-
+        ->An event handler is a function that executes when an event occurs.
+            function sayHello(){
+            console.log("Hello");
+            }
+            ->here the function sayHello is event handler when we call this using event like onclick then the entire process called event handling.
+
+    -->
+    <button onclick="sayHello()" id="btn">click me</button>
+    <script>
+        function sayHello() {
+            alert("Hello i am Function in Events");
+        }
+
+
+
+
+        
+
+    </script>
+
+</body>
+
+</html>

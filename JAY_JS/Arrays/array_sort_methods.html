@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sort Methods</title>
+</head>
+
+<body>
+    <script>
+        //==================================Alphabetic Sort============================================
+
+        //1)sort() : The sort() method sorts an array alphabetically.
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.sort());
+
+        //2)reverse() : reverses the elements in an array.
+        console.log(fruits.reverse());
+
+        //3)toSorted() :  the toSorted() method as a safe way to sort an array without altering the original array.means this willgive new array without altering tyhe older one.
+        const months = ["Jan", "Feb", "Mar", "Apr"];
+        const sorted = months.toSorted();
+        console.log(months)
+        console.log(sorted)
+
+        //4)toReversed() : the toReversed() method as a safe way to reverse an array without altering the original array.
+        const months1 = ["Jan", "Feb", "Mar", "Apr"];
+        const sorted1 = months1.toSorted();
+        console.log(months1)
+        console.log(sorted1)
+
+
+
+
+        //==================================Numeric  Sort============================================        
+
+        //Ascending
+        const points = [40, 100, 1, 5, 25, 10];
+        points.sort((a, b) => a - b);
+
+        console.log(points);
+
+        //Descending
+        points.sort((a, b) => b - a);
+
+        console.log(points);
+
+        //min with sort()
+        points.sort(function (a, b) {
+            return a - b
+        });
+        console.log(points[0])
+
+        //max with sort
+        points.sort((a, b) => b - a);
+
+        console.log(points[0]);
+
+        //========================================sorting object arrays================================================
+        const cars = [
+            { type: "Volvo", year: 2016 },
+            { type: "Saab", year: 2001 },
+            { type: "BMW", year: 2010 }
+        ];
+        cars.sort((a, b) => a.year - b.year)
+        console.log(cars);
+
+        //localeCompare() (Important for Strings) : Used for proper string comparison.
+        let names = ["Rahul", "jay", "Kunal"];
+
+        names.sort((a, b) =>
+            a.toLowerCase().localeCompare(b.toLowerCase())
+        );
+
+        console.log(names);
+
+
+    </script>
+</body>
+
+</html>

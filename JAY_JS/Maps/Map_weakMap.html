@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript WeakMap Object</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Definition :-
+            ->A JavaScript WeakMap is a collection of key/value pairs where the keys must be objects.\
+            ->A WeakMap holds weak references to its keys.
+        
+        */
+
+        //creating WeakMap
+        let myMap = new WeakMap();
+        console.log(myMap)
+
+        let myObj = { name: "john", city: "surat" };
+        myMap.set(myObj, "player");//here the player string is its type
+        console.log(myMap)
+        console.log(myMap.get(myObj));
+    </script>
+</body>
+
+</html>

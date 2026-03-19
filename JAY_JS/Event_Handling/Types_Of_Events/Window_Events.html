@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Events</title>
+</head>
+
+<body>
+    <!-- 
+     Window Events :- Window events occur when something happens to the browser window.
+   | Event          | Description                                                        |
+    | -------------- | ------------------------------------------------------------------ |
+    | `load`         | Triggered when the whole page (HTML, CSS, images) finishes loading |
+    | `resize`       | Triggered when the browser window size changes                     |
+    | `scroll`       | Triggered when the user scrolls the page                           |
+    | `beforeunload` | Triggered before the page is closed or refreshed                   |
+    | `unload`       | Triggered when the page is leaving                                 |
+
+    -->
+    <script>
+
+        /*
+        load Event :-
+        ->The load event occurs when the entire page is fully loaded.
+        ->This includes : html,css ,images and scripts
+        */
+        window.addEventListener("load", function () {
+            console.log("Page fully loaded");
+        });
+
+
+        /*
+        resize Event :-
+        ->The resize event occurs when the browser window size changes.
+        */
+        window.addEventListener("resize", function () {
+            console.log("Window resized");
+        });
+
+        /*
+        scroll Event :-
+        ->The scroll event occurs when the user scrolls the page.
+        */
+        window.addEventListener("scroll", function () {
+            console.log("Page scrolling...");
+        });
+
+        /*
+        beforeunload Event :-
+        ->The beforeunload event occurs before the user leaves the page.
+        ->This Happens when : Refreshing the page ,closing the tab ,Navigating to another page
+        */
+        window.addEventListener("beforeunload", function (e) {
+            e.preventDefault();
+            e.returnValue = "";
+        });
+
+        /*
+        unload Event :-
+        ->The unload event occurs when the page is being unloaded (closed or refreshed).
+        */
+        window.addEventListener("unload", function () {
+            console.log("Page is unloading");
+        });
+    </script>
+</body>
+
+</html>

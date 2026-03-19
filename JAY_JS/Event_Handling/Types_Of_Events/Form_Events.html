@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events</title>
+</head>
+
+<body>
+    <!-- 
+    
+  Form Events :- Form events happen when users interact with form elements.
+    | Event  | Meaning             |
+    | ------ | ------------------- |
+    | submit | Form submitted      |
+    | change | Input value changed |
+    | reset  | Form reset          |
+    | input  | Input value updated |
+
+ Focus Events :
+    | focus  | Input focused       |
+    | blur   | Input lost focus    |
+-->
+    <form id="myForm">
+        <input type="text" placeholder="Enter name">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    <br>
+    <br>
+
+
+    <input type="text" id="name">
+    <br>
+    <br>
+    <input type="text" id="name1">
+    <br>
+    <br>
+
+    <!-- focus events -->
+    <input type="text" id="name2" placeholder="Click here">
+    <script>
+
+        /*
+        submit :-
+        ->The submit event occurs when the user submits a form.
+        ->This happens when:
+            The user clicks a submit button ,
+            The user presses Enter inside a form field
+        */
+        document.getElementById("myForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            console.log("Form submitted");
+        });
+
+
+        /*
+        reset :-
+        ->The reset event occurs when the user clicks the reset button in a form.
+        ->It clears all form fields.
+        */
+        document.getElementById("myForm").addEventListener("reset", function () {
+            console.log("Form reset");
+        });
+
+
+        /*
+        change :-
+        ->The change event occurs when the value of a form element changes and loses focus.
+        ->it works with : input ,select ,checkbox and radio
+        ->It will only run when you click outside the input.
+        */
+        document.getElementById("name").addEventListener("change", function (e) {
+            console.log("Changed value:", e.target.value);
+        });
+
+        /*
+        input :-
+        ->The input event occurs every time the value of an input changes.
+        ->It triggers on every keystroke.
+        */
+        document.getElementById("name1").addEventListener("input", function (e) {
+            console.log("Typing:", e.target.value);
+        });
+
+        /*
+        focus :-
+        ->The focus event occurs when an element becomes active or selected.
+        ->Example situations: Clicking inside an input field ,Using Tab key to move to an input
+        */
+        document.getElementById("name2").addEventListener("focus", function () {
+            document.getElementById("name2").style.background = "lightyellow";
+        });
+
+        /*
+        blur :-
+        ->The blur event occurs when an element loses focus.
+        ->Example situations: Clicking outside the input , Pressing Tab to move to another input
+        */
+        document.getElementById("name2").addEventListener("blur", function () {
+            document.getElementById("name2").style.background = "red"
+        })
+    </script>
+</body>
+
+</html>

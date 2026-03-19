@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Destructuring</title>
+</head>
+
+<body>
+    <script>
+        /*
+        
+        Definition:-
+            ->Destructuring is a JavaScript feature that allows you to extract values from arrays or properties from objects 
+              and assign them to variables easily.
+            ->Instead of writing multiple lines, destructuring allows short and clean syntax.
+
+        */
+
+        //without destructuring
+        let arr = [10, 20, 30];
+        let a = arr[0]
+        let b = arr[1]
+        let c = arr[2]
+        console.log(a, b, c)
+
+        //with destructuring
+        let [x, y, z] = arr;
+        console.log(x, y, z);
+
+
+
+        /*
+        Types of Destructuring
+        i)Array Destructuring
+        ii) Object Destructuring
+        */
+
+
+        //=========================================array destructuring============================================
+
+        //simple
+        let numbers = [10, 20, 30, 40];
+        let [m, n, o, p] = numbers;
+        console.log(m);
+        console.log(n);
+        console.log(o);
+        console.log(p);
+
+        //skipping array values
+
+        let n1 = [10, 20, 30, 40];
+
+        let [a1, , c1] = n1;
+
+        console.log("first : " + a1);
+        console.log("third : " + c1);
+
+
+        //array position values
+        const fruits = ["apple", "banana", "pineapple", "orange"];
+        let { [0]: fruit1, [1]: fruit2 } = fruits;
+        console.log(fruit1 + " " + fruit2)
+
+        //using rest parameter
+        const arr1 = [10, 20, 30, 90];
+        const [fisrt, second, ...rest] = arr1;
+        console.log(fisrt, second, rest)
+
+        //destructuring maps
+        const myMap = new Map();
+        myMap.set("name", "jay");
+        myMap.set("age", 21);
+        myMap.set("city", "surat");
+        console.log(myMap)
+        for (let [key, value] of myMap) {
+            console.log(key + " " + value)
+        }
+
+        //swappin variables
+
+        let s1 = 10;
+        let s2 = 20;
+        [s1, s2] = [s2, s1]
+        console.log(s1, s2)
+
+
+        //============================================object destructuring=========================================================
+
+        //simple
+
+        const user = {
+            firstName: "Jay",
+            lastName: "Khatik",
+            age: 21,
+            city: "Ahmedabad",
+            role: "Mern-stack Developer"
+        }
+
+        let { firstName, lastName, role } = user;
+        console.log(firstName, lastName, role)
+
+        let { age, city, country = "india" } = user;
+        console.log(age, city, country);
+
+        //proprty Alias : using the propety name from object and give the other name to it
+
+        const movie = {
+            name: "Fast & Furious",
+            year: 2009
+        }
+        let { name: movieNmae } = movie;
+        console.log(movieNmae)
+
+
+        //string destructuring
+
+        let name = "HARRY POTTER";
+        let [z1, z2, z3, z4, z5] = name;
+
+        console.log(z1, z3, z5)
+
+    </script>
+</body>
+
+</html>

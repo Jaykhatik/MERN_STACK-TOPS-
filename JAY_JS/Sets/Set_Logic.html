@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Set Logic</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Logic Set Methods
+
+        In JavaScript 2025, 7 new logical methods were added to the Set object:
+
+            ● union()
+            ● difference()
+            ● intersection()
+            ● isDisjointFrom()
+            ● isSubsetOf()
+            ● isSupersetOf()
+            ● symmetricDifference()
+        */
+
+        //union() :  returns the union of two sets.
+        const A = new Set(['a', 'b', 'c']);
+        const B = new Set(['b', 'c', 'd']);
+
+        console.log(A.union(B))
+
+        //intersection() : returns the intersection of two sets.//which character common that display
+        console.log(A.intersection(B))
+
+        //difference() :  returns the difference between two sets.//check karta hai ki dusre set me kya nahi hai
+        console.log(A.difference(B))//a
+        console.log(B.difference(A))//d
+
+        //symmetricDifference() : returns the symmetric difference between to sets.// returns a new set containing elements which are in this set or in the argument set, but not in both.
+        console.log(A.symmetricDifference(B));//a,d//means jo dono sets me common nahi hai vo
+
+        //isSubsetOf() :  returns true if all elements in this set is also elements in the argument set.
+        const name1 = new Set(["jay", "rahul", "prashant", "kunal"])
+        const name2 = new Set(["jay", "rahul", "kunal"])
+
+        console.log(name1.isSubsetOf(name2));//false because prashant is not in name2 set.
+        console.log(name2.isSubsetOf(name1));//true because name2 sets values are all in the name1 set.
+
+        //isSupersetOf() : returns true if all elements in the argument set are also in this set.
+        console.log(name1.isSupersetOf(name2));//true because values of name2 set is  in name1 set.
+        console.log(name2.isSupersetOf(name1));//false because name1 sets values are not in the name2 set.
+
+        //isDisjointFrom() : returns true if this set has no elements in common with the argument set.
+        console.log(name1.isDisjointFrom(name2));//false because name1 has common name that are in name2
+        console.log(name2.isDisjointFrom(name1));//false becasue name2 has also same name which are in name1
+    </script>
+</body>
+
+</html>

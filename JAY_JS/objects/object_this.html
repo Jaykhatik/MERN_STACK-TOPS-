@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this in Object</title>
+</head>
+<body>
+    <script>
+        /*
+        Definition: -> In JavaScript, this is used to access the object that is calling a method.
+                    -> The this keyword refers to an object.
+                    ->The this keyword makes it possible to use the same method with different objects.
+        */
+
+        const person1={
+            name:"rahul",
+            hello(){
+                return "hello "+this.name;
+            }
+        }
+        
+        const person2={
+            name:"jay",
+            hello(){
+                return "hello "+this.name;
+            }
+        }
+        console.log(person1.hello())
+        console.log(person2.hello());
+
+
+        //======================this alone in object=============================
+        /*
+        ->When used alone, this refers to the global object.
+        ->In a browser, the global object is the window object.
+        */
+       let x;
+       console.log(x)//it is undefined because it is a global object
+       
+
+
+       //==================this in a function==================================
+       
+
+    </script>
+</body>
+</html>

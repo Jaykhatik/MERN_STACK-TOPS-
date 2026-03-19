@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Methods in JS</title>
+</head>
+
+<body>
+    <script>
+        //new Set() :-Pass an array to the new Set() constructor.//basically creating for the new set and it also empty and then we also add value in it using methods.
+        const letters = new Set(["a", "b", "c"]);
+        console.log(letters)
+
+        //add()
+        letters.add("j");
+        letters.add("y");
+        console.log(letters)
+
+        //delete
+        letters.delete("b");
+        console.log(letters)
+
+       
+
+        //size property : for get the size of the partcular set
+        console.log(letters.size);
+
+        //has() : returns true if a specified value exists in a set.
+        console.log(letters.has("j"));//true
+
+        //forEach() :The forEach() method invokes a function for each Set element:
+        letters.forEach((value) => {
+            console.log(value)
+        })
+
+        //values() : returns an Iterator object with the values in a Set.
+        const names = new Set(["jay", "chetan", "rahul"]);
+        const myNames = names.values();
+        console.log(myNames);
+        for (let x of myNames) {
+            console.log(x);
+        }
+
+        //keys() : returns an Iterator object with the values in a Set://A Set has no keys, so keys() returns the same as values().
+        const name = new Set(["jay1", "chetan1", "rahul1"]);
+        const myName = name.keys();
+        console.log(myName);
+        for (let x of myName) {
+            console.log(x);
+        }
+
+        /*entries() : The entries() method returns an Iterator with [value,value] pairs from a Set.
+                        -> The entries() method is supposed to return a [key,value] pair from an object.
+                        -> A Set has no keys, so the entries() method returns [value,value].
+                        -> This makes Sets compatible with Maps.
+        */
+        const name1 = new Set(["jay12", "chetan12", "rahul12"]);
+        const myName1 = name1.entries();
+        console.log(myName1);
+        for (let x of myName1) {
+            console.log(x);
+        }
+
+         //clear() : clear all tha set and make it 0
+        letters.clear();
+    </script>
+</body>
+
+</html>

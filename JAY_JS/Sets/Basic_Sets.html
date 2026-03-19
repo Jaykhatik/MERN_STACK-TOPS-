@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Sets In JS</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Definition :-
+            ->A Set is a built-in JavaScript object that allows you to store unique values of any type.
+                ● No duplicate values allowed
+                ● Values can be primitive or objects
+                ● Maintains insertion order
+
+            ->syntax: let setName = new Set();
+        */
+
+        //creating a set
+        let mySet = new Set();
+        console.log(typeof mySet)//type of seta are object
+        console.log(mySet)
+
+        //Now add value in it using add methods
+        mySet.add(2);
+        mySet.add(2);
+        mySet.add(3);
+        mySet.add(5);
+        mySet.add(6);
+        mySet.add(8);
+        console.log(mySet);//here 2 value is multiple time so the "set" is not display it.
+
+
+        //we also create variable and add in it
+
+        let name="jay";
+        mySet.add(name);
+        console.log(mySet);
+
+        //now the value are in set so if we have to converts it into array then we have to use from method and show using for..of loop
+        let myArr=Array.from(mySet);
+        console.log(myArr)
+        for(let value of myArr){
+            console.log(value);
+        }
+
+
+    </script>
+</body>
+
+</html>

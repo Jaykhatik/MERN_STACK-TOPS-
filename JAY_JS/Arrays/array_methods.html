@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <script>
+        //1)push() → Add element at end
+        let arr = [1, 2, 3, 4];
+        arr.push(5);
+        console.log(arr)
+
+        //2)pop() → Remove last element
+        arr.pop();
+        console.log(arr)
+
+        //3)shift() →Removes the first array element of an array and shift all array elementsb to lower index
+        arr.shift();
+        console.log(arr)
+
+        //4)unshift() → Add element at beginning
+        arr.unshift(10);
+        console.log(arr)
+
+        //5)length → Get array size
+        console.log(arr.length)
+
+        //6)indexOf() → Find index
+        console.log(arr.indexOf(3))//here in bracket is array value not the index
+
+        //7)includes() → Check value exists
+        console.log(arr.includes(10));//here the bracket is value not the index
+
+        //8).toString() → returns the elements of an array as a comma separated string.
+        console.log(arr.toString());
+
+        //9)at() → get the element using their index value
+        console.log(arr.at(2))//here the bracket show the index value so the output is 3 number
+
+        //10)join() → The join() method also joins all array elements into a string.It behaves just like toString(), but in addition you can specify the separator: 
+        const fruits = ["apple", "banana", "mango", "orange"];
+        console.log(fruits.join(" / "))
+
+        //11)Array.isArray() → check that the array is true or not
+        console.log(Array.isArray(fruits));//true
+
+        //12)delete the array element
+        console.log(delete fruits[0])
+        console.log(fruits)
+
+        //13)concat() : creates a new array by merging (concatenating) existing arrays:
+        const myGirls = ["Cecilie", "Lone"];
+        const myBoys = ["Emil", "Tobias", "Linus"];
+        const eleders = ["rajesh", "rahul"]
+
+        console.log(myGirls.concat(myBoys));
+        console.log(myBoys.concat(myGirls, eleders))//merging three arrays
+        console.log(eleders.concat("jay"))//add or merge the value in array
+
+        //14)copyWithin()  : copies array elements to another position in an array.
+        const fruits1 = ["pineapple", "watermelon", "chickoo"];
+        console.log(fruits1.copyWithin(1, 0));//here the first value defines the place where to copy and the second one defines which value to copy.
+
+        //15)flat() : creates a new array with sub-array elements concatenated to a specified depth.
+        const myarr1 = [[1, 2, 3], [4, 5, 6, 3]]
+        console.log(myarr1.flat())
+
+        //16) flatMap() : The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
+        const myarr3 = [10, 12, 23, 45, 67];
+        console.log(myarr3.flatMap(x => [x, x * 2]));
+
+
+        //17)splice : The splice() method can be used to add new items to an array://basically with the help of splice we add/remove /replace the element
+        //synatx : array.splice(startindex,deletecount,newitems)
+
+
+        //replace
+        const cars = ["BMW", "volvo", "Volkswagen", "Mercedes", "Porsche ", "Land Rover"];
+        cars.splice(1, 1, "Ferrari")
+        console.log(cars);
+
+        //add
+        cars.splice(cars.length, 0, "Toyota", "Ford")
+        console.log(cars)
+
+        //remove
+        cars.splice(0, 2)
+        console.log(cars)
+
+
+        //18)slice() : The slice() method slices out a piece of an array into a new array.
+        //syntax : array.slice(startindex,endindex)
+        const hardWare = ["mouse", "keyboard", "monitor", "cpu"];
+        const newHardware = hardWare.slice(0, 2);//here we store the array in new variable its a necessary
+        console.log(newHardware)
+
+        const lastHardware=hardWare.slice(0);
+        console.log(lastHardware)
+    </script>
+</body>
+
+</html>

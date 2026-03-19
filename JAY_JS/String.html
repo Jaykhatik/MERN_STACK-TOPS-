@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings in JS</title>
+</head>
+
+<body>
+    <script>
+
+        //normal way to declare the strings in js using single and double quotes
+        let str1 = 'khatik';
+        let str2 = "jay";
+        console.log(str1 + " " + str2);
+
+        //another way using new keyword
+
+        let stringNew=new String("jay");
+        console.log(stringNew)
+        console.log(stringNew[0])
+        console.log(stringNew.toUpperCase())
+        console.log(stringNew.charAt(1))
+
+        //string under the string
+        //this only works if the quotes are differ from each other in that same string
+
+        let text = "hello my name is 'jay'And";
+        let text1 = 'i am "21" years old';
+        console.log(text + " " + text1)
+
+        //another way to write string is using backticks
+
+        let str4 = `i am from "ahmedabad"`;
+        console.log(str4)
+
+        //string length
+
+        let str3 = "jay";
+        console.log(str3.length);
+
+        //interpolation using strings
+        //interpolation means that in string we can accesss the partcular variables value using ${} with backticks(``)
+        let s1 = "jay";
+        let s2 = "you";
+        console.log(`welcome ${s1}.How are ${s2} ?..`)
+
+
+        /*
+        slice :
+        ->it takes two paramteres like start position and end position
+        ->synatx : slice(start,end)
+        ->where the start position defines that where to start but the end position defines where to end and
+         also the end position is not included means if we give 5 end position of any string then it ends on 4.
+        */
+        let t1 = "javascript hello";
+        console.log(t1.slice(1, 12));
+        console.log(t1.slice(11));//it only counts the start position and go to the end of string
+        console.log(t1.slice(-4));//and always the minus value start from -1 amnd if we give me -4 then the output will be "ello";
+        console.log(t1.slice(-12, -5));//script
+
+
+        /*
+        substring() method
+        ->substring() is similar to slice().
+        ->The difference is that start and end values less than 0 are treated as 0 in substring().
+        */
+        let t2 = "jaykhatik";
+        console.log(t2.substring(1, 3));
+
+        /*
+        substr() method
+          ->substr() is similar to slice().
+          ->The difference is that the second parameter specifies the length of the extracted part.
+        */
+        let t3 = "jay khatik";
+        console.log(t3.substr(4, 1));
+
+
+        //trim():-removes whitespace from both sides of a string./means aage peeche ki space remove karti hai.
+        let t4 = "  jay khatik   ";
+        console.log(t4.trim());
+        console.log(t4.trimStart());//removes whitspace from starting of the string
+        console.log(t4.trimEnd());//removes whitspace from ending of the string
+
+
+        //padstart() and padend()
+        let t5 = "5";
+        console.log(t5.padStart(4, "0"));//0005
+        console.log(t5.padEnd(4, "x"));//5xxx
+
+        //repeat():-repeats the string according to given count number in bracket
+        let t6 = "jay ";
+        console.log(t6.repeat(3));
+
+
+        /*replace()
+             synatx :
+                     string.repeat("oldvalue","newvalue"); 
+                     
+            ->By default, the replace() method replaces only the first match
+            ->To replace all matches, use a regular expression with a /g flag (global match).
+
+            ->the replace() method is case sensitive. Writing KHATIK (with upper-case) will not work.
+            the replace() method is case sensitive. Writing MICROSOFT (with upper-case) will not work.      
+            */
+        let t7 = "jay khatik";
+        console.log(t7.replace("khatik", "kumar"));
+
+        let t8 = "KhaTik jay";
+        console.log(t8.replace(/khatik/i, "kk"));
+
+        let t9 = "khatik khatik jay";
+        console.log(t9.replace(/khatik/g, "hello"))
+
+
+        /*
+        split()
+        :->The split() method is a string method used to convert a string into an array by breaking it at a specified separator.
+        */
+        let t10 = "khatik jay vasantbhai";
+        console.log(t10.split(""));
+        console.log(t10.split(","));
+        console.log(t10.split(" "));
+
+
+
+    </script>
+    <script>
+        /*
+        Main String Search Methods
+
+            ● indexOf()
+            ● lastIndexOf()
+            ● includes()
+            ● startsWith()
+            ● endsWith()
+            ● search()
+            ● match()
+            ● matchAll() (Advanced)
+
+        */
+
+        /*
+        indexOf()
+        ->Returns the first index position of a specified value.
+        ->If not found → returns -1.
+        ->Syntax:
+                string.indexOf(searchValue, startPosition)
+        ->in below example when i write the serchvalue 'a' then it finds the 'a' and give me first index where it finds but 
+          when i give the stratposition the it serach from that position to end of string. 
+        */
+        let t11 = "jaykumar";
+        console.log(t11.indexOf('a'));//1
+        console.log(t11.indexOf('a', 5));//6
+
+
+        /*
+        lastIndexOf()
+        ->Returns the last occurrence index of a value.
+        */
+        console.log(t11.lastIndexOf('a'));
+
+
+        /*
+        includes()
+        ->The includes() method returns true if a string contains a specified value.
+        ->Returns true or false.
+        ->Syntax:
+                  string.includes(searchValue, startPosition)
+        */
+        let t12 = "JavaScript is powerful";
+
+        console.log(t12.includes("Script")); // true
+        console.log(t12.includes("Script", 8)); // false
+        console.log(t12.includes("script")); // false (case-sensitive)
+
+        /*
+        startsWith()
+        ->The startsWith() method returns true if a string begins with a specified value.
+        ->Otherwise it returns false.
+        */
+        let t13 = "hello jay";
+        console.log(t13.startsWith('hello'));//true
+        console.log(t13.startsWith('jay'));//false
+        console.log(t13.startsWith('hello', 1));//false/beacuse this string not  start from 1 index it starts from 0 index.
+        console.log(t13.startsWith('jay', 6));//true/because in this string start from that 6 index.
+
+        /*
+        endsWith()
+        ->The endsWith() method returns true if a string ends with a specified value.
+        ->Otherwise it returns false:
+        */
+        let t14 = "hello jay";
+        console.log(t14.endsWith('hello'));//false
+        console.log(t14.endsWith('jay'));//true
+        console.log(t14.endsWith('hello', 5));//true/beacsuse the ending index is 5 and the hello ends on 5 so its true
+        console.log(t14.endsWith('jay', 6));//false/because the ending index is 6 and the jay ends on 9 index
+
+
+        /*
+        search()
+        ->The search() method searches a string for a string (or a regular expression) and returns the position of the match.
+        ->The search() method cannot take a second start position argument.
+        */
+        let t15 = 'hello world';
+        console.log(t15.search('hello'));
+
+
+        /*
+        match()
+        ->The match() method returns an array containing the results of matching a string against a string (or a regular expression).
+        */
+        let t16 = "The rain in SPAIN stays mainly in the plain";
+        console.log(t16.match(/ain/g));
+
+
+        /*
+        matchAll()
+        ->Returns all matches as an iterator (used with regex + global flag).
+        */
+
+        let str = "hello JS JS JS JS";
+
+        let matches = str.matchAll(/JS/g);
+
+        for (let match of matches) {
+            console.log(match);
+        }
+    </script>
+</body>
+
+</html>

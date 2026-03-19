@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array with Multiple Concepts</title>
+</head>
+
+<body>
+    <ul id="fruits"></ul>
+    <script>
+        /*Array with Functions
+        ->receive an array as a parameter
+        ->return an array
+        ->modify an array
+        */
+
+        //simple
+        function takeFruits(fruit) {
+            console.log(fruit)
+        }
+        let fruits = ["apple", "mango", "orange"]
+        takeFruits(fruits)
+
+        //processing array inside function
+        function doubleNumber(arr) {
+            let res = []
+            for (let i = 0; i < arr.length; i++) {
+                res.push(arr[i] * 2);
+            }
+            return res;
+        }
+        let n1 = [2, 5, 8, 9, 10];
+        console.log(doubleNumber(n1));
+
+        //returning an array
+        function returnArray() {
+            let users = ["jay", "rahul"]
+            return users
+        }
+        console.log(returnArray())
+
+
+
+        /*
+        Arrays with Loops :-
+        ->Arrays are usually processed using loops.
+        */
+        let students = ["Hardik", "Jay", "Rahul"];
+        for (let i = 0; i < students.length; i++) {
+            console.log(students[i])
+        }
+
+        //for..of
+        let fruits1 = ["apple", "banana", "mango"];
+
+        for (let fruit of fruits1) {
+            console.log(fruit);
+        }
+
+        //forEach loop
+        let fruits2 = ["apple", "banana", "mango"];
+
+        fruits2.forEach(function (item, index, arr) {
+            console.log(index, item, arr);
+        });
+
+
+
+        /*
+        Arrays with Callback Functions :-
+        ->Many array methods use callbacks.
+        ->A callback is a function passed inside another function.
+        ->Example methods:map,reduce,filter,forEach,find
+        */
+
+        /*
+        Array with object :-
+        ->Real applications uses arrays of object
+        */
+        const user = [
+            { name: "Rajesh", position: "Mern_Stack", experience: 8 },
+            { name: "Prashant", position: "Frontend", experience: 6 },
+            { name: "Pooja", position: "Softskills", experience: 2 }
+        ]
+        console.log(user[0].name)
+        console.log(user[2])
+
+        for (let i = 0; i < user.length; i++) {
+            console.log(user[i])
+        }
+
+        user.forEach((user1) => {
+            console.log(user1.name, user1.position)
+        })
+
+        let res = user.filter((pos) => {
+            return pos.position === "Softskills"
+        })
+        console.log(res)
+
+        let newRes = user
+            .filter((year) => { return year.experience > 6 })
+            .map((names) => { return names })
+
+        console.log(newRes)
+
+        /*
+        Arrays with Higher Order Functions :-
+        ->A Higher Order Function is a function that:takes another function as argument and also retuns a function
+        ->Array methods like map, filter, reduce are higher order.
+        */
+
+        /*
+        Arrays with Destructuring :-
+        ->Destructuring extracts values easily.
+        ->in destructuring the rest element always in last ,we can't add in the middle of any array
+        ->In Destructuring we also skip values like this (a1,,...a2)
+        */
+        let f1 = ["apple", "banana", "pineapple", "watermelon"];
+        //    let [d1,...d2,d3]=f1;//it gives error because we put the rest element in the middle
+        let [d1, d2, ...d3] = f1
+        let [a1, , ...a2] = f1//here we skip the value ("banana")
+        console.log(d1);
+        console.log(d2)
+        console.log(d3)
+        console.log(a1)
+        console.log(a2)
+
+
+        /*
+        Arrays with Spread Operator :-
+        ->Spread expands arrays.
+        */
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+
+        let combined = [...arr1, ...arr2];
+
+        console.log(combined);
+
+        //we can copy the array in single element using spread operatror
+        let numbers = [10, 20, 30];
+
+        let copy = [...numbers];
+
+        console.log(copy);
+
+        /*
+        Arrays with Rest Operator :-
+        ->Rest collects multiple values into array.
+        */
+        function sum(...numbers) {
+            let total = 0;
+            for (let num of numbers) {
+                total = total + num
+            }
+            console.log(total)
+
+        }
+        sum(20, 40, 50, 100);
+
+        /*
+        Arrays with Closures:-
+        -> A closure happens when a function remembers its outer variables.
+        */
+        function counter() {
+            let ar = [];
+            return function (value) {
+                ar.push(value);
+                console.log(ar)
+            }
+        }
+        let add = counter();
+        add(10)
+        add(20)
+        add(20)
+
+
+        /*
+        Arrays with DOM :-
+        ->Arrays are used to display dynamic data on webpage.
+        */
+        let f2 = ["apple", "grapes", "coconut"]
+        let resFruits = document.getElementById("fruits");
+        f2.forEach((fruit) => {
+            let li = document.createElement("li")
+            li.innerText = fruit;
+            resFruits.appendChild(li);
+        })
+
+        /*
+        Arrays with APIs :-
+        ->When we fetch data from APIs, we get arrays of objects.
+       
+       
+       [
+        {id:1,name:"John"},
+        {id:2,name:"Jane"}
+        ]//here it is data
+
+
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res=>res.json())
+        .then(data=>{
+
+        let names = data.map(user=>user.name);
+
+        console.log(names);
+
+        })
+       
+        */
+
+
+    </script>
+
+</body>
+
+</html>

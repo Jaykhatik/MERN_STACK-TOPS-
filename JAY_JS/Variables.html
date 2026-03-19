@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Variables</title>
+</head>
+
+<body>
+    <!-- 
+    => Variables in JavaScript act as containers for storing data values. You declare them using the keywords let, 
+       const, or var. 
+    => Modern JavaScript development primarily uses let and const due to their improved scoping rules
+    -->
+    <!-- 
+    Naming Rules
+        Variable names (identifiers) must follow these rules: 
+           -> Must begin with a letter, an underscore (_), or a dollar sign ($).
+           -> Cannot start with a number.
+           -> Can contain letters, digits, underscores, and dollar signs after the first character.
+           -> Are case-sensitive (age and Age are different variables).
+           -> Cannot use reserved JavaScript keywords (like function, let, return).
+           -> The conventional best practice is to use camelCase (e.g., firstName).
+    -->
+    <p id="sum"></p>
+    <script>
+        var camelCase = "lowercase word, then uppercase";
+        var dinner2Go = "pizza";
+        var I_AM_HUNGRY = true;
+        var _Hello_ = "what a nice greeting"
+        var $_$ = "money eyes";
+
+        const price1 = 10,
+        price_2 = 20 //value of const cannot be redeclared and reassigned
+        let total = price1 + price_2 //the value of let can be reassigned but not redeclared
+        document.getElementById('sum').innerHTML = "sum of two numbers are:" + total;
+    </script>
+
+
+    <!-- 
+            TYPES:
+
+            =>1) var
+                > var is global scope.
+                > it is redeclared and reassigned
+
+            =>2) let
+                > let is blocked scope.
+                > it cannot be  redeclared and but is is reassigned
+
+            =>3) const
+                > const is also blocked scope.
+                > it cannot be redeclared and neither reassigned
+
+    -->
+
+</body>
+
+</html>

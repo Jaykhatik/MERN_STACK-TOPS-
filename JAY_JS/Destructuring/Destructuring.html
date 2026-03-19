@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        What is Destructuring? :-
+        ->Destructuring means extracting values from arrays or objects into separate variables easily.
+        ->So destructuring reduces code and improves readability.
+        */
+        let arr = [2, 3, 4, 5];
+        let [n1, n2, n3, n4] = arr;
+        console.log(n1, n2, n3, n4)
+
+        //    Array Destructuring :-
+        let fruits = ["apple", "banana", "mango"];
+
+        let [a, b, c] = fruits;
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        //skipping values
+        let [first, , third] = fruits;
+
+        console.log(first);
+        console.log(third);
+
+
+        //Swapping Variables
+        let num1 = 10;
+        let num2 = 20;
+
+        [num1, num2] = [num2, num1];
+
+        console.log(num1, num2);
+
+        //Default Values :- If a value is missing, you can assign default value.
+        let arr1 = ["apple"];
+
+        let [a1, b1 = "banana"] = arr1;
+
+        console.log(a1);
+        console.log(b1);
+
+        //Rest Operator with Array Destructuring
+        let numbers = [1, 2, 3, 4, 5];
+
+        let [f1, f2, ...rest] = numbers;
+
+        console.log(f1);
+        console.log(f2);
+        console.log(rest);
+
+        //nested rray destructuring
+        let company = ["microsoft", "google", "infosys", ["TCS", "deloitte"]]
+        let [co1, co2, co3, co4] = company;
+
+        console.log(co1, co2, co3, co4)//here the co4 is also array
+
+        let [coSub1, coSub2] = co4;
+        console.log(coSub1, coSub2);//1st way
+
+        let [z1, z2, z3, [z4, z5]] = company
+        console.log(z1, z2, z3, z4, z5)//2nd way
+        //Object Destructuring :- Object destructuring extracts values based on property names.
+        let user = {
+            name: "Jay",
+            age: 22,
+            city: "Ahmedabad"
+        }
+
+        let { name, age, city } = user;
+
+        console.log(name, age, city);
+
+        let { name: firstname } = user;//here we also change the property name of object using destructuring
+        console.log(firstname)
+
+        let { age: userage, country = "india" } = user;//here we also add default value in object using destucturing
+        console.log(userage, country)
+
+
+        //Nested Destructuring :- When objects contain objects inside them.
+        let u1 = {
+            name: "Jay",
+            address: {
+                c1: "Ahmedabad",
+                state: "Gujarat"
+            }
+        }
+        let { address: { c1, state } } = u1;
+
+        console.log(c1);
+        console.log(state);
+
+        //Destructuring in Function Parameters
+        let u2 = {
+            name: "rahul",
+            age: 22
+        }
+
+        function printUser({ name, age }) {
+            console.log(name, age);
+        }
+
+        printUser(u2);
+
+        //Destructuring with map()
+        let u3 = [
+            { name: "Jay", age: 22 },
+            { name: "Rahul", age: 25 }
+        ]
+
+        u3.map(({ name, age }) => {
+            console.log(name, age);
+        });
+
+    </script>
+</body>
+
+</html>

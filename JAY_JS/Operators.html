@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators of JS</title>
+</head>
+
+<body>
+    <!-- 
+    Definition :- Operators are symbols that perform operations on values (operands).
+                    let sum = 10 + 5;  // + is operator and 10,5 are operands
+
+
+    🔹 Types of Operators in JavaScript
+
+            ● Arithmetic Operators
+            ● Assignment Operators
+            ● Comparison Operators
+            ● Logical Operators
+            ● Unary Operators
+            ● Increment / Decrement
+            ● Ternary Operator
+            ● Type Operators
+            ● Bitwise Operators
+            ● String Operators
+            ● Spread & Rest Operators
+    -->
+
+    <script>
+        //Arithmetic
+        let a = 10;
+        let b = 3;
+
+        console.log(a + b);  // 13
+        console.log(a - b);  // 7
+        console.log(a * b);  // 30
+        console.log(a / b);  // 3.33
+        console.log(a % b);  // 1
+        console.log(a ** b); // 10*10*10=1000(it's called exponent)
+
+
+        //Assignment
+
+        /*
+
+        | Operator | Meaning    |
+        | -------- | ---------- |
+        | +=       | x = x + y  |
+        | -=       | x = x - y  |
+        | *=       | x = x * y  |
+        | /=       | x = x / y  |
+        | %=       | x = x % y  |
+        | **=      | x = x ** y |
+
+        */
+        let x = 10;//Basic assignment
+        x += 5;  // 15(Compound assignment)
+        x *= 2;  // 30
+
+
+        //Comparison :- Used to compare two values and return Boolean.
+        /*
+        | Operator | Meaning                     |
+        | -------- | --------------------------- |
+        | ==       | Equal (value only)          |
+        | ===      | Strict equal (value + type) |
+        | !=       | Not equal                   |
+        | !==      | Strict not equal            |
+        | >        | Greater                     |
+        | <        | Less                        |
+        | >=       | Greater or equal            |
+        | <=       | Less or equal               |
+        */
+        let age = 18;
+
+        if (age > 18) {
+            console.log("adult");
+        }
+        else if (age === 18) {
+            console.log("just turned adult");
+        }
+        else {
+            console.log("minor");
+        }
+
+
+        //Logical :- Used to combine multiple conditions.
+        /*
+            | Operator | Meaning |
+            | -------- | ------- |
+            | &&       | AND     |
+            | ||       | OR      |
+            | !        | NOT     |
+        */
+
+        let ageOfUser = 21;
+        let isAdmin = false;
+        if (age >= 18 && !isAdmin) {
+            console.log("sahi hai")
+        }
+        else {
+            console.log("sahi nahi hai");
+        }
+
+
+
+        //Ternary :- Short form of if-else.
+        //synatx : condition ? value1 : value2;
+
+        let ageOfPerson = 18;
+        let result = ageOfPerson >= 18 ? "Adult" : "Minor";
+        console.log(result);
+    </script>
+</body>
+
+</html>

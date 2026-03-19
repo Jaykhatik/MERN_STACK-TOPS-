@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JS</title>
+</head>
+
+<body>
+    <p id="view1"></p>
+    <script>
+
+        //simple
+        function greet() {
+            document.write("hello world" + "<br><br>");
+        }
+        greet();//here we call the function
+
+
+
+        //with return 
+
+        function ret() {
+            return "this is return function" + "<br><br>";
+        }
+        let res = ret();
+        document.write(res);
+
+
+        //calling function many times
+        function many() {
+            return "hiiiii";
+        }
+        let a = many();
+        document.write(a + "<br>");
+        let b = many();
+        document.write(b + "<br>");
+        let c = many();
+        document.write(c + "<br><br>");
+
+
+        //with parameter and arguments
+
+        function arpa(a, b, c) {
+            return a + (b * c);
+        }
+        let cal = arpa(2, 4, 5);
+        document.write(cal);
+
+        //display result using id in html
+
+        function display() {
+            return "Good Evening";
+        }
+        let result1 = display();
+        document.getElementById('view1').innerHTML = result1;
+
+        //function with thiskeyword
+         const user={
+            name:"jay",
+            greet:function(){
+                console.log(this.name)
+            }
+         }
+         user.greet();
+
+
+         //anonymous function
+         //a function without a name.
+         setTimeout(function(){
+            console.log("executed after the time");
+         },2000);
+
+         //IIFE
+
+         (function(){
+            console.log("i run now");
+         })();
+
+         //default parameters
+
+         function greetDefault(name="jay"){
+            console.log(`hello ${name}`);
+         }
+         greetDefault("chetan");
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional statements</title>
+</head>
+
+<body>
+    <!-- 
+        Definition :- 
+                ➜Conditional Statements allow us to perform different actions for different conditions.
+                ➜Conditional statements include:
+                        ● if
+                        ● if...else
+                        ● if...else if...else
+                        ● switch
+                        ● ternary (? :)
+    
+    -->
+    <p id="tarikh"></p>
+
+    <script>
+        //if :- Use if to specify a code block to be executed, if a specified condition is true.Basically it only shows the true part only.
+
+        let age = 19;
+        if (age >= 18) {
+            console.log("adult");
+        }
+
+
+        //if..else :- it checks the full condition whether the condition is true or false.
+        let value = 19;
+        if (value === "19") {
+            console.log("value is correct");
+        }
+        else {
+            console.log("value is incorrect");
+        }
+
+
+        //if..else if..else(if..else ladder) :- Basically the if..else ladder check the condition line wise if the first is true then it not check the other.
+
+        let time = 10;
+        if (time <= 10) {
+            console.log("good morning");
+        }
+        else if (time < 15) {
+            console.log("afternoon");
+        }
+        else {
+            console.log("good night");
+        }
+
+
+        //Ternary
+
+        let val = 19;
+        let res = (val >= 18) ? "true" : "false";
+        console.log(res)
+
+        //switch :- Based on a condition, switch selects one or more code blocks to be executed.
+
+        let day;
+        let date = new Date().getDay();
+        switch (date) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;
+            default:
+                break;
+        }
+        document.getElementById('tarikh').innerHTML = day;
+
+
+        //nested if
+        let val1=20
+        if(val1>=10){
+            if(val1==="20"){
+                console.log("result is correct")
+            }
+            else{
+                console.log("result is incorrect")
+            }
+        }
+        else{
+            console.log("invalid condition")
+        }
+    </script>
+</body>
+
+</html>

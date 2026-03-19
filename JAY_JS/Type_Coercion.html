@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type-Coercion</title>
+</head>
+
+<body>
+    <!-- 
+    ★ Type Coercion :
+        ➜ Type Coercion is the automatic conversion of one data type into another by JavaScript during an operation.
+        ➜ There are three types of type conversion:
+            ● String Coercion
+            ● Number Coercion
+            ● Boolean Coercion
+            ● Equality Coercion (==)
+            ● Strict Equality (===)
+            ● Logical Operator Coercion
+            ● Object to Primitive Coercion
+            ● Unary Plus Coercion
+            ● BigInt Coercion
+    -->
+
+    <script>
+        /*
+        String Coercion :- 
+        ➜String coercion happens when JavaScript automatically converts a value into a string during an operation.
+        ➜ You do NOT use String() manually,JavaScript converts the value internally.
+        */
+
+        // ==========================================================
+        // 1️⃣ + OPERATOR STRING COERCION
+        // ==========================================================
+
+        /*
+        Rule :- If one operand is string → the other operand becomes string.
+        Evaluation happens LEFT → RIGHT.
+        */
+
+
+        console.log("10" + 5);              // "105"
+        console.log(typeof ("10" + 5));      // string
+
+        console.log(5 + "10");              // "510"
+        console.log(typeof (5 + "10"));      // string
+
+        console.log("5" + 2 + 3);           // "523"
+        console.log(typeof ("5" + 2 + 3));   // string
+
+        console.log(5 + 2 + "3");           // "73"
+        console.log(typeof (5 + 2 + "3"));   // string
+
+
+
+        // ==========================================================
+        // 2️⃣ BOOLEAN → STRING COERCION
+        // ==========================================================
+        console.log("Value: " + true);
+        console.log(typeof ("Value: " + true));   // string
+
+        console.log("Value: " + false);
+        console.log(typeof ("Value: " + false));  // string
+
+        // ==========================================================
+        // 3️⃣ NULL → STRING COERCION
+        // ==========================================================
+
+        console.log("Data: " + null);
+        console.log(typeof ("Data: " + null));    // string
+
+
+
+
+        // ==========================================================
+        // 4️⃣ UNDEFINED → STRING COERCION
+        // ==========================================================
+
+        console.log("Data: " + undefined);
+        console.log(typeof ("Data: " + undefined));  // string
+
+
+
+
+        // ==========================================================
+        // 5️⃣ ARRAY → STRING COERCION
+        // ==========================================================
+
+        console.log("Numbers: " + [1, 2, 3]);
+        console.log(typeof ("Numbers: " + [1, 2, 3]));  // string
+
+        console.log("" + [10, 20]);
+        console.log(typeof ("" + [10, 20]));           // string
+
+
+
+
+
+        // ==========================================================
+        // 6️⃣ OBJECT → STRING COERCION
+        // ==========================================================
+        console.log("User: " + { name: "Jay" });
+        console.log(typeof ("User: " + { name: "Jay" }));  // string    
+
+
+        // ==========================================================
+        // 7️⃣ EMPTY STRING TRICK
+        // ==========================================================
+        console.log("" + 100);
+        console.log(typeof ("" + 100));     // string
+
+        console.log("" + true);
+        console.log(typeof ("" + true));    // string
+
+
+
+
+
+        // ==========================================================
+        // 8️⃣ TEMPLATE LITERALS STRING COERCION
+        // ==========================================================
+
+        let age = 25;
+
+        console.log(`Age is ${age}`);
+        console.log(typeof (`Age is ${age}`));   // string
+
+
+
+        // ==========================================================
+        // 9️⃣ STRING METHODS CAUSING COERCION
+        // ==========================================================
+
+        console.log("Hello " + 123);     // "Hello 123"
+        console.log("Result: " + (5 > 3)); // "Result: true"
+
+        /*
+        Whenever JavaScript expects a string,
+        it converts the value automatically.
+        */
+    </script>
+    <script>
+
+        /*
+        Number Coercion (Implicit) :-
+        
+        ➜ Number coercion happens when JavaScript automatically converts a value into a number.
+        ➜ We do NOT use Number() manually.
+        ➜ JavaScript internally converts the value when required.
+        
+        ➜ Number coercion mainly occurs in:
+        
+           ● Arithmetic operators (-, *, /, %, **)
+           ● Unary + operator
+           ● Comparison operators
+           ● Mathematical operations
+           ● Bitwise operators
+           ● Relational comparisons (<, >, <=, >=)
+        
+        ➜ Important Rule:
+        If operation expects NUMBER → JavaScript converts the value into number.
+        */
+
+
+        // ==========================================================
+        // 1️⃣ ARITHMETIC OPERATORS (-, *, /, %)
+        // ==========================================================
+
+        console.log("10" - 5);           // 5
+        console.log(typeof ("10" - 5));   // number
+
+        console.log("10" * 2);
+        console.log(typeof ("10" * 2));   // number
+
+        console.log("20" / 2);
+        console.log(typeof ("20" / 2));   // number
+
+        console.log("10" % 3);
+        console.log(typeof ("10" % 3));   // number
+
+
+        /*
+        Unlike + operator,
+        -, *, /, % ALWAYS convert values to number.
+        */
+
+
+        // ==========================================================
+        // 2️⃣ BOOLEAN → NUMBER COERCION
+        // ==========================================================
+
+        console.log(true + 1);
+        console.log(typeof (true + 1));   // number
+
+        console.log(false + 5);
+        console.log(typeof (false + 5));  // number
+
+        /*
+        true  → 1
+        false → 0
+        */
+
+
+        // ==========================================================
+        // 3️⃣ NULL → NUMBER COERCION
+        // ==========================================================
+
+        console.log(null + 5);
+        console.log(typeof (null + 5));  // number
+
+        /*
+        null → 0
+        0 + 5 = 5
+        */
+
+
+        // ==========================================================
+        // 4️⃣ UNDEFINED → NUMBER COERCION
+        // ==========================================================
+
+        console.log(undefined + 5);
+        console.log(typeof (undefined + 5));  // number
+
+        /*
+        undefined → NaN
+        NaN + 5 → NaN
+        Type of NaN is number
+        */
+
+
+        // ==========================================================
+        // 5️⃣ EMPTY STRING → NUMBER COERCION
+        // ==========================================================
+
+        console.log("" - 5);
+        console.log(typeof ("" - 5));   // number
+
+        /*
+        "" → 0
+        0 - 5 = -5
+        */
+
+
+        // ==========================================================
+        // 6️⃣ STRING NUMBER → NUMBER COERCION
+        // ==========================================================
+
+        console.log("100" - "50");
+        console.log(typeof ("100" - "50"));   // number
+
+        /*
+        Both strings converted to numbers
+        100 - 50 = 50
+        */
+
+
+        // ==========================================================
+        // 7️⃣ INVALID STRING → NaN
+        // ==========================================================
+
+        console.log("abc" - 5);
+        console.log(typeof ("abc" - 5));   // number
+
+        /*
+        "abc" → NaN
+        NaN - 5 → NaN
+        Type is still number
+        */
+
+
+        // ==========================================================
+        // 8️⃣ UNARY + OPERATOR (IMPORTANT)
+        // ==========================================================
+
+        console.log(+"100");
+        console.log(typeof (+"100"));   // number
+
+        console.log(+true);
+        console.log(typeof (+true));    // number
+
+        console.log(+false);
+        console.log(typeof (+false));   // number
+
+        console.log(+null);
+        console.log(typeof (+null));    // number
+
+        console.log(+undefined);
+        console.log(typeof (+undefined));  // number (NaN)
+
+        /*
+        Unary + forces number conversion.
+        Very important for interviews.
+        */
+
+
+        // ==========================================================
+        // 9️⃣ COMPARISON OPERATORS (<, >, <=, >=)
+        // ==========================================================
+
+        console.log("10" > 5);
+        console.log(typeof ("10" > 5));   // boolean
+
+        /*
+        "10" → 10
+        10 > 5 → true
+        Result is boolean
+        But internal conversion was number
+        */
+
+
+        // ==========================================================
+        // 🔟 BITWISE OPERATORS
+        // ==========================================================
+
+        console.log("5" & 1);
+        console.log(typeof ("5" & 1));   // number
+
+        /*
+        Bitwise operators convert values to number.
+        */
+
+
+        // ==========================================================
+        // ⚠ SPECIAL CASES
+        // ==========================================================
+
+        console.log([] - 1);
+        console.log(typeof ([] - 1));   // number
+
+        /*
+        [] → ""
+        "" → 0
+        0 - 1 = -1
+        */
+
+        console.log([10] - 5);
+        console.log(typeof ([10] - 5));  // number
+
+        /*
+        [10] → "10"
+        "10" → 10
+        10 - 5 = 5
+        */
+
+
+        // ==========================================================
+        // 💡 IMPORTANT CONVERSIONS TABLE
+        // ==========================================================
+
+        /*
+        Value        → Number Conversion
+        
+        true         → 1
+        false        → 0
+        null         → 0
+        ""           → 0
+        "123"        → 123
+        "abc"        → NaN
+        undefined    → NaN
+        []           → 0
+        [10]         → 10
+        [1,2]        → NaN
+        {}           → NaN
+        */
+
+
+        // ==========================================================
+        // 🔥 FINAL GOLDEN RULE
+        // ==========================================================
+
+        /*
+        If operator expects NUMBER (except +),
+        JavaScript converts the value into number automatically.
+        
+        -, *, /, %, <, > always force number coercion.
+        
+        */
+
+    </script>
+    <script>
+
+        /*
+        Boolean Coercion (Implicit) :-
+
+        ➜ Boolean coercion happens when JavaScript automatically converts a value into true or false.
+        ➜ We do NOT use Boolean() manually.
+        ➜ JavaScript internally converts values when a boolean is required.
+
+        ➜ Boolean coercion mainly occurs in:
+
+        ● if condition
+        ● while / for loops
+        ● Logical operators (&&, ||, !)
+        ● Ternary operator
+        ● Comparison operations
+        ● Double NOT (!!)
+
+        ➜ Important Rule:
+        When JavaScript expects TRUE or FALSE,
+        it converts the value based on Truthy and Falsy rules.
+        */
+
+
+        // ==========================================================
+        // 1️⃣ FALSY VALUES (VERY IMPORTANT)
+        // ==========================================================
+
+        /*
+        There are ONLY 7 falsy values in JavaScript:
+
+        false
+        0
+        -0
+        0n (BigInt zero)
+        "" (empty string)
+        null
+        undefined
+        NaN
+        */
+
+        if(0){
+            console.log("Runs");
+        } else {
+            console.log("0 is Falsy");  // Runs
+        }
+
+        if(""){
+            console.log("Runs");
+        } else {
+            console.log("Empty string is Falsy"); // Runs
+        }
+
+
+
+        // ==========================================================
+        // 2️⃣ TRUTHY VALUES
+        // ==========================================================
+
+        /*
+        Everything except the 7 falsy values is TRUTHY.
+        */
+
+        if("Hello"){
+            console.log("Non-empty string is Truthy"); // Runs
+        }
+
+        if(100){
+            console.log("Non-zero number is Truthy"); // Runs
+        }
+
+        if([]){
+            console.log("Empty array is Truthy"); // Runs
+        }
+
+        if({}){
+            console.log("Empty object is Truthy"); // Runs
+        }
+
+
+
+        // ==========================================================
+        // 3️⃣ BOOLEAN COERCION IN LOGICAL OPERATORS
+        // ==========================================================
+
+        console.log(true && false); 
+        console.log(typeof(true && false));  // boolean
+
+        console.log(5 && 10);  
+        /*
+        5 is truthy → returns 10
+        Logical operators return values, not always boolean
+        */
+
+        console.log(0 || "Hello");
+        /*
+        0 is falsy → returns "Hello"
+        */
+
+        console.log(!"Hello");
+        console.log(typeof(!"Hello"));   // boolean
+
+        /*
+        ! converts value into boolean and then reverses it.
+        */
+
+
+
+        // ==========================================================
+        // 4️⃣ DOUBLE NOT (!!) TRICK
+        // ==========================================================
+
+        console.log(!!"Hello");    
+        console.log(typeof(!!"Hello"));  // boolean (true)
+
+        console.log(!!0);          
+        console.log(typeof(!!0));       // boolean (false)
+
+        /*
+        !! forces boolean coercion.
+        Very common interview trick.
+        */
+
+
+
+        // ==========================================================
+        // 5️⃣ BOOLEAN COERCION IN COMPARISON
+        // ==========================================================
+
+        console.log(Boolean(5 > 2));   // true (comparison returns boolean)
+        console.log(typeof(5 > 2));    // boolean
+
+        /*
+        Comparison operators always return boolean.
+        */
+
+
+
+        // ==========================================================
+        // 6️⃣ BOOLEAN COERCION WITH NULL & UNDEFINED
+        // ==========================================================
+
+        if(null){
+            console.log("Runs");
+        } else {
+            console.log("null is Falsy");  // Runs
+        }
+
+        if(undefined){
+            console.log("Runs");
+        } else {
+            console.log("undefined is Falsy"); // Runs
+        }
+
+
+
+        // ==========================================================
+        // 7️⃣ SPECIAL CASES (INTERVIEW IMPORTANT)
+        // ==========================================================
+
+        console.log(Boolean("false"));  
+        // true (because non-empty string is truthy)
+
+        console.log(Boolean("0"));      
+        // true (string "0" is truthy)
+
+        console.log(Boolean([]));       
+        // true
+
+        console.log(Boolean({}));       
+        // true
+
+        console.log(Boolean(NaN));      
+        // false
+
+
+
+        // ==========================================================
+        // 💡 TRUTHY vs FALSY QUICK TABLE
+        // ==========================================================
+
+        /*
+        Value        → Boolean Result
+
+        false        → false
+        0            → false
+        ""           → false
+        null         → false
+        undefined    → false
+        NaN          → false
+
+        "0"          → true
+        "false"      → true
+        []           → true
+        {}           → true
+        1            → true
+        -1           → true
+        */
+
+
+
+        // ==========================================================
+        // 🔥 FINAL GOLDEN RULE
+        // ==========================================================
+
+        /*
+        JavaScript converts values to boolean
+        based on Truthy and Falsy rules.
+
+        Only 7 values are falsy.
+        Everything else is truthy.
+
+        */
+
+    </script>
+    <script>
+
+        /*
+        Equality Coercion (==) :-
+
+        ➜ The == operator is called Loose Equality.
+        ➜ It compares two values AFTER performing type coercion.
+        ➜ If types are different → JavaScript converts one value to match the other.
+
+        ➜ Important:
+        == checks VALUE after conversion
+        === checks VALUE + TYPE (No coercion)
+
+        */
+
+
+        // ==========================================================
+        // 1️⃣ SAME TYPE COMPARISON
+        // ==========================================================
+
+        console.log(10 == 10);           
+        console.log(typeof(10 == 10));    // boolean (true)
+
+        console.log("5" == "5");         
+        console.log(typeof("5" == "5"));  // boolean (true)
+
+        /*
+        If both values have same type,
+        no coercion happens.
+        */
+
+
+
+        // ==========================================================
+        // 2️⃣ NUMBER == STRING
+        // ==========================================================
+
+        console.log(10 == "10");      
+        console.log(typeof(10 == "10"));  // boolean (true)
+
+        /*
+        Rule:
+        If one is number and one is string →
+        String converts to number.
+        */
+
+        console.log(5 == "5");        // true
+        console.log(5 == "10");       // false
+
+
+
+        // ==========================================================
+        // 3️⃣ BOOLEAN == ANYTHING
+        // ==========================================================
+
+        console.log(true == 1);     
+        console.log(typeof(true == 1));   // boolean (true)
+
+        console.log(false == 0);    
+        console.log(typeof(false == 0));  // boolean (true)
+
+        /*
+        Rule:
+        Boolean converts to number.
+        true  → 1
+        false → 0
+        */
+
+        console.log(true == "1");   // true
+        console.log(false == "0");  // true
+
+
+
+        // ==========================================================
+        // 4️⃣ NULL & UNDEFINED SPECIAL RULE
+        // ==========================================================
+
+        console.log(null == undefined);  
+        console.log(typeof(null == undefined));  // boolean (true)
+
+        /*
+        Special Rule:
+        null and undefined are equal ONLY to each other.
+        */
+
+        console.log(null == 0);        // false
+        console.log(undefined == 0);   // false
+        console.log(null == false);    // false
+
+
+
+        // ==========================================================
+        // 5️⃣ OBJECT == PRIMITIVE
+        // ==========================================================
+
+        console.log([10] == 10);      
+        console.log(typeof([10] == 10));  // boolean (true)
+
+        /*
+        Rule:
+        Object converts to primitive (toString/valueOf)
+        [10] → "10"
+        "10" → 10
+        10 == 10 → true
+        */
+
+        console.log([] == 0);    // true
+        /*
+        [] → ""
+        "" → 0
+        0 == 0 → true
+        */
+
+        console.log({} == {});   // false
+        /*
+        Different object references
+        Objects compare by reference.
+        */
+
+
+
+        // ==========================================================
+        // 6️⃣ VERY CONFUSING INTERVIEW CASES
+        // ==========================================================
+
+        console.log("" == 0);     
+        /*
+        "" → 0
+        0 == 0 → true
+        */
+
+        console.log(" " == 0);    
+        /*
+        " " → 0 (space converts to 0)
+        true
+        */
+
+        console.log(false == ""); 
+        /*
+        false → 0
+        "" → 0
+        0 == 0 → true
+        */
+
+        console.log(false == []); 
+        /*
+        false → 0
+        [] → ""
+        "" → 0
+        0 == 0 → true
+        */
+
+        console.log([] == ![]);   
+        /*
+        ![] → false
+        false → 0
+        [] → ""
+        "" → 0
+        0 == 0 → true
+        */
+
+
+
+        // ==========================================================
+        // 7️⃣ STRICT EQUALITY (NO COERCION)
+        // ==========================================================
+
+        console.log(10 === "10");   
+        console.log(typeof(10 === "10"));  // boolean (false)
+
+        /*
+        === checks:
+        1. Value
+        2. Type
+
+        No type conversion happens.
+        */
+
+
+
+        // ==========================================================
+        // 💡 COMPLETE COERCION ORDER (SIMPLIFIED)
+        // ==========================================================
+
+        /*
+        When using == :
+
+        Step 1 → If types same → compare directly
+        Step 2 → If number & string → string → number
+        Step 3 → If boolean → convert boolean → number
+        Step 4 → If object → convert object → primitive
+        Step 5 → null == undefined → true
+        Step 6 → Otherwise → false
+        */
+
+
+
+        // ==========================================================
+        // 🔥 FINAL GOLDEN RULE
+        // ==========================================================
+
+        /*
+        == allows type coercion
+        === does NOT allow type coercion
+
+        For safety in real projects,
+        always prefer ===
+
+        Use == only when you fully understand coercion rules.
+        */
+
+    </script>
+     <script>
+
+        /*
+        Strict Equality (===) :-
+
+        ➜ The === operator is called Strict Equality.
+        ➜ It compares BOTH value AND type.
+        ➜ NO type coercion happens.
+        ➜ If types are different → result is ALWAYS false.
+
+        ➜ Important Difference:
+        ==  → allows type coercion
+        === → does NOT allow type coercion
+
+        */
+
+
+        // ==========================================================
+        // 1️⃣ SAME TYPE COMPARISON
+        // ==========================================================
+
+        console.log(10 === 10);         
+        console.log(typeof(10 === 10));   // boolean (true)
+
+        console.log("5" === "5");       
+        console.log(typeof("5" === "5")); // boolean (true)
+
+        console.log(true === true);     
+        console.log(typeof(true === true)); // boolean (true)
+
+        /*
+        If both type and value are same → true
+        */
+
+
+
+        // ==========================================================
+        // 2️⃣ DIFFERENT TYPE COMPARISON
+        // ==========================================================
+
+        console.log(10 === "10");       
+        console.log(typeof(10 === "10"));  // boolean (false)
+
+        console.log(true === 1);        
+        console.log(typeof(true === 1));   // boolean (false)
+
+        console.log(false === 0);       
+        console.log(typeof(false === 0));  // boolean (false)
+
+        /*
+        Types are different → no conversion → false
+        */
+
+
+
+        // ==========================================================
+        // 3️⃣ NULL & UNDEFINED
+        // ==========================================================
+
+        console.log(null === undefined);   
+        console.log(typeof(null === undefined)); // boolean (false)
+
+        /*
+        In strict equality:
+        null and undefined are NOT equal
+        (because types are different)
+        */
+
+
+
+        // ==========================================================
+        // 4️⃣ OBJECT COMPARISON (REFERENCE CHECK)
+        // ==========================================================
+
+        let obj1 = {name: "Jay"};
+        let obj2 = {name: "Jay"};
+        let obj3 = obj1;
+
+        console.log(obj1 === obj2);   
+        console.log(typeof(obj1 === obj2));  // boolean (false)
+
+        /*
+        Different memory reference
+        Even if values look same
+        */
+
+        console.log(obj1 === obj3);   
+        console.log(typeof(obj1 === obj3));  // boolean (true)
+
+        /*
+        Same reference → true
+        */
+
+
+
+        // ==========================================================
+        // 5️⃣ ARRAY COMPARISON
+        // ==========================================================
+
+
+        let arr1 = [1,2];
+        let arr2 = arr1;
+
+        console.log(arr1 === arr2);   
+        console.log(typeof(arr1 === arr2));  // boolean (true)
+
+
+
+        // ==========================================================
+        // 6️⃣ SPECIAL CASE (NaN)
+        // ==========================================================
+
+        console.log(NaN === NaN);      
+        console.log(typeof(NaN === NaN));   // boolean (false)
+
+        /*
+        NaN is NOT equal to itself.
+        To check NaN use:
+        Number.isNaN(value)
+        */
+
+
+
+        // ==========================================================
+        // 7️⃣ +0 and -0
+        // ==========================================================
+
+        console.log(+0 === -0);      
+        console.log(typeof(+0 === -0));   // boolean (true)
+
+        /*
+        +0 and -0 are considered equal in ===
+        */
+
+
+
+        // ==========================================================
+        // 💡 STRICT EQUALITY RULE SUMMARY
+        // ==========================================================
+
+        /*
+        === follows this algorithm:
+
+        Step 1 → Check type
+        Step 2 → If types different → return false
+        Step 3 → If primitive → compare values
+        Step 4 → If object → compare memory reference
+        Step 5 → Special case: NaN !== NaN
+        */
+
+
+        // ==========================================================
+        // 🔥 FINAL GOLDEN RULE
+        // ==========================================================
+
+        /*
+        === checks VALUE + TYPE
+        No coercion happens.
+
+        For real projects and interviews,
+        always prefer === over ==
+
+        */
+
+    </script>
+    <script>
+
+        /*
+        Logical Operator Coercion :-
+
+        ➜ Logical operators automatically perform Boolean coercion.
+        ➜ But IMPORTANT: They do NOT always return boolean.
+        ➜ They return one of the original values.
+
+        Logical Operators:
+        ● &&  (AND)
+        ● ||  (OR)
+        ● !   (NOT)
+
+        Rule:
+        JavaScript checks truthy and falsy values.
+        */
+
+
+        // ==========================================================
+        // 1️⃣ AND (&&) OPERATOR
+        // ==========================================================
+
+        /*
+        Rule:
+        Returns first FALSY value.
+        If no falsy value → returns last value.
+        */
+
+        console.log(true && true);      
+        console.log(typeof(true && true));   // boolean (true)
+
+        console.log(5 && 10);           
+        console.log(typeof(5 && 10));    // number
+
+        /*
+        5 is truthy
+        10 is truthy
+        Returns last value → 10
+        */
+
+        console.log(0 && 10);           
+        console.log(typeof(0 && 10));    // number
+
+        /*
+        0 is falsy
+        Returns 0 immediately
+        */
+
+
+        // ==========================================================
+        // 2️⃣ OR (||) OPERATOR
+        // ==========================================================
+
+        /*
+        Rule:
+        Returns first TRUTHY value.
+        If no truthy value → returns last value.
+        */
+
+        console.log(0 || 100);          
+        console.log(typeof(0 || 100));   // number
+
+        /*
+        0 is falsy
+        100 is truthy
+        Returns 100
+        */
+
+        console.log("" || "Hello");     
+        console.log(typeof("" || "Hello"));   // string
+
+        console.log(false || null);     
+        console.log(typeof(false || null));   // object (null type bug)
+
+
+
+        // ==========================================================
+        // 3️⃣ NOT (!) OPERATOR
+        // ==========================================================
+
+        /*
+        ! converts value into boolean and reverses it.
+        */
+
+        console.log(!"Hello");          
+        console.log(typeof(!"Hello"));   // boolean
+
+        console.log(!0);                
+        console.log(typeof(!0));        // boolean
+
+        /*
+        "Hello" → true → !true → false
+        0 → false → !false → true
+        */
+
+
+        // ==========================================================
+        // 4️⃣ DOUBLE NOT (!!) TRICK
+        // ==========================================================
+
+        /*
+        !! forces Boolean conversion.
+        */
+
+        console.log(!!"Hello");         
+        console.log(typeof(!!"Hello"));  // boolean (true)
+
+        console.log(!!0);               
+        console.log(typeof(!!0));        // boolean (false)
+
+
+
+        // ==========================================================
+        // 🔥 FINAL RULE
+        // ==========================================================
+
+        /*
+        && → returns first falsy OR last value
+        || → returns first truthy OR last value
+        !  → always returns boolean
+
+        Logical operators use truthy/falsy coercion internally.
+        */
+
+    </script>
+    <script>
+
+        /*
+        Object to Primitive Coercion :-
+
+        ➜ When object is used with primitive operation,
+        JavaScript converts it to primitive value.
+
+        This happens in:
+        ● + operator
+        ● == comparison
+        ● Arithmetic operations
+        ● String concatenation
+
+        Conversion Order (Important):
+
+        Step 1 → Check Symbol.toPrimitive
+        Step 2 → Check valueOf()
+        Step 3 → Check toString()
+        */
+
+
+        // ==========================================================
+        // 1️⃣ OBJECT WITH + OPERATOR
+        // ==========================================================
+
+        console.log("Hello " + {name:"Jay"});  
+        console.log(typeof("Hello " + {name:"Jay"}));   // string
+
+        /*
+        Object → "[object Object]"
+        */
+
+
+        // ==========================================================
+        // 2️⃣ ARRAY TO PRIMITIVE
+        // ==========================================================
+
+        console.log([10] + 5);           
+        console.log(typeof([10] + 5));    // string
+
+        /*
+        [10] → "10"
+        "10" + 5 → "105"
+        */
+
+
+        // ==========================================================
+        // 3️⃣ OBJECT WITH ARITHMETIC
+        // ==========================================================
+
+        console.log([10] - 5);           
+        console.log(typeof([10] - 5));    // number
+
+        /*
+        [10] → "10"
+        "10" → 10
+        10 - 5 = 5
+        */
+
+
+        // ==========================================================
+        // 4️⃣ CUSTOM toString()
+        // ==========================================================
+
+        let o1 = {
+            toString() {
+                return "Custom String";
+            }
+        };
+
+        console.log("Value: " + o1);
+        console.log(typeof("Value: " + o1));   // string
+
+
+
+        // ==========================================================
+        // 5️⃣ CUSTOM valueOf()
+        // ==========================================================
+
+        let o2 = {
+            valueOf() {
+                return 50;
+            }
+        };
+
+        console.log(o2 + 20);
+        console.log(typeof(o2 + 20));   // number
+
+        /*
+        valueOf() used for numeric operations
+        */
+
+
+        // ==========================================================
+        // 6️⃣ Symbol.toPrimitive (Highest Priority)
+        // ==========================================================
+
+        let o3 = {
+            [Symbol.toPrimitive](hint) {
+                if (hint === "number") return 100;
+                if (hint === "string") return "One Hundred";
+                return 0;
+            }
+        };
+
+        console.log(o3 + 1);            
+        console.log(typeof(o3 + 1));    // number
+
+        console.log("Value: " + o3);    
+        console.log(typeof("Value: " + o3));  // string
+
+
+
+        // ==========================================================
+        // 🔥 FINAL RULE
+        // ==========================================================
+
+        /*
+        When object is used in primitive context:
+
+        1️⃣ Symbol.toPrimitive (highest priority)
+        2️⃣ valueOf()
+        3️⃣ toString()
+
+        Object must convert to primitive before operation.
+
+        */
+
+    </script>
+</body>
+
+</html>

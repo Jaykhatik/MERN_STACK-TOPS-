@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Flow</title>
+    <style>
+        body {
+            background-color: palevioletred;
+        }
+
+        #parent {
+            background-color: blue;
+            padding: 20px;
+            height: 200px;
+            text-align: center;
+        }
+
+        #child {
+            color: red;
+            background-color: black;
+            border: none;
+            margin-top: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    Event Flow : 
+    ->When an event happens in the browser (like clicking a button), the event does not directly run on that element only.
+    ->Instead, the browser follows a process called Event Flow.
+    ->Event Flow has 3 phases :
+        i)Capturing Phase
+        ii)Targeting Phase
+        iii)Bubbling Phase
+
+    ->syntax : addEventListener(event,function,useCapture);
+    ->here the default value of useCapture is false which means it follows the third phase which called event 
+      bubbling and if we write the useCapture value True then it follows the Event Capturing phase.
+    -->
+
+
+    <!-- 
+    Capturing Phase (Top → Bottom) :-
+    ->In this phase the event starts from the top of the DOM tree and travels downward until it reaches the target element.
+    ->Flow :
+             Document
+                ↓
+                HTML
+                ↓
+                Body
+                ↓
+                Parent
+                ↓
+                Button
+
+    ->This phase is called event capturing.
+    -->
+
+
+    <!-- 
+    Target Phase :-
+    ->This phase occurs when the event reaches the actual element that triggered the event.
+    -->
+
+
+    <!-- 
+    Bubbling Phase (Bottom → Top) :-
+    ->After reaching the target element, the event moves upward through the DOM tree.
+    ->Flow :
+                    Button
+                    ↓
+                    Parent
+                    ↓
+                    Body
+                    ↓
+                    HTML
+                    ↓
+                    Document
+    ->This is called event bubbling.
+    -->
+    <div id="parent">
+        <button id="child">click</button>
+    </div>
+    <script>
+        let d = document.getElementById('parent');
+        let b = document.getElementById("child")
+
+        // d.addEventListener("click", divClicked, true);
+        // b.addEventListener("click", buttonClicked, true);
+        // document.body.addEventListener("click", bodyClicked, true);
+        d.addEventListener("click", divClicked);
+        b.addEventListener("click", buttonClicked);
+        document.body.addEventListener("click", bodyClicked);
+
+        function bodyClicked() {
+            console.log("Body Clicked...........")
+        }
+
+        function divClicked(e) {
+            e.stopPropagation();//so here we used stopPropagation() so when we click button so the div cant move to thier parent element
+            console.log("Div Clicked...........")
+        }
+
+        function buttonClicked() {
+            console.log("Button Clicked...........")
+        }
+
+        /*
+        ->here when we do not provide the useCapture value that means it called event bubbling so it follows the botton to top(button->div->body).
+        ->when we  provide the useCapture value is True that means it called event Capturing so it follows the top to botton(body->div->button).
+        */
+
+        /*
+        IMPORTANT :
+        ->here the Event Propagation is also follow the flow but in this there are some controls so sometime
+          we want to stop the event from moving to parent elements.
+
+        ->so thats why we used the stopPropagation() method.But it runs the other parent click event also.
+        ->Basically Stops event bubbling.
+
+
+        ->and  so when we give propagation in div then it cant go to its parent but it runs its other event also.
+          so we want strict propagation then we use stopImmediatepropagation() so it stops the other events of parent also.
+        
+        */
+    </script>
+</body>
+
+</html>

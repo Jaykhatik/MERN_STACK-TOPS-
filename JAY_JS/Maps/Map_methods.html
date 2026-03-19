@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Map Methods</title>
+</head>
+
+<body>
+    <script>
+        // new Map() : You can create a map by passing an array to the new Map() constructor.
+        const person = new Map([["name", "Hardik"], ["age", 22], ["city", "rajkot"]]);
+        console.log(person)
+
+        //get() : You get the value of a key in a map with the get() method
+        console.log(person.get("name"));
+
+
+        //set() : You can add elements to a map with the set() method.
+        person.set("role", "python-developer");
+        console.log(person);
+        //The set() method can also be used to change existing map values:
+        person.set("role", "backend-developer")
+        console.log(person)
+
+
+        //size property
+        console.log(person.size);
+
+        //delete
+        person.delete("city");
+        console.log(person)
+
+        //has() : The has() method returns true if a key exists in a map:
+        console.log(person.has("name"));
+
+        //forEach()
+        person.forEach((value, key) => {
+            console.log(key + " " + value);
+        })
+
+        //entries() : returns an iterator object with the [key,values] in a map:
+        for(let x of person.entries()){
+            console.log(x)
+        }
+
+
+        //keys() : returns an iterator object with the keys in a map.
+         for(let x of person.keys()){
+            console.log(x)
+        }
+
+        //values() : returns an iterator object with the values in a map.
+        for(let x of person.values()){
+            console.log(x)
+        }
+
+        //clear
+        console.log(person.clear());
+    </script>
+</body>
+
+</html>

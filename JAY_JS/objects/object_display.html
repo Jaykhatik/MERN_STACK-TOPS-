@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Object in JS</title>
+</head>
+
+<body>
+    <script>
+        //display js object
+        const user = {
+            firstName: "jay",
+            lastName: "khatik",
+            city: "surat",
+            role: "Mern-stack Developer"
+        }
+
+        let result = user;
+        document.write(result)
+
+        //using for loop in above object
+        for (let x in user) {
+            console.log(user[x]);
+        }
+
+        //using Object.values()
+        //->Object.values() creates an array from the property values.
+        const newUser = Object.values(user);
+        console.log(newUser.toString());
+
+        //using Object.entries()
+        //->Object.entries() makes it simple to use objects in loops.
+
+        const fruits = { Bananas: 300, Oranges: 200, Apples: 500 };
+
+        for (let [fruit, value] of Object.entries(fruits)) {
+            console.log(fruit + " " + value);
+        }
+
+        //using JSON.stringify()
+        //->JavaScript objects can be converted to a string with JSON method JSON.stringify().
+        //->JSON.stringify() is included in JavaScript and supported in all browsers.
+
+        const person={
+            name:"Rahul kamat",
+            address:"vatva",
+            city:"ahmedabad",
+            age:21,
+            role:"frontend"
+        }
+        console.log(person)
+        console.log(JSON.stringify(person));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Search Methods</title>
+</head>
+
+<body>
+    <script>
+        //1)indexOf() : Finds first index of value
+        let arr = ["rahul", "jay", "kunal", "jay"];
+        console.log(arr.indexOf("jay"));//output is 1 because it gives the first index of value
+
+        //2)lastIndexOf() :  returns the position of the last occurrence of the specified element.
+        console.log(arr.lastIndexOf("jay"));//3
+
+        //3)include() : This allows us to check if an element is present in an array (including NaN, unlike indexOf).
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.includes("Mango"));//true
+        console.log(fruits.includes("banana"));//false because the b letter is small
+
+        //4)find() : returns the value of the first array element that passes a test function.(first matching element)
+        let numbers = [5, 10, 15, 20];
+
+        let result = numbers.find(function (num) {
+            return num > 12;
+        });
+
+        console.log(result);
+
+        //5)findIndex() : Returns index of first matching condition
+        let result1 = numbers.findIndex(function (num) {
+            return num > 12;
+        })
+        console.log(result1)
+
+        //6)some() : Checks if at least one element matches condition
+        let arr1 = [2, 4, 6, 7];
+
+        console.log(arr1.some(num => num % 2 !== 0));//true
+
+        //7)every() : Checks if ALL elements match condition
+        console.log(arr1.every(num => num % 2 == 0));//because the last element is odd
+
+
+    </script>
+</body>
+
+</html>

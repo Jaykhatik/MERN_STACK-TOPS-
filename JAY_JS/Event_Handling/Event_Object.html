@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object</title>
+</head>
+
+<body>
+    <!-- 
+    Event Object :-
+    ->An Event Object is an object automatically created by the browser whenever 
+     an event occurs. It contains all information about that event.
+    ->It contains information like:
+        which element triggered the event ,
+        mouse position ,
+        key pressed ,
+        event type ,
+        timestamp
+
+
+
+    How Event Object Works (Flow) :-
+        i)User performs an action(click, scroll, press key)
+        ii)Browser detects the action
+        iii)Browser creates an Event Object
+        iv)Browser passes that object to the event handler function
+
+        User Action → Browser → Event Object Created → Event Handler Receives Event
+
+
+    Syntax of Event Object :-
+        document.addEventListener("click", function(e){
+        console.log(e.target);
+        });
+           
+
+    Structure of Event Object :-
+    ->The event object contains many properties and methods.
+    ->Main Parts :
+          Event
+            ├── type
+            ├── target
+            ├── currentTarget
+            ├── timeStamp
+            ├── bubbles
+            ├── cancelable
+            ├── preventDefault() : Most imp(whole topic in new file)
+            ├── stopPropagation() :most imp(whole topic in new file)
+
+
+    -->
+    <div>
+        <button id="btn">property</button>
+    </div>
+    <script>
+        // Important Properties of Event Object
+
+        //1. type : Tells which event occurred
+        document.getElementById("btn").addEventListener("click", function (e) {
+            console.log(e.type);
+        });
+
+        //2.target : Returns the element that triggered the event
+        document.getElementById("btn").addEventListener("click", function (e) {
+            console.log(e.target);
+        });
+
+        //3.currentTarget : Returns the element on which event listener is attached
+        document.querySelector("div").addEventListener("click", function (e) {
+            console.log(e.target);
+            console.log(e.currentTarget);
+        });
+
+        //4. timeStamp : Returns time when event occurred
+        document.getElementById('btn').addEventListener("click", function (e) {
+            console.log(e.timeStamp);
+        });
+
+        //5.bubbles : Returns true if event bubbles
+          document.getElementById("btn").addEventListener("click", function (e) {
+            console.log(e.bubbles);
+        });
+
+        //6. cancelable : Checks if event can be cancelled
+         document.getElementById("btn").addEventListener("click", function (e) {
+            console.log(e.cancelable);
+        });
+
+    </script>
+</body>
+
+</html>

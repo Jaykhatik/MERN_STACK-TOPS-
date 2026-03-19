@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Time(Set)</title>
+</head>
+
+<body>
+    <!-- 
+    Set Date methods let you set date values (years, months, days, hours, minutes, seconds, milliseconds) for a Date Object.
+
+     | Method             | Description
+     =============================================================
+     | setDate()          | 	Set the day as a number (1-31)
+     | setFullYear()      | 	Set the year (yyyy)
+     | setHours()         | 	Set the hour (0-23)
+     | setMilliseconds()  | 	Set the milliseconds (0-999)
+     | setMinutes()       | 	Set the minutes (0-59)
+     | setMonth()         | 	Set the month (0-11)
+     | setSeconds()       | 	Set the seconds (0-59)
+     | setTime()          | 	Set the time (milliseconds since January 1, 1970)
+
+    -->
+    <script>
+        const dateNew = new Date();
+        document.write(dateNew + "<br>");
+
+        dateNew.setDate(15);
+        document.write(dateNew + "<br>");
+
+        dateNew.setMonth(10) + 1;
+        document.write(dateNew + "<br>");
+
+        dateNew.setFullYear(2028);
+        document.write(dateNew + "<br>");
+
+
+        dateNew.setHours(23);
+        document.write(dateNew + "<br>");
+
+        dateNew.setMinutes(23);
+        document.write(dateNew + "<br>");
+
+
+        dateNew.setSeconds(50);
+        document.write(dateNew + "<br>");
+    </script>
+
+</body>
+
+</html>

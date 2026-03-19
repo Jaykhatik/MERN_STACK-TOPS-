@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Time(Get)</title>
+</head>
+
+<body>
+
+    <!-- 
+    
+    Date Get Methods
+        | Method            |	Description
+        ============================================================
+        | getFullYear()     |	Get year as a four digit number (yyyy)
+        | getMonth()        |	Get month as a number (0-11)
+        | getDate()         |	Get day as a number (1-31)
+        | getDay()          |	Get weekday as a number (0-6)
+        | getHours()        |	Get hour (0-23)
+        | getMinutes()      |	Get minute (0-59)
+        | getSeconds()      |	Get second (0-59)
+        | getMilliseconds() |	Get millisecond (0-999)
+        | getTime()         |	Get time (milliseconds since January 1, 1970)
+-->
+
+
+
+
+
+    <h2 id="test1"></h2>
+    <h1 id='test'></h1>
+
+    <script>
+        //creating date object using "new Date()"
+        let newDate = new Date();//current date
+        console.log(newDate)
+        let customDate = new Date("2004-09-21");//for creating the custome date
+        console.log(customDate)
+
+        //custom way to declare date
+
+        let newcustomDate = new Date();
+        console.log(newcustomDate)
+        console.log(newcustomDate.getDate());
+        console.log(newcustomDate.getDay())
+
+        console.log((newcustomDate.getDate()) + "/" + (newcustomDate.getMonth() + 1) + "/" + (newcustomDate.getFullYear()));
+
+        console.log((newcustomDate.getHours()) + ":" + (newcustomDate.getMinutes()) + ":" + (newcustomDate.getSeconds()));
+
+
+
+
+
+        //watch using setInterval
+        setInterval(watch, '1000')
+        function watch() {
+            var today = new Date();
+            var time = (today.getHours()) + ":" + (today.getMinutes()) + ":" + (today.getSeconds());
+            document.getElementById('test').innerHTML = time;
+        }
+
+
+        //happy birthday task using setTimeout
+        setTimeout(happy, 5000)
+        function happy() {
+            let birthday = document.getElementById('test1').innerHTML = "Happy Birthay!!!!!!!!!!!";
+        }
+
+        //Get a date as a string, using locale conventions:
+        const d = new Date();
+
+        let text3 = d.toLocaleString();
+        document.write(text3 + "<br>")
+
+        let text2 = d.toLocaleDateString();
+        document.write(text2 + "<br>");
+
+        let text4 = d.toLocaleTimeString();
+        document.write(text4 + "</br>");
+
+        //Get a date as a string, using the ISO standard:
+
+        let text5 = d.toISOString();
+        document.write(text5 + "</br>");
+
+        //Get a date as a string, formatted as a JSON date:
+
+        let text6 = d.toJSON();
+        document.write(text6 + "</br>");
+    </script>
+</body>
+
+</html>

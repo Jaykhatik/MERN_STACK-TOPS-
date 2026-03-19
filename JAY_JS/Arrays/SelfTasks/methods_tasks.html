@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let fruits = ["apple", "banana", "mango", "orange"];
+        fruits.push("pineapple")
+        console.log(fruits)
+        fruits.pop()
+        console.log(fruits)
+        fruits.shift()
+        console.log(fruits);
+        fruits.unshift("apple")
+        console.log(fruits)
+        console.log(fruits.includes("mango"))
+        console.log(fruits.indexOf("orange"))
+        console.log(fruits.toString(","))
+        console.log(fruits[2])
+        console.log(fruits.join("*"))
+        delete fruits[1]
+        console.log(fruits)
+        console.log(Array.isArray(fruits))
+        console.log(fruits.length)
+
+        const newFruits = ["kiwi", "dragonFruit"];
+        console.log(fruits.concat(newFruits))
+
+
+
+
+        /*
+        
+        Must-Know Array Problems
+        1 Reverse array
+        2 Find duplicates
+        3 Remove duplicates
+        4 Find max & min
+        5 Flatten array
+        6 Group objects
+        7 Count frequency
+        8 Sort objects
+        9 Find second largest
+        10 Chunk array
+        11 Intersection of arrays
+        12 Difference of arrays
+        13 Sum of nested array
+        14 Rotate array
+        15 Find missing number
+        */
+
+        //reverse array
+        let a1 = [1, 2, 6, 7, 8, 9];
+        // let r1 = a1.reverse()
+        // console.log(r1)
+
+
+        let reversed = [];
+
+        for (let i = a1.length - 1; i >= 0; i--) {
+            reversed.push(a1[i]);
+        }
+
+        console.log(reversed);
+
+        //find duplicates
+        let a2 = [1, 2, 3, 2, 2, 3, 1, 4];
+        let r2 = a2.filter((item, index) => {
+            return a2.indexOf(item) !== index && a2.lastIndexOf(item) === index;
+        })
+        console.log(r2)
+
+        //remove duplicates
+        let a3 = [1, 2, 3, 2, 2, 1, 4];
+        let r3 = a3.filter((value, index, array) => {
+            return array.indexOf(value) === index;
+        })
+        console.log(r3)
+
+        //find max and min
+        let r4 = Math.max(...a3)
+        console.log(r4)
+
+        let r5 = Math.min(...a3)
+        console.log(r5)
+
+
+        let number = [2, 3, 1, 4]
+        let r6 = number.sort((a, b) => {
+            return a - b;
+        })
+        console.log(r6[0])//min=1
+        let r7 = number.sort((a, b) => {
+            return b - a;
+        })
+        console.log(r7[0])//max=4
+
+        //flatten array
+        //Convert nested arrays to single array.
+        const a4 = [1, 2, [3, 4, 5], [6, 7]]
+        let r8 = a4.flat()
+        console.log(r8)
+
+
+
+        //Group Objects :-
+        let users = [
+            { name: "Jay", role: "admin" },
+            { name: "Rahul", role: "user" },
+            { name: "Prashant", role: "admin" }
+        ];
+
+        let r9 = users
+            .filter((roles) => { return roles.role === "admin" })
+            .map((names) => { return names.name })
+        console.log(r9)//this is simple way only for one condition
+
+        let r10 = users.reduce((a, b) => {
+            if (!a[b.role]) {
+                a[b.role] = [];
+            }
+            a[b.role].push(b);
+            return a
+        }, {});
+        console.log(r10)
+
+        //count the frequency
+        let f1 = ["apple", "banana", "apple", "mango", "banana"];
+
+        let result = f1.reduce((acc, fruit) => {
+
+            if (acc[fruit]) {
+                acc[fruit]++
+            }
+            else {
+                acc[fruit] = 1
+            }
+
+            return acc
+
+        }, {});
+
+        console.log(result);
+
+        //Sort Objects
+        let u1 = [
+            { name: "Jay", age: 22 },
+            { name: "Rahul", age: 30 },
+            { name: "Prashant", age: 25 }
+        ];
+        u1.sort((a, b) => a.age - b.age);
+        console.log(u1);
+
+        //find second largest
+
+        let n1 = [2, 11, 6, 2, 7, 9];
+        let r11 = n1.sort((a, b) => {
+            return b - a;
+        })
+        console.log(r11)
+        console.log(r11[1])
+
+
+        //chunk arrays :-Split array into smaller arrays.
+        let n2 = [4, 6, 9, 9, 3, 2, 2];//chunk size=2
+        function chunk(n2, size) {
+            let result = [];
+
+            for (let i = 0; i < n2.length; i += size) {
+                result.push(n2.slice(i, i + size));
+            }
+
+            return result;
+        }
+        console.log(chunk(n2, 2))
+
+        //Intersection of Arrays
+        let a = [1, 4, 3];
+        let b = [2, 3, 4];
+
+
+        let r12 = a.filter(x => b.includes(x));
+
+        console.log(r12);
+
+        //Difference of Arrays
+        let r13 = a.filter((x) => {
+            return !b.includes(x)
+        })
+        console.log(r13)
+
+        //rotate array
+        let a10 = [2, 5, 8, 9, 10]
+        console.log(a10)
+        let r14 = a10.shift()
+        console.log(a10)
+        a10.push(r14)
+        console.log(a10)
+
+
+        //Find Missing Number
+        let arr = [1, 2, 4, 5];
+
+        let n = arr.length + 1;
+        console.log(n)
+
+        let expected = n * (n + 1) / 2;
+
+        let actual = arr.reduce((a, b) => a + b, 0);
+
+        console.log(expected - actual);
+
+    </script>
+</body>
+
+</html>

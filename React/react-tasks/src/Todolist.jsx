@@ -18,14 +18,14 @@ function Todolist() {
         setTodos(newTodos);
     };
 
-     const deleteTodo = (index) => {
-    const newTodos = todos.filter((_, i) => i !== index);
-    setTodos(newTodos);
-  };
+    const deleteTodo = (index) => {
+        const newTodos = todos.filter((_, i) => i !== index);
+        setTodos(newTodos);
+    };
     return (
 
         <>
-            <h3>Todo</h3>
+            <h3 style={{background:"gray", textAlign:"center", padding:"10px", color:"whitesmoke", borderRadius:"20px"}}>Todo list :</h3>
 
             <input
                 value={task}
@@ -45,7 +45,7 @@ function Todolist() {
                     <span style={{ textDecoration: todo.done ? "line-through" : "none" }}>
                         {todo.text}
                     </span>
-                     <button onClick={() => deleteTodo(index)}>Delete</button>
+                    <button onClick={() => deleteTodo(index)}>Delete</button>
                 </div>
             ))}
         </>

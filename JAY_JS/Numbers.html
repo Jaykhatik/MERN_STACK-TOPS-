@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers in JS</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        NUMBERS IN JAVASCRIPT :-
+        
+        ➜ Number is a primitive data type.
+        ➜ JavaScript uses 64-bit floating point format (IEEE 754).
+        ➜ It can store:
+            ● Integers
+            ● Floating point numbers
+            ● Infinity
+            ● NaN
+        
+        Example:
+        */
+
+        let a = 10;        // integer
+        let b = 10.5;      // float
+        let c = -100;
+
+        document.write(typeof a);  // number
+
+        //another way for declare numbers
+        const numberOne = new Number(400);
+        console.log(numberOne)
+        //IMPORTANT NUMBER PROPERTIES (STATIC)
+
+
+        console.log(Number.MAX_VALUE);        // Largest possible number
+        console.log(Number.MIN_VALUE);        // Smallest positive number
+        console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+        console.log(Number.MIN_SAFE_INTEGER);
+        console.log(Number.POSITIVE_INFINITY);
+        console.log(Number.NEGATIVE_INFINITY);
+        console.log(Number.NaN);
+
+
+        // NUMBER CONVERSION METHODS
+
+        console.log(Number("100"));     // 100
+        console.log(Number(true));      // 1
+        console.log(Number("abc"));     // NaN
+
+        console.log(parseInt("100px"));      // 100
+        console.log(parseInt("101", 2));     // 5 (binary to decimal)
+
+        console.log(parseFloat("10.99px"));  // 10.99
+
+
+
+
+        // NUMBER CHECKING METHODS
+
+        console.log(Number.isNaN(NaN));          // true
+        console.log(Number.isNaN("NaN"));        // false
+
+        console.log(Number.isFinite(100));       // true
+        console.log(Number.isFinite(Infinity));  // false
+
+        console.log(Number.isInteger(10));       // true
+        console.log(Number.isInteger(10.5));     // false
+
+        console.log(Number.isSafeInteger(100));  // true
+
+
+
+        //NUMBER FORMATTING METHODS 
+
+        let num = 123.456;
+
+        /*
+        toFixed(digits)
+        ➜ Rounds number to fixed decimal places
+        ➜ Returns STRING
+        */
+
+        console.log(num.toFixed(2));   // "123.46"
+
+
+        /*
+        toPrecision(digits)
+        ➜ Controls total digits
+        ➜ Returns STRING
+        */
+
+        console.log(num.toPrecision(4));  // "123.5"
+
+
+        /*
+        toString(radix)
+        ➜ Converts number to string
+        ➜ Can change base
+        */
+
+        let n = 255;
+        console.log(n.toString());    // "255"
+        console.log(n.toString(16));  // "ff"
+
+
+        /*
+        toExponential(digits)
+        ➜ Converts to exponential notation
+        */
+
+        console.log(n.toExponential(2));  // "2.55e+2"
+
+
+        /*
+        valueOf()
+        ➜ Returns primitive value from Number object
+        */
+
+        let objNum = new Number(10);
+        console.log(objNum.valueOf());   // 10
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selection Methods</title>
+</head>
+
+<body>
+    <p id="msg">JavaScript message</p>
+    <p id="msg">JavaScript message1</p>
+    <input type="radio" name="language" value="React">React
+    <input type="radio" name="language" value="Node">Node
+
+
+    <h1>Heading1</h1>
+    <h1>Heading2</h1>
+    <h1>Heading3</h1>
+    <h1>Heading4</h1>
+
+    <h2 class="cls">class headind1</h2>
+    <h2 class="cls">class headind2</h2>
+
+    <div id="c1">
+        <div class="cls">constainer class heading</div>
+    </div>
+
+
+    <h3 class="qh1">heading of queryselector1</h3>
+    <h3 class="qh1">heading of queryselector2</h3>
+
+    <script>
+        //Selecting elements is the first step of DOM manipulation.
+
+        //i)getElementById() :- Selects an element using its id.
+
+        let message = document.getElementById('msg');
+        console.log(message);
+        //->And if there is same name id tgen it prefer the first only.
+        let message1 = document.getElementById('msg');
+        console.log(message1)
+        //->and if there is No id provided then the result is null
+
+
+
+        //ii)getElementByName() :- selects an element using their name
+        let btn = document.getElementsByName('language');
+        console.log(btn)
+
+
+
+        //iii)getElementsByTagName() :- This  method accepts a tagname and returns a live HTML collectuon of elements.
+        let headings = document.getElementsByTagName("h1");
+        console.log(headings)
+
+
+
+        //iv)getElementsByClassName() :- Selects elements by class name.Returns HTML collection(array-like object).
+        let msgCls = document.getElementsByClassName('cls');
+        console.log(msgCls)
+        console.log(msgCls[0])
+        console.log(msgCls[1])
+        //->But if the same classname under some particular div then we access tgat using that div.
+        let container = document.getElementById('c1');
+        let contMsg = c1.getElementsByClassName('cls')
+        console.log(contMsg)
+
+
+        //v)querySelector() :- Returns the first matching element using CSS selectors.
+        //vi)querySelectorAll() :- Selects all elements matching selector.
+
+        let qsel = document.querySelector('.qh1');
+        console.log(qsel)
+
+        let qsel1 = document.querySelectorAll('.qh1');
+        console.log(qsel1)
+        //Note :- Here in querySelector and querySelectorAll we also use id and tagnames by there signs like for id ('#idname') and for particular div(div ,h1);
+
+    </script>
+</body>
+
+</html>

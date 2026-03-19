@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods</title>
+</head>
+
+<body>
+    <script>
+        /*
+        ->When a function is stored inside object → it is called a method.
+        ->Methods are actions that can be performed on objects.
+        ->Methods are functions stored as property values.
+        */
+
+        //simple object method
+
+        const user = {
+            firstName: "khatik",
+            lastName: "jay",
+            age: 21,
+            city: "surat",
+            country: "india",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;//here the this keyword refere to an object which is user
+            }
+        };
+        console.log(user.fullName())
+
+
+        //add method in above method
+
+        user.address = function () {
+            return this.city + " " + this.country;
+        }
+        console.log(user.address())
+
+    </script>
+</body>
+
+</html>

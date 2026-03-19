@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>
+
+<body>
+    <!-- 
+    Mouse Events :- Mouse events occur when the user interacts with the mouse on an element.
+    | Event         | Description                          |
+    | ------------- | ------------------------------------ |
+    | `click`       | Triggered when an element is clicked |
+    | `dblclick`    | Triggered when double-clicked        |
+    | `mousedown`   | Mouse button pressed                 |
+    | `mouseup`     | Mouse button released                |
+    | `mouseover`   | Mouse enters an element              |
+    | `mouseout`    | Mouse leaves an element              |
+    | `mousemove`   | Mouse moves over element             |
+    | `contextmenu` | Right-click event                    |
+    -->
+    <button id="btn1">Click event</button>
+    <button id="btn2">Double Click</button>
+    <button id="box">Press Mouse</button>
+    <button id="box1">Release Mouse</button>
+    <div id="box2" style="width:200px;height:100px;background:lightblue;">
+        Hover on me
+    </div>
+    <div id="box3" style="width:200px;height:100px;background:lightgreen;">
+        Move mouse out
+    </div>
+    <div id="box4" style="width:300px;height:200px;background:lightgray;"></div>
+    <div id="box5">Right Click Here</div>
+
+    <script>
+
+        //click : The click event occurs when the user presses and releases the mouse button on an element.
+        document.getElementById("btn1").addEventListener("click", function () {
+            console.log("Button clicked");
+        });
+
+        //dblclick : The dblclick event occurs when the user double clicks an element.
+        document.getElementById("btn2").addEventListener("dblclick", function () {
+            console.log("Button double clicked");
+        });
+
+        //mousedown : The mousedown event occurs when the mouse button is pressed down on an element.
+        document.getElementById("box").addEventListener("mousedown", function () {
+            console.log("Mouse button pressed");
+        });
+        //mouseup : The mouseup event occurs when the mouse button is released.
+        document.getElementById("box1").addEventListener("mouseup", function () {
+            console.log("Mouse button released");
+        });
+
+        //mouseover : The mouseover event occurs when the mouse pointer enters an element.
+        document.getElementById("box2").addEventListener("mouseover", function () {
+            console.log("Mouse entered element");
+        });
+
+        //mouseout : The mouseout event occurs when the mouse pointer leaves an element.
+        document.getElementById("box3").addEventListener("mouseout", function () {
+            console.log("Mouse left element");
+        });
+
+        //mousemove : The mousemove event occurs whenever the mouse pointer moves inside an element.
+        document.getElementById("box4").addEventListener("mousemove", function (e) {
+            console.log("X:", e.clientX, "Y:", e.clientY);
+        });
+
+        //contextmenu : The contextmenu event occurs when the user right-clicks an element.
+        document.getElementById("box5").addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+            console.log("Right click detected");
+        });
+
+    </script>
+</body>
+
+</html>

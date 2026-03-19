@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Blocks In JS</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Code Blocks:-
+            ->it defines with {}
+            ->A code block or block statement is a group of statements enclosed within curly braces { }.
+            ->Code blocks allows for multiple statements to be treated as a single unit.
+        */
+
+        function greet() {
+            let a = 20;
+            let b = 20;
+            const sum = a + b;
+            console.log(sum)
+            console.log("hello i'm greet function in code block");
+        }
+        greet()
+
+        //code blocks are essential for conditional statements like if,switch etc.
+
+        const hours = new Date().getHours();
+        let greeting;
+        if (hours < 18) {
+            console.log("good day");
+        }
+        else {
+            console.log("good evening");
+        }
+
+        //code blocks are also used in loops
+        for (let i = 0; i < 10; i++) {
+            console.log(i)
+        }
+
+
+        let a = 1;
+        while (a < 10) {
+            console.log("hello : " + a);
+            a++;
+        }
+    </script>
+</body>
+
+</html>

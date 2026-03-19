@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Travesing</title>
+</head>
+
+<body>
+    <div class="p1">
+        <p class="c1">Traversing Element 1</p>
+        <p>Traversing Element 2</p>
+        <p class="c3">Traversing Element 3</p>
+        <p>Traversing Element 4</p>
+    </div>
+    <script>
+
+
+        //Traversing Elements :- Traversing Elements means how to get the parentElement ,chidElement and the siblingElement.
+
+        //Parent Element :
+        let bacha = document.querySelector(".c1");
+        console.log(bacha.parentNode);
+
+        //child Element
+        let papa = document.querySelector('.p1')
+        console.log(papa.childNodes);
+        console.log(papa.firstElementChild);
+        console.log(papa.lastElementChild);
+
+        //siblings elements
+
+        let sib = document.querySelector('.c3');
+        console.log(sib.previousElementSibling);
+        console.log(sib.nextElementSibling)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+What can js do?
+->Basically js is lightweight,interpreted programmin language which makes our websites or webpages 
+  more interactive and dynamic.
+->It can update and change both HTML and CSS.
+
+
+Js in <head>,<body> and using External file:
+
+->In body, JavaScript code is inserted between <script> and </script> tags.
+->Example:
+        <script>
+        document.getElementById("demo").innerHTML = "My First JavaScript";
+        </script>
+
+->in head section ,js code is inserted using same as body.
+->Example:
+        <head>
+        <script>
+        function myFunction() {
+        document.getElementById("demo").innerHTML = "Paragraph changed.";
+        }
+        </script>
+        </head>
+
+->External JavaScripts can also be placed in external files
+->myScript.js
+        function myFunction() {
+        document.getElementById("demo").innerHTML = "Paragraph changed.";
+        }
+->To use an external script, put the name of the script file in the src (source) attribute of a <script> tag:
+    <script src="myScript.js"></script>

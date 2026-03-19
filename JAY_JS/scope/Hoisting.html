@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting in JS</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Definition : -
+            ->Hoisting is JavaScript's behavior of moving declarations to the top of their scope before code execution.
+            ->in simple words,JavaScript reads the code first and allocates memory for variables and functions before executing the code.
+            ->Only declaration are hoisted,not the initialization
+        */
+
+        console.log(a);
+        var a = 10;//undefined
+
+
+        /*
+        ->because js converts internally like
+            var a;
+            console.log(a);
+            a = 10;
+        ->So the variable declaration is hoisted but not the value.
+            */
+    </script>
+    <script>
+        /*
+        why hoisting happens?
+        ->js executes the code in 2 phases.
+        ->i)creation phase :-
+                ● variable declared/var->undefined
+                ● function->stored fully in memory
+                ● let&const->allocated but uninitialized(TDZ)
+
+        ->ii)execution phase :-
+                ● code runs line by line 
+                ● values are assigned
+        */
+    </script>
+
+    <script>
+        /*
+        Hoisting with var :-
+
+        ->hoisted
+        ->initialized with undefined
+
+        */
+        console.log(x);//undefined
+
+        var x = 50;
+
+
+
+
+        /*
+        Hioisting with let&const:-
+
+        ->let and const are hoisted but not initialized.
+        ->so they give error beacuse in memory phase they are uninitialized and go to TDZ.
+        ->TDZ is the time between variable hoisting and initialization where the variable cannot be accessed.
+        
+        */
+       console.log(y);
+       let y=10;
+       const b=20;
+
+
+
+       //hoisting with function :- they are fully hoisted
+       greet()
+       function greet(){
+        console.log("hello im function in hoisting")
+       }
+
+       /*
+       because during the memory creation phase js stores function name,and entire function body.
+       so internally js already knows greet()=>function(){console.log("hello")}
+       so thats why it is fully hoisted.
+
+       but the function expression are not fully hoisted.because it stored inside variable.so that why it gives undefined.
+       and also arrow fuctions are function expression thats why they also not hoisted fully.
+       */
+
+    </script>
+</body>
+
+</html>

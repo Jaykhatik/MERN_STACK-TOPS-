@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strict Mode In JS</title>
+</head>
+
+<body>
+    <!-- 
+    Definition :-
+        ->Strict Mode is a special mode in JavaScript that makes the language behave in a stricter 
+          and safer way by eliminating silent errors and restricting unsafe features.
+        ->Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+    -->
+
+    <script>
+        "use strict";
+        //x=3.14;
+        //console.log(x)//it gives error because we work under the strict mode so we have to declare the variable properly
+
+        let a = 10;
+        console.log(a)
+
+
+        /*
+        there are foolowing ways to declare the strict mode in code.
+        1)Global strict mode : Applies to the entire script.
+        2)Function Strict Mode : Applies only inside a function.
+        */
+        function newStrict() {
+            "use strict";
+            let x = 1000;
+            console.log(x);
+        }
+        newStrict()
+    </script>
+</body>
+
+</html>

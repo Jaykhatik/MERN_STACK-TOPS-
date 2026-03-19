@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Hnadling</title>
+</head>
+
+<body>
+    <!-- 
+    -> Event Handling is the process of executing JavaScript code when a specific event occurs in the browser.
+    -> An event is any action that happens in the browser.
+    -> Examples of Events:
+
+            | Event     | Description                |
+            | --------- | -------------------------- |
+            | click     | When user clicks element   |
+            | mouseover | When mouse enters element  |
+            | mouseout  | When mouse leaves element  |
+            | keydown   | When key is pressed        |
+            | keyup     | When key is released       |
+            | submit    | When form is submitted     |
+            | change    | When input value changes   |
+            | load      | When page finishes loading |
+
+    -->
+    <button onclick="hello()">simple way</button>
+    <button onclick="alert('Button Clicked')">Inline Event Handling</button><!--inline event handling -->
+    <button id="btn">DOM Event handling</button>
+    <button id="btn4">addEventListener</button>
+
+    <script>
+        function hello() {
+            alert("helloooo user!!!!!!!!");
+        }
+
+
+
+        /*
+        Types of Event Handling Methods
+            -> There are 3 ways to handle events.
+                ● Inline Event Handling
+                ● DOM Event handling
+                ● addEventListener()
+            */
+    </script>
+    <script>
+        //DOM Event Handling :- Attach event using JavaScript DOM property.
+        let btn = document.getElementById("btn");
+
+        btn.onclick = function () {
+            alert("Button clicked with Dom event handling");
+
+        }
+    </script>
+
+    <script>
+        //addEventListener()  :- addEventListener() attaches an event handler to an element without overwriting existing handlers.
+        let btn1 = document.getElementById("btn4");
+
+        btn1.addEventListener("click", function () {
+            alert("Button Clicked using addEventListener");
+        });
+    </script>
+</body>
+
+</html>

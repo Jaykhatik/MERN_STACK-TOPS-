@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript WeakSet Object</title>
+</head>
+<body>
+    <script>
+        /*
+        WeakSet Object:
+            ->A JavaScript WeakSet is a collection of values where the values must be objects.
+            ->A WeakSet holds weak references to its values.
+        */
+        
+        let mySet=new WeakSet();
+        let myObj={name:"jay",city:"suart"};
+        mySet.add(myObj)
+        console.log(mySet);
+    </script>
+    <script>
+        let mySet1=new WeakSet();
+        let myObj1={name:"jay",city:"suart"};
+        mySet.add(myObj1)
+
+        myObj1=null;//here we make the object null so the sets value goes to garbage collection
+        console.log(mySet1)
+    </script>
+</body>
+</html>

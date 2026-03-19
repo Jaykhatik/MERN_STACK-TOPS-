@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow_Function in JS</title>
+</head>
+
+<body>
+    <!-- 
+    Definition :- 
+    ➜ An Arrow Function is a shorter way to write function expressions in JavaScript using the => syntax.
+    -->
+    <script>
+
+        //basic arrow function
+
+        const add = () => {
+            return "This is simple aroow function";
+        }
+        console.log(add());
+
+        //multiple parameters
+
+        const multiply = (a, b, c) => {
+            return a * b * c;
+        }
+        console.log(multiply(2, 10, 2));
+
+        //arrow function with "this" keyword
+        const user = {
+            des: "this is the person from ahmefabad",
+            greet() {
+                console.log(this.des);
+            }
+        }
+        user.greet();
+
+        //arrow function with object return
+        const getUser=()=>({
+            name:"rahul",
+            role:"FD"
+        });
+        console.log(getUser().name)
+        console.log(getUser().role)
+        console.log(getUser());
+
+
+        //=======================arrow functions in array methods=========================
+        
+        //map()
+        const numbers=[1,2,3,4,5,6];
+        const square=numbers.map(num=>num*num);
+        console.log(square);
+
+        //filter()
+        const n1=[18,23,16,12];
+        const dis=n1.filter(n=>n>=18);
+        console.log(dis);
+
+        //foreach()
+        const fruits=["apple","banana","mango"];
+        fruits.forEach(fruit=>console.log(fruit))
+
+    </script>
+</body>
+
+</html>

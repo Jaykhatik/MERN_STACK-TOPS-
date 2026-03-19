@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops of JS</title>
+</head>
+
+<body>
+    <!-- 
+    Definition : 
+            ➜A loop is used to execute a block of code repeatedly until a specified condition becomes false.
+            ➜Types of loop in js :
+            i)for loop
+            ii)while loop
+            iii)do..while loop
+    -->
+
+    <script>
+        //for
+        /*
+        definition:-Used when the number of iterations is known.
+        Syntax:
+            for (initialization; condition; increment/decrement) {
+                // code block
+            }
+        */
+        for (let i = 0; i < 4; i++) {
+            console.log(i);
+        }
+
+        //while
+        /*
+        definition:-Runs as long as the condition is true.
+        Syntax:
+                while (condition) {
+                // code block
+                }
+        */
+        let a = 1;
+
+        while (a <= 5) {
+            console.log(a);
+            a++;
+        }
+
+
+        //do..while
+        /*
+        definition:-Executes block at least once, even if condition is false.
+        Syntax:
+                do  {
+                // code block
+                }while(condition);
+        */
+
+        let b = 1;
+
+        do {
+            console.log(b);
+            b++;
+        } while (b <= 3);
+
+
+        //for..in
+        /*
+        Definition:-Used to iterate over object properties (keys).
+        synatx:
+                    for (let key in object) {
+                        // code
+                    }
+        */
+        const user = {
+            name: "jay",
+            age: 21
+        }
+        for (let key in user) {
+            console.log(key, user[key]);
+        }
+
+
+        //for..of
+        /*
+        Definition:-Used to iterate over iterable values (array, string, map, set).
+        synatx:     for (let value of iterable) {
+                        // code
+                    }
+        */
+
+        let fruits=["apple","banana","mango"];
+        for(let value of fruits){
+            console.log(value);
+        }
+
+
+        //break :- stops the loops imediately
+        for(let k=1;k<=6;k++){
+            if(k===5){
+                break;
+            }
+            console.log(k)
+        }
+
+        //continue :- skip the loops of that particular number or part 
+        for(let j=1;j<=10;j++){
+            // if(j>=4 && j<=8){
+            if(j===4 ||j===5){
+                continue;
+            }
+            console.log(j);
+        }
+    </script>
+</body>
+
+</html>

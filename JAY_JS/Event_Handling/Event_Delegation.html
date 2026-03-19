@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .container{
+            display: flex;
+            gap: 30px;
+            padding: 10px;
+            flex-wrap: wrap;
+            /* align-items: center; */
+            justify-content: center;
+            align-content: center;
+
+        }
+        .box{
+            background-color: navy;
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    ->like we already knew that if we have to get the element on which the 
+    eventlisteners are performed then we use target property of an objet.
+
+    ->and we also knew that when we click on child then it bubbles up and go to parents.
+
+    ->so the concept is that when we have multiple child of parent and if we want to access them or changed them 
+    so we dont attched the eventlisteners to them and we attach the eventlisteners to parent so our work willl be fast and quick. 
+    -->
+
+
+    <!-- 
+    Event Delegation :
+    ->Instead of attaching events to many elements, attach to parent.
+    ->This technique is used when :
+    i)you have a large number of child elements that need the same handler.
+    ii)child elemements are dynamicaaly added or removed.
+    -->
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+    </div>
+    
+    <script>
+        let con=document.querySelector(".container");
+        // console.log(con)
+        // con.childNodes.forEach((ele)=>{
+        //     ele.addEventListener("click",function(){
+        //         console.log(ele.innerText)
+        //     })
+        // })
+        con.addEventListener("click",function(e){
+            if(e.target.classList.contains('box')){
+                console.log(e.target.textContent)
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object properties</title>
+</head>
+
+<body>
+    <!-- 
+    ➜ Properties are key:value Pairs
+    ➜ A JavaScript object is a collection of properties
+    ➜ Properties can be changed, added, and deleted.
+
+    -->
+
+    <script>
+        //-----------------------changing properties------------------------------------
+
+        //add
+        const person = {
+            name: "p1",
+            age: 21
+        }
+        person.city = "surat";
+        console.log(person)
+
+        //delete
+        delete person.age;
+        console.log(person)
+
+        //check if property exists
+        //in this we use "in" keyword
+
+        let result = ("name" in person);
+        console.log(result)
+
+
+        //nested objects
+        const myObj = {
+            name: "John",
+            age: 30,
+            myCars: {
+                car1: "Ford",
+                car2: "BMW",
+                car3: "Fiat"
+            }
+        }
+        console.log(myObj)
+        console.log(myObj.myCars)
+    </script>
+</body>
+
+</html>

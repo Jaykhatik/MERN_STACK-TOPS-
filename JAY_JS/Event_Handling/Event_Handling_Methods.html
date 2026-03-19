@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+
+<body>
+
+    <!-- 
+    Event Handling Methods in JavaScript
+    =====================================
+
+    1)Inline Event Handling
+    2)DOM Property Event Handling
+    3)addEventListener (Best Method)
+    
+    -->
+
+    <!-- //Inline Event Handling :- Event written directly in HTML. -->
+    <button onclick="alert('hello i am inline event handling')">click</button>
+    <button id="btns">DOM event handling button</button>
+    <button id="addEventListener">addEventListener button</button>
+
+
+    <button id="btnRemove">Remove Btn</button>
+
+    <script>
+
+        /*DOM Property Event Handling :-
+        
+        Problems : Only one event handler allowed. and The first one gets overwritten.
+        */
+        let btn = document.getElementById('btns')
+        btn.onclick = function () {
+            console.log("i am DOM event Handling")
+        }
+        btn.onclick = function () {
+            console.log("i am DOM event Handling-2")
+        }
+
+
+
+
+        /*
+        addEventListener (Best Method) :-
+        ->Advantages
+        Multiple handlers allowed
+        More control
+        Supports capturing/bubbling        
+        */
+        let btn1 = document.getElementById('addEventListener');
+        btn1.addEventListener("click", function () {
+            console.log("hello i am addeventlistener.")
+        })
+
+        btn1.addEventListener("click", function () {
+            alert("hello i am addeventlistener-2.")
+        })
+
+
+
+
+        /*
+        ->removeEventListener() :Removes event listener.
+        */
+        function show() {
+            console.log("hello");
+        }
+
+        let btn3 = document.getElementById("btnRemove");
+        btn3.addEventListener("click", show);
+
+        btn3.removeEventListener("click",show);//it removes the click event from the button
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript object Constructor</title>
+</head>
+
+<body>
+    <script>
+        /*what is the object constuctor?
+            ->An Object Constructor is a special function used to create multiple objects with the same structure (properties and methods).
+            ->Instead of creating objects again and again manually, we use a constructor function to generate objects easily.
+            👉 It works like a blueprint or template for objects.
+
+            ->syntax : function ConstructorName(parameter1, parameter2){
+                            this.property1 = parameter1;
+                            this.property2 = parameter2;
+                        }
+
+            -> Then create object using:
+                let obj = new ConstructorName(value1, value2);
+        */
+
+        function Student(first, last, age, city, pincode) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.city = city;
+            this.pinCode = pincode;
+        }
+
+        const obj1 = new Student("khatik", "jay", 21, "surat", 300001);
+        const obj2 = new Student("kamat", "rahul", 20, "surat", 302401);
+        const obj3 = new Student("parmar", "prashant", 22, "rajkot", 388801);
+        const obj4 = new Student("rawal", "kunal", 23, "ahmedabad", 390001);
+
+
+        //now if we want to add more properties in constructor so we use protoype inbuilt method in object constuctor
+
+        Student.prototype.nationality = "indian";
+
+        //using prototype we also add method in the constructor
+        Student.prototype.name = function () {
+            return this.firstName + " " + this.lastName;
+        }
+
+        console.log(obj1.name())
+
+    </script>
+</body>
+
+</html>

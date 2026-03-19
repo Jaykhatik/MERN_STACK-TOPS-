@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Events</title>
+</head>
+
+<body>
+    <!-- 
+    
+    Keyboard Events :- Keyboard events occur when the user presses keys.
+    | Event    | Meaning                  |
+    | -------- | ------------------------ |
+    | keydown  | Key pressed              |
+    | keyup    | Key released             |
+    | keypress | Key pressed (deprecated) |
+
+    -->
+    <input type="text" id="inputBox" placeholder="Press any key">
+    <input type="text" id="inputBox1">
+    <input type="text" id="inputBox2">
+    <script>
+
+        /*
+        keydown :-
+        ->The keydown event occurs when a key is pressed down on the keyboard.
+        ->It triggers for every key, including:letters,numbers, function keys,control keys (Shift, Ctrl, Alt)
+        */
+        document.getElementById("inputBox").addEventListener("keydown", function (e) {
+            console.log("Key pressed:", e.key);
+        });
+
+
+        /*
+        keyup :-
+        ->The keyup event occurs when the key is released after being pressed.
+        ->Used For : Detecting when user finishes pressing a key ,Input Validation , keyboard shortcuts
+        */
+        document.getElementById("inputBox1").addEventListener("keyup", function (e) {
+            console.log("Key released:", e.key);
+        });
+
+        /*
+        keypress :-
+        ->The keypress event occurs when a key that produces a character is pressed.
+        ->⚠️ Important : This event is deprecated and not recommended for modern development.
+        */
+        document.getElementById("inputBox2").addEventListener("keypress", function (e) {
+            console.log("Character pressed:", e.key);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type-Conversion in JS</title>
+</head>
+
+<body>
+    <!-- 
+    ★ Definition :-
+    ➜ it means manually converting one dataype into another using js built-in functions.
+    ➜ There are three types of type conversion
+            ● String conversion
+            ● Number conversion
+            ● Boolean conversion
+    -->
+
+    <!-- 
+    ★ String conversion :-
+       ➜ Converting any value into string.
+       ➜ There are following methods in string conversion Explicitly:
+            i)String()
+            ii).toString()
+            iii)Template Literals
+            iv)concatenation with empty string 
+    -->
+    <script>
+        /*String() :- it is a global function that converts any value into a string.
+                   :- synatx: String(value)
+        */
+        let n1 = 123;
+        let s1 = String(n1);
+        console.log(s1);        // "123"
+        console.log(typeof s1); // string
+
+        /*toString() :- converts a value to a string using the objects own method
+                   :- synatx: toString(value)
+        */
+
+        let n2 = 500;
+        let s2 = n2.toString();
+        console.log(s2);        // "500"
+        console.log(typeof s2); // string
+
+
+        /*Template Literals :-Using backticks ` ` automatically converts value into string.
+                   :- synatx: `${value}`
+        */
+        let n3 = 250;
+        let s3 = `${n3}`;
+        console.log(typeof s3); // string
+
+
+        /*Cocatenation with Empty String :-Adding empty string "" converts value into string.
+                   :- synatx: value + ""
+        */
+
+        let n4 = 700;
+        let s4 = n4 + "";
+        console.log(typeof s4); // string
+    </script>
+
+
+    <!-- 
+        ★ Number conversion :-
+        ➜ Number conversion is the process of converting other datatypes into the number datatype. 
+        ➜ JavaScript provides multiple ways to convert values into numbers:
+                i)Number()
+                ii)parseInt()
+                iii)parseFloat()
+                iv)Unary Plus (+)
+                v)Math methods (indirect use cases)
+                vi)Converting Boolean, null, arrays, objects to number
+        -->
+
+    <script>
+        /*
+        Number():-
+        ➜ Number() converts a value into a number using JavaScript’s internal ToNumber algorithm.
+        ➜ syntax :Number(value)
+        */
+
+
+        //string->number
+        let n5 = Number("100");
+        let n6 = Number("10.5");
+        let n7 = Number("  20  ");
+        let n8 = Number(" ");
+        let n9 = Number(" abc ");
+        let n10 = Number("abc");
+        console.log(typeof (n5), n5);
+        console.log(typeof (n6), n6);
+        console.log(typeof (n7), n7);
+        console.log(typeof (n8), n8);
+        console.log(typeof (n9), n9);
+        console.log(typeof (n10), n10);
+
+        //boolean->number
+        console.log(Number(true));//1
+        console.log(Number(false));//0
+
+        //Null and undefined
+        console.log(Number(null));//0
+        console.log(Number(undefined))//nan
+
+        //arrat->number
+        console.log(Number([5]));//5
+        console.log(Number([]));//0
+        console.log(Number([1, 2, 3]));//NaN
+
+        //object->number
+        console.log(Number({}));//nan
+        console.log(Number({ name: "jay" }))//NaN
+
+
+        /*
+       parseInt():-
+       ➜ It converts a string to an int(whole number)
+       ➜ syntax :parseInt(string,radix)
+
+       note: radix is a number system base,it tells js which number system the string belongs to.
+       
+       | Radix | Number System | Digits Used |
+       | ----- | ------------- | ----------- |
+       | 2     | Binary        | 0, 1        |
+       | 8     | Octal         | 0–7         |
+       | 10    | Decimal       | 0–9         |
+       | 16    | Hexadecimal   | 0–9, A–F    |
+
+       */
+
+        //basic
+        console.log(parseInt("50"))//50
+        console.log(parseInt("50.78"))//50
+        console.log(parseInt("100px"));//100
+        console.log(parseInt("px100"));//NaN
+
+        //using radix
+        console.log(parseInt("A", 16))//10
+        console.log(parseInt("101", 2));//5
+        console.log(parseInt("101", 8));//65
+        console.log(parseInt("101", 10));//101
+
+
+
+        /*
+        parseFloat():-
+            ➜It converts a string into a floating-point numbers(Decimal Numbers).
+            ➜syntax : parseFloat(string)
+
+        */
+
+        console.log(parseFloat("10.5"));//10.5
+        console.log(parseFloat("10.5px"));//10.5
+        console.log(parseFloat("20"));//20
+        console.log(parseFloat("px10.5"));//NaN
+        console.log(parseFloat(true));//NaN
+        console.log(parseFloat(false));//NaN
+        console.log(parseFloat(undefined));//NaN
+        console.log(parseFloat(null));//NaN
+
+
+        /*
+        Unary Plus Operator (+):-
+        ➜ It converts a value to a number quickly. OR Fastest way to convert value into number.
+        ➜ syntax : +value
+
+        Note:- It is same as Number() but its not safe and its tricky.
+        */
+
+        console.log(+"100");//100
+        console.log(+"10.5");//10.5
+        console.log(+true);//1
+        console.log(+false);//0
+        console.log(+null);//0
+        console.log(+undefined);//NaN
+        console.log(+"");//0
+        console.log(+"abc");//NaN
+
+
+
+        /*
+        Math Functions:
+        ➜ Math functions do not directly convert types like Number(), but they force numeric conversion internally.
+        */
+        //math.random()
+        //the value of it between 0 to 1
+        console.log(Math.random())
+
+
+        //Math.floor() : basically string->number->round down//means converts the decimal into whole number whether its string or number.
+        console.log(Math.floor(10.9))//10
+        console.log(Math.floor("10.9"))//10
+
+        //Math.ceil : Returns the smallest integer greater than or equal to a number(round up).//means agar 10.1 hai to uska ye 11 kar dega
+        console.log(Math.ceil("10.1"));//11
+
+        //Math.round() : Rounds number to nearest integer.
+        console.log(Math.round(20.9))//21
+        console.log(Math.round("30.9"))//31
+
+        //Math.trunc() : Removes decimal part (no rounding).
+        console.log(Math.trunc("30.9"))//30
+        console.log(Math.trunc(-20.9))//-20
+        console.log(Math.trunc(true));//1
+
+        //Math.abs() : Returns positive value (absolute value).
+        console.log(Math.abs("-20"));   // 20
+        console.log(Math.abs(-15));   // 15
+        console.log(Math.abs(true));   // 1
+        console.log(Math.abs(null));   // 0
+
+
+        //Math.sqrt() : Returns square root.
+        console.log(Math.sqrt(25));//5
+        console.log(Math.sqrt("16"));//4
+
+        //Math.pow() : Returns base raised to power.
+        console.log(Math.pow("2", "3"));   // 8
+        console.log(Math.pow(4, 3));   // 64
+        console.log(Math.pow(true, 3));   // 1
+
+        //Math.max() and Math.min() : Return maximum / minimum number.
+        //Note: If any argument cannot convert → result is NaN.
+        console.log(Math.max("10", "20"));  // 20
+        console.log(Math.min("5", 2));  // 2
+        console.log(Math.max(true, 5));  // 5
+        console.log(Math.min(false, 6));//0
+
+    </script>
+
+    <!-- 
+        ★ Boolean conversion :-
+        ➜ Boolean conversion means manually converting any value into true or false using JavaScript built-in methods.
+        ➜ Main ways:
+            i)Boolean(value)
+            ii)Double NOT operator !!value
+        -->
+    <script>
+
+        /*
+        Boolean() :- Boolean() converts any value into either true or false using JavaScript’s internal ToBoolean algorithm.
+                     syntax : Boolean(value)
+        */
+
+        console.log(Boolean(1));
+        console.log(Boolean(0));
+        console.log(Boolean(-10));
+        console.log(Boolean("hello"));
+        console.log(Boolean(""));
+        console.log(Boolean(null));
+        console.log(Boolean(undefined));
+        console.log(Boolean([]));
+        console.log(Boolean([1, 2, 3]));
+        console.log(Boolean({}));
+
+        /*
+        Double NOT Operator (!!) :- Double NOT Operator (!!)
+                                    syntax : !!value
+
+                                    How It Works:
+
+                                        ->First ! converts to boolean and reverses it.
+                                        ->Second ! reverses it again.
+        */
+        console.log(!!(1));
+        console.log(!!(0));
+        console.log(!!("text"));
+        console.log(!!(""));
+        console.log(!!(null));
+        console.log(!!(undefined));
+    </script>
+</body>
+
+</html>

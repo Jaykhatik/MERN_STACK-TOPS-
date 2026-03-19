@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrevenetDefault in Event Handling</title>
+</head>
+
+<body>
+    <!-- 
+    preventDefault() :-
+    ->preventDefault() is a method of the Event Object used to stop the browser’s default behavior of an element.
+    ->Every HTML element has some default actions ,preventDefault() prevents those actions from happening.
+    ->Syntax : event.preventDefault()
+
+
+
+
+    What is Default Behavior?
+    ->Default behavior means what the browser normally does automatically.
+        | Element                   | Default Behavior              |
+        | ------------------------- | ----------------------------- |
+        | `<a>` link                | Opens the URL                 |
+        | `<form>`                  | Submits form and reloads page |
+        | `<input type="checkbox">` | Checks/unchecks               |
+        | Right click               | Opens context menu            |
+        | Drag element              | Starts dragging               |
+
+    ->preventDefault() stops these actions.
+
+    -->
+    <a href="https://google.com" id="link">Go to Google</a>
+    <br><br>
+    <form id="form">
+        <input type="text">
+        <button type="submit">Submit</button>
+    </form>
+    <br><br>
+    <div id="box">Right Click Here</div>
+    <br><br>
+    <input type="checkbox" id="check">
+    <script>
+        //Example 1: Prevent Link Navigation
+        document.getElementById("link").addEventListener("click", function (e) {
+            e.preventDefault()
+            console.log("Link clicked");
+        });
+
+
+        //Example 2: Prevent Form Submission
+        document.getElementById("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            console.log("Form submission prevented");
+        });
+
+        //Example 3: Prevent Right Click Menu
+        document.getElementById("box").addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+            console.log("Right click disabled");
+        });
+
+        //Example 4: Prevent Checkbox Checking
+        document.getElementById("check").addEventListener("click", function (e) {
+            e.preventDefault();
+            console.log("Checkbox prevented");
+        });
+
+
+
+
+        /*
+        Important Event Object Property :
+        ->event.defaultPrevented :- This property checks if default action was prevented.
+        
+        */
+        document.getElementById("check").addEventListener("click", function (e) {
+            e.preventDefault();
+            console.log(e.defaultPrevented)//which means it checks that the elementt is prevented by the preventdefault() or not.
+            // console.log("Checkbox prevented");
+        });
+
+    </script>
+</body>
+
+</html>

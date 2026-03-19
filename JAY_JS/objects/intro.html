@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction of Object</title>
+</head>
+
+<body>
+    <!-- 
+    
+    Definition :-
+    ➜ Objects are variables that can store both values and functions.
+    ➜ Values are stored as key:value pairs called properties.
+    ➜ Functions are stored as key:function() pairs called methods.
+
+    -->
+    <p id="person"></p>
+    <script>
+        //object example
+        const user = {
+            name: "Rahul",
+            age: 21,
+            role: "Frontend"
+        }
+        console.log(user)//it will give full object
+        console.log(user.name);//Rahul
+        console.log(user.age);//21
+        console.log(user.role);//Frontend
+
+
+        //create empty object then add values
+        const stu = {
+
+        }
+        stu.firstName = "jay";
+        stu.lastName = "khatik";
+        stu.age = 21;
+        console.log(stu)
+
+        //using "new" keyword
+        const person = new Object({
+            name: "rahul",
+            city: "surat"
+        })
+        document.getElementById('person').innerHTML = person.city;
+
+
+        //accessing object usiing dot notation and brackets
+
+        const obj = {
+            car: "BMW",
+            year: 2024
+        }
+        console.log(obj.car)
+        console.log(obj["year"])
+
+
+        //object method
+
+        const p1 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        console.log(p1.fullName());
+    </script>
+</body>
+
+</html>

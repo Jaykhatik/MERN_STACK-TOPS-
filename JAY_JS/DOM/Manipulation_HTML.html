@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation HTML</title>
+</head>
+
+<body>
+    <p id="heading">i amd defalut</p>
+    <h1 id="heading1">i am default h1</h1>
+    <ul id="list">
+        <li>Home</li>
+        <li>Contact</li>
+        <li style="display: none;">About</li>
+    </ul>
+    <ol id="orders">
+        <li>pizza</li>
+        <li>burger</li>
+        <li>coca colla</li>
+    </ol>
+    <script>
+        /*==========================================createElement=====================================================*/
+        let div = document.createElement('div');
+        div.innerHTML = "<p>Hello i am the Div tag</p>"
+        div.id = "divId";
+        div.className = "divCls"
+        document.body.appendChild(div);//with the use of appendchild we add the newly created div tag iside the body.
+
+        console.log(div);
+        /*=============================================Adding Elements===================================================*/
+        //appendChild() : for adding elements dynamically using this methods
+        let list = document.getElementById('list');
+        let li = document.createElement('li');
+        li.innerHTML = 'Services';
+
+        list.appendChild(li);
+
+        //append() :- using append() we can add multiple elements in our data.
+
+        //remove elements
+        let orders = document.getElementById('orders');
+        orders.removeChild(orders.lastElementChild)
+
+
+        /*===================================================Baisc Manipulation=====================================*/
+
+        //textContent and innerText
+        //textContent displays all the content of that particular data whether its tyle is display none
+        //and the innerText shows the content based on the style also like if the data is not display then it also not display(Returns visible text of element.)
+
+        let dis = document.getElementById('list');
+        console.log(dis.textContent)
+        let dis1 = document.getElementById('list');
+        console.log(dis1.innerText)
+
+        //manipulation using innerHTML,innerText and other
+
+        document.getElementById('heading').innerHTML = "<h1>I am changed using innerHTML</h1>";
+        document.getElementById('heading1').innerText = '<p>I am changed using innerText</p>';
+
+
+        /*==============================================insertAdjacent elements============================================*/
+        //inserAdjacentHTML()
+        let menu1 = document.getElementById('list');
+        menu1.insertAdjacentHTML("afterend", "jay");
+        menu1.insertAdjacentHTML("afterbegin", "khatik");
+        menu1.insertAdjacentHTML("beforebegin", "kumar");
+        menu1.insertAdjacentHTML("beforeend", "vasantbhai")
+    </script>
+</body>
+
+</html>
+
+
+

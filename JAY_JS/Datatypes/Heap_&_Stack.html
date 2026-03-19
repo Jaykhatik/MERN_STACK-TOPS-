@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heap and Stack</title>
+</head>
+
+<body>
+    <script>
+        //stack : All the primitive datatype are stored in stack memory beacuse it makes the copy of other variable.
+        let userOne = "hitesh"
+        let userTwo = userOne;
+        userTwo = "jay";
+        console.log(userOne);
+        console.log(userTwo);
+
+        //heap : All the Non-primitive datatypes are stored in heap memory because it gives thhe reference of that particular variable not make the copy.
+
+        let userData = {
+            name: "rahulkamat",
+            email: "rahul@gmail.com"
+        }
+        let userData2 = userData;
+        userData2.email = "jay@gmail.com"
+        console.log(userData.email)
+        console.log(userData2.email)//Because here the userData2 takes the reference of useData so when userData2 make scganges of it tgen both will be same.
+    </script>
+</body>
+
+</html>

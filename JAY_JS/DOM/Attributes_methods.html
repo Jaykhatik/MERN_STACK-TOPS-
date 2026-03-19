@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Attributes Methods</title>
+</head>
+
+<body>
+    <!-- 
+    In the DOM (Document Object Model), attributes are used to get, set, check, or remove HTML element attributes 
+    using JavaScript.
+
+    Examples of HTML attributes :
+    ->id
+    ->class
+    ->src
+    ->href
+    ->title
+    ->alt
+    ->value
+    ->type
+
+
+    there are multiple attributes methods to handle those attributes dynamically.
+    
+    -->
+    
+    <input type="text" id="user" placeholder="User Name">
+   
+    <script>
+
+        //getAttribute() :- is used to get the value of an attribute from an HTML element.
+        let user = document.getElementById('user');
+        console.log(user.getAttribute("id"));
+
+        //setAttribute() :- is used to add a new attribute or change the value of an existing attribute.//synatx : attributeName,attributeValue
+        user.setAttribute("class", "userclass");
+        user.setAttribute("class", "usercls")//we can also change the value of existing atttribute using this
+        console.log(user)
+
+        //removeAttribute() : Removes an attribute from an element.
+        user.removeAttribute("class");
+        console.log(user)
+
+        //hasAttribute() : Checks whether an element contains a specific attribute or not.
+        console.log(user.hasAttribute("placeholder"));//true
+        console.log(user.hasAttribute("class"));//false
+
+
+    </script>
+</body>
+
+</html>
