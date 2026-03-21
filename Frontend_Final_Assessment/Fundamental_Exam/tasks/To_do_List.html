@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do CRUD (Session Storage)</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      text-align: center;
+    }
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input {
+      width: 70%;
+      padding: 10px;
+    }
+    button {
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    li {
+      list-style: none;
+      background: #eee;
+      margin: 10px 0;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>To-Do List (Session Storage)</h2>
+
+  <input type="text" id="taskInput" placeholder="Enter task">
+  <button onclick="addTask()">Add</button>
+
+  <ul id="taskList"></ul>
+</div>
+
+<script>
+  let tasks = JSON.parse(sessionStorage.getItem("tasks")) || [];
+
+  function saveTasks() {
+    sessionStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
+  function displayTasks() {
+    let list = document.getElementById("taskList");
+    list.innerHTML = "";
+
+    tasks.forEach((task, index) => {
+      let li = document.createElement("li");
+
+      li.innerHTML = `
+        ${task}
+        <div>
+          <button onclick="editTask(${index})">Edit</button>
+          <button onclick="deleteTask(${index})">Delete</button>
+        </div>
+      `;
+
+      list.appendChild(li);
+    });
+  }
+
+  function addTask() {
+    let input = document.getElementById("taskInput");
+    let value = input.value.trim();
+
+    if (value === "") {
+      alert("Enter a task!");
+      return;
+    }
+
+    tasks.push(value);
+    saveTasks();
+    displayTasks();
+
+    input.value = "";
+  }
+
+  function deleteTask(index) {
+    tasks.splice(index, 1);
+    saveTasks();
+    displayTasks();
+  }
+
+  function editTask(index) {
+    let newTask = prompt("Edit task:", tasks[index]);
+
+    if (newTask !== null && newTask.trim() !== "") {
+      tasks[index] = newTask;
+      saveTasks();
+      displayTasks();
+    }
+  }
+
+  // Initial load
+  displayTasks();
+</script>
+
+</body>
+</html>
