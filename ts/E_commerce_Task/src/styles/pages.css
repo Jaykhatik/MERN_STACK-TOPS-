@@ -1,0 +1,507 @@
+/* ================================product page==================================== */
+
+
+.products-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #f5f7fb;
+  height: 900px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* products */
+.product {
+  width: 350px;
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.product-header {
+  background: #1A3263;
+  padding: 15px;
+  text-align: center;
+}
+
+.product-header h1 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Body */
+.product-body {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.product-body img {
+  width: 90px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #ddd;
+}
+
+.product-body-content {
+  flex: 1;
+}
+
+.product-body-content h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #1A3263;
+}
+
+.product-body-content p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Footer */
+.product-footer {
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.action-buttons button {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.action-buttons button:nth-child(1) {
+  background: #4facfe;
+  color: white;
+}
+
+
+.action-buttons button:nth-child(2) {
+  background: #ff4d4d;
+  color: white;
+}
+
+
+.action-buttons button:nth-child(3) {
+  background: #1A3263;
+  color: white;
+}
+.action-buttons button:nth-child(4){
+  background-color: palevioletred;
+  color: whitesmoke;
+  padding: 10px;
+}
+
+
+/* =================================user page============================== */
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #1A3263;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: whitesmoke;
+  color: #1A3263;
+
+  border: 2px solid #1A3263;
+}
+.table-container {
+  padding: 30px;
+  background: #f5f7fb;
+}
+
+/* Table */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.user-table thead {
+  background: #1A3263;
+  color: white;
+}
+
+.user-table th {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.user-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* ADDbutton */
+.addButton{
+  background-color: #1A3263;
+  width: max-content;
+  padding: 10px;
+  color: whitesmoke;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  float: right;
+}
+/* Actions */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.actions button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.edit-btn {
+  background: #4facfe;
+  color: white;
+  
+}
+
+
+.delete-btn {
+  background: #da5151;
+  color: white;
+}
+
+
+.view-btn {
+  background: #1A3263;
+  color: white;
+}
+
+/* ============================cartcard and product card========================== */
+/* CartCard container */
+.cart-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart header */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cart-header h2 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* Remove button */
+.cart-header button {
+  cursor: pointer;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #da5151;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.cart-header button:hover {
+  background-color: #c03939;
+}
+
+/* Products grid inside cart card */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Product card inside cart */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 150px;
+  flex: 1 1 200px;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+/* Product info */
+.product-card h3 {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.product-card .price {
+  color: #27ae60;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.product-card .qty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+/* Quantity buttons */
+.product-card .qty button {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.product-card .qty button:hover {
+  background-color: #2980b9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.view-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: gainsboro;
+  padding: 30px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.view-container h2 {
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.view-container button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: red;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+.edit-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: gainsboro;
+  padding: 30px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.edit-container input {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+}
+.upd-btn{
+  background-color: green;
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+}
+.can-btn{
+  background-color: red;
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+/* cart page */
+.cart-container{
+  padding: 40px;
+}
+.cart-container h1{
+  text-align: center;
+}
+.cart-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  margin: 25px 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.cart-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Header */
+.cart-header {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.cart-header h2 {
+  color: #333;
+  font-size: 20px;
+}
+
+
+
+
+/* Product Card */
+.product-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  background: #f1f7ff;
+  transform: scale(1.03);
+}
+
+/* Info */
+.product-info h3 {
+  font-size: 15px;
+  margin: 8px 0;
+  color: #222;
+}
+
+.price {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.qty {
+  color: #555;
+}
+
+
+/* ===============logout-btbn=============== */
+.logout-btn{
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  color: whitesmoke;
+}

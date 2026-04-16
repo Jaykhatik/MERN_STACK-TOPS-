@@ -1,0 +1,207 @@
+/* ===== FORM CONTAINER ===== */
+.form-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+/* subtle hover lift */
+.form-container:hover {
+    transform: translateY(-3px);
+}
+
+/* ===== TITLE ===== */
+.form-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+}
+
+/* underline accent */
+.form-title::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 5px;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* label */
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* input fields */
+.form-group input {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+/* focus effect */
+.form-group input:focus {
+    border-color: #667eea;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* hover effect */
+.submit-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* click effect */
+.submit-btn:active {
+    transform: scale(0.97);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+    .form-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+/* ===== CONTAINER ===== */
+.edit-container {
+    max-width: 420px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: 0.3s ease;
+}
+
+/* hover lift */
+/* .edit-container:hover {
+    transform: translateY(4px);
+} */
+
+/* ===== TITLE ===== */
+.edit-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    position: relative;
+}
+
+/* underline */
+.edit-container h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 5px;
+}
+
+/* ===== INPUTS ===== */
+.edit-container input {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+/* focus effect */
+.edit-container input:focus {
+    border-color: #667eea;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+/* ===== BUTTON BASE ===== */
+.edit-container button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ===== UPDATE BUTTON ===== */
+.upd-btn {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: #fff;
+}
+
+/* hover */
+.upd-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
+}
+
+/* ===== CANCEL BUTTON ===== */
+.can-btn {
+    background: #ecf0f1;
+    color: #555;
+}
+
+/* hover */
+.can-btn:hover {
+    background: #dcdde1;
+    transform: scale(1.03);
+}
+
+/* ===== BUTTON ACTIVE ===== */
+.edit-container button:active {
+    transform: scale(0.95);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 500px) {
+    .edit-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
