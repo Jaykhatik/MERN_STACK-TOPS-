@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "MacBook Pro 14\"",
+        "price": 189900,
+        "category": "Electronics",
+        "brand": "Apple",
+        "stock": 12,
+        "rating": 4.9,
+        "description": "Apple M3 Pro chip, 18GB RAM, 512GB SSD. Perfect for developers and creatives."
+    },
+    {
+        "id": 2,
+        "name": "Dell UltraSharp 27\" Monitor",
+        "price": 52000,
+        "category": "Electronics",
+        "brand": "Dell",
+        "stock": 25,
+        "rating": 4.7,
+        "description": "4K IPS display with 99% sRGB coverage. Ideal for design and development work."
+    },
+    {
+        "id": 3,
+        "name": "Keychron K2 Mechanical Keyboard",
+        "price": 7500,
+        "category": "Peripherals",
+        "brand": "Keychron",
+        "stock": 40,
+        "rating": 4.8,
+        "description": "Wireless mechanical keyboard with RGB backlight and hot-swappable switches."
+    },
+    {
+        "id": 4,
+        "name": "Logitech MX Master 3S",
+        "price": 9200,
+        "category": "Peripherals",
+        "brand": "Logitech",
+        "stock": 35,
+        "rating": 4.8,
+        "description": "Advanced wireless mouse with 8K DPI sensor and ergonomic design for all-day use."
+    },
+    {
+        "id": 5,
+        "name": "Ergonomic Office Chair",
+        "price": 24500,
+        "category": "Furniture",
+        "brand": "Herman Miller",
+        "stock": 8,
+        "rating": 4.9,
+        "description": "Fully adjustable lumbar support, breathable mesh back. Built for long work sessions."
+    },
+    {
+        "id": 6,
+        "name": "Sony WH-1000XM5 Headphones",
+        "price": 29990,
+        "category": "Audio",
+        "brand": "Sony",
+        "stock": 20,
+        "rating": 4.8,
+        "description": "Industry-leading noise cancellation with 30-hour battery life and premium sound."
+    },
+    {
+        "id": 7,
+        "name": "iPad Pro 12.9\"",
+        "price": 112900,
+        "category": "Electronics",
+        "brand": "Apple",
+        "stock": 15,
+        "rating": 4.7,
+        "description": "M2 chip with Liquid Retina XDR display. Perfect for design and productivity on the go."
+    },
+    {
+        "id": 8,
+        "name": "Standing Desk (Electric)",
+        "price": 32000,
+        "category": "Furniture",
+        "brand": "FlexiSpot",
+        "stock": 6,
+        "rating": 4.6,
+        "description": "Height-adjustable electric standing desk with memory presets and cable management."
+    }
+]

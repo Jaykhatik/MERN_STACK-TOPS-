@@ -1,0 +1,113 @@
+[
+    {
+        "id": 1,
+        "userId": 1,
+        "title": "Building Scalable REST APIs with Node.js",
+        "body": "Learn how to design and build production-ready REST APIs using Node.js, focusing on scalability, error handling, and best practices for large-scale applications.",
+        "category": "Backend",
+        "tags": [
+            "Node.js",
+            "API",
+            "REST"
+        ],
+        "date": "2024-01-12",
+        "readTime": "8 min"
+    },
+    {
+        "id": 2,
+        "userId": 2,
+        "title": "React 18 Concurrent Features Deep Dive",
+        "body": "Explore the new concurrent rendering features in React 18 including useTransition, useDeferredValue, and Suspense improvements that make UIs more responsive.",
+        "category": "Frontend",
+        "tags": [
+            "React",
+            "JavaScript",
+            "Performance"
+        ],
+        "date": "2024-02-05",
+        "readTime": "12 min"
+    },
+    {
+        "id": 3,
+        "userId": 3,
+        "title": "Design Systems: Building Consistent UI at Scale",
+        "body": "A comprehensive guide to creating and maintaining a design system that keeps your product consistent across teams and platforms, with real-world examples.",
+        "category": "Design",
+        "tags": [
+            "UI",
+            "Design System",
+            "CSS"
+        ],
+        "date": "2024-02-20",
+        "readTime": "10 min"
+    },
+    {
+        "id": 4,
+        "userId": 4,
+        "title": "Product Roadmap Planning for Agile Teams",
+        "body": "How to create a product roadmap that balances business goals, user needs, and technical constraints while keeping your agile team aligned and motivated.",
+        "category": "Product",
+        "tags": [
+            "Agile",
+            "Product",
+            "Strategy"
+        ],
+        "date": "2024-03-01",
+        "readTime": "7 min"
+    },
+    {
+        "id": 5,
+        "userId": 5,
+        "title": "Docker & Kubernetes: Container Orchestration Guide",
+        "body": "Step-by-step guide to containerizing your Node.js applications with Docker and deploying them at scale using Kubernetes with zero-downtime deployments.",
+        "category": "DevOps",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "DevOps"
+        ],
+        "date": "2024-03-15",
+        "readTime": "15 min"
+    },
+    {
+        "id": 6,
+        "userId": 6,
+        "title": "Automated Testing Strategies for Modern Web Apps",
+        "body": "Explore unit, integration, and end-to-end testing strategies using Jest, React Testing Library, and Playwright to ship confident, bug-free releases.",
+        "category": "Testing",
+        "tags": [
+            "Testing",
+            "Jest",
+            "QA"
+        ],
+        "date": "2024-04-02",
+        "readTime": "9 min"
+    },
+    {
+        "id": 7,
+        "userId": 2,
+        "title": "TypeScript Best Practices in 2024",
+        "body": "Advanced TypeScript patterns including discriminated unions, template literal types, and utility types that will make your codebase more robust and maintainable.",
+        "category": "Frontend",
+        "tags": [
+            "TypeScript",
+            "JavaScript"
+        ],
+        "date": "2024-04-18",
+        "readTime": "11 min"
+    },
+    {
+        "id": 8,
+        "userId": 8,
+        "title": "Data Visualization with D3.js and React",
+        "body": "Build interactive, real-time dashboards by combining the power of D3.js for data visualization with React's component model for a seamless developer experience.",
+        "category": "Analytics",
+        "tags": [
+            "D3.js",
+            "React",
+            "Data"
+        ],
+        "date": "2024-05-10",
+        "readTime": "13 min"
+    }
+]

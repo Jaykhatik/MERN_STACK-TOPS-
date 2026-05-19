@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Arjun Sharma",
+    "email": "arjun.sharma@techcorp.in",
+    "role": "Admin",
+    "department": "Engineering",
+    "location": "Mumbai",
+    "joined": "2021-03-15",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Priya Mehta",
+    "email": "priya.mehta@techcorp.in",
+    "role": "Senior Developer",
+    "department": "Engineering",
+    "location": "Bangalore",
+    "joined": "2020-07-22",
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "name": "Rahul Verma",
+    "email": "rahul.verma@techcorp.in",
+    "role": "UI/UX Designer",
+    "department": "Design",
+    "location": "Pune",
+    "joined": "2022-01-10",
+    "status": "Active"
+  },
+  {
+    "id": 4,
+    "name": "Sneha Patil",
+    "email": "sneha.patil@techcorp.in",
+    "role": "Product Manager",
+    "department": "Product",
+    "location": "Hyderabad",
+    "joined": "2019-11-05",
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "name": "Amit Joshi",
+    "email": "amit.joshi@techcorp.in",
+    "role": "DevOps Engineer",
+    "department": "Infrastructure",
+    "location": "Chennai",
+    "joined": "2021-08-30",
+    "status": "Active"
+  },
+  {
+    "id": 6,
+    "name": "Kavya Nair",
+    "email": "kavya.nair@techcorp.in",
+    "role": "QA Engineer",
+    "department": "Quality",
+    "location": "Kochi",
+    "joined": "2022-05-18",
+    "status": "Active"
+  },
+  {
+    "id": 7,
+    "name": "Rohan Gupta",
+    "email": "rohan.gupta@techcorp.in",
+    "role": "Backend Developer",
+    "department": "Engineering",
+    "location": "Delhi",
+    "joined": "2020-02-14",
+    "status": "Inactive"
+  },
+  {
+    "id": 8,
+    "name": "Ananya Singh",
+    "email": "ananya.singh@techcorp.in",
+    "role": "Data Analyst",
+    "department": "Analytics",
+    "location": "Kolkata",
+    "joined": "2023-01-09",
+    "status": "Active"
+  },
+  {
+    "id": 9,
+    "name": "Jay Kumar",
+    "email": "jay@gmail.com",
+    "role": "MERN",
+    "department": "Engineering",
+    "location": "Ahmedabad",
+    "joined": "2026-05-19",
+    "status": "Active"
+  }
+]
