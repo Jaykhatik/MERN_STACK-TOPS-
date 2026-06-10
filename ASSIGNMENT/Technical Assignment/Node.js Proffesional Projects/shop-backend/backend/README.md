@@ -90,7 +90,7 @@ Retrieves all items currently in the cart.
 ```
 
 #### `POST /cart/add`
-Adds a product to the cart or increases its quantity if it already exists.
+Adds a product to the cart or increases its quantity if it already exists. Sending a negative quantity decreases the quantity, and automatically removes the item from the cart completely if the resulting quantity reaches 0 or below.
 - **Body**:
 ```json
 {

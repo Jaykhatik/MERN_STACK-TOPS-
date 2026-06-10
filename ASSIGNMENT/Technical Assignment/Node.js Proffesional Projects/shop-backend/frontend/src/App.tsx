@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import CategorySection from './components/CategorySection/CategorySection';
@@ -7,7 +7,6 @@ import ProductGrid from './components/ProductGrid/ProductGrid';
 import CartDrawer from './components/CartDrawer/CartDrawer';
 import Toast from './components/Toast/Toast';
 import { useStore } from './store/useStore';
-import CategoryPage from './pages/CategoryPage';
 import './App.css';
 
 const Home = () => {
@@ -36,7 +35,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/category/:categoryName" element={<CategoryPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
 

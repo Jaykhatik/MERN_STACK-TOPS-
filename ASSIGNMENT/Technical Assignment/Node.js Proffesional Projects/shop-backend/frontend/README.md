@@ -20,8 +20,8 @@ The frontend operates independently as a Single Page Application (SPA), communic
 3. **Components & UI**:
    - Uses pure CSS (CSS Modules approach) for a premium look with glassmorphism, floating shapes, and smooth micro-interactions.
    - The UI is fully responsive, ensuring perfect scaling on desktop, tablet, and mobile.
-   - The **Cart Drawer** dynamically updates the subtotal, calculates a 5% delivery charge, and displays the final total in real-time.
-   - Animated **Toast Notifications** are triggered via the Zustand store whenever a user interacts with the cart.
+   - The **Cart Drawer** dynamically updates the subtotal, calculates a 5% delivery charge, and displays the final total in real-time. It features + and - buttons to adjust item quantities, automatically removing items if their quantity reaches 0.
+   - Animated **Toast Notifications** are triggered via the Zustand store whenever a user interacts with the cart (e.g. checkout).
 
 ## 🚀 Running Individually
 

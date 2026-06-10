@@ -4,13 +4,11 @@ A complete modern E-Commerce web application featuring a premium UI/UX design an
 
 ## 🚀 Features
 
-### Frontend (Premium UI/UX)
-
-- **Modern Tech Stack**: React 19, TypeScript, Vite.
-- **State Management**: Global state management using Zustand for cart, products, and search.
-- **Premium Design System**: Glassmorphism, modern typography, floating animations, hover effects.
-- **Live Search**: Debounced instant search without page refresh.
-- **Cart System**: Slide-in drawer with real-time bill calculations (subtotal, 5% delivery charge, total).
+### ✅ Frontend
+- **React 19 + TypeScript + Vite** — Fast, modern, type-safe SPA
+- **Zustand** — Global state for `products`, `cart`, `cartTotals`, `searchQuery`, `isCartOpen`, `toastMessage`
+- **Live Search** — Navbar search bar calls `GET /products/search?q=` on every keystroke and updates the product grid instantly
+- **Cart Drawer** — Slides in from the right with: real-time bill calculations (subtotal, 5% delivery charge, total).
 - **Toast Notifications**: Custom beautiful slide-in animated notifications replacing standard alerts.
 - **Responsive**: Fully responsive design (Desktop, Tablet, Mobile).
 
@@ -82,7 +80,7 @@ Alternatively, to run them separately:
 ### Cart
 
 - `GET /cart` - Returns current cart items.
-- `POST /cart/add` - Adds an item to the cart or increases quantity if it already exists.
+- `POST /cart/add` - Adds an item to the cart or increases quantity if it already exists. Sending a negative quantity decreases it, and the item is removed if quantity drops to 0 or below.
   - Body: `{ "productId": 1, "quantity": 1 }`
 - `GET /cart/total` - Returns calculated totals.
   - Response: `{ "subtotal": 134900, "deliveryCharge": 6745, "total": 141645 }`
