@@ -30,8 +30,9 @@ insta-clone/
 ```bash
 cd backend
 npm install
-npx ts-node src/index.ts
+npm run dev
 ```
+*(Alternatively, use `npm start` to run without hot-reloading).*
 The backend runs on `http://localhost:5000`.
 
 ### 2. Frontend
