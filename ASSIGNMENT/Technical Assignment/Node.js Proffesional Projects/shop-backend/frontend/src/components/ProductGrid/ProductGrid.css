@@ -1,0 +1,23 @@
+.product-grid-section {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 16px;
+  color: var(--text-muted);
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
