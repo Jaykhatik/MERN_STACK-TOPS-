@@ -28,12 +28,18 @@ router.post('/add', (req, res) => {
     if (existingItemIndex > -1) {
         // Increase quantity
         cart[existingItemIndex].quantity += parseInt(quantity);
+        // Remove if quantity drops to 0 or below
+        if (cart[existingItemIndex].quantity <= 0) {
+            cart.splice(existingItemIndex, 1);
+        }
     } else {
-        // Add new item
-        cart.push({
-            product: product,
-            quantity: parseInt(quantity)
-        });
+        if (parseInt(quantity) > 0) {
+            // Add new item
+            cart.push({
+                product: product,
+                quantity: parseInt(quantity)
+            });
+        }
     }
 
     setCart(cart);

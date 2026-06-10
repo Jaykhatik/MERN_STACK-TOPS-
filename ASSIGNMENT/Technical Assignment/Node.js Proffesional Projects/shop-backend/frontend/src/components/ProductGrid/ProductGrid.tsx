@@ -1,4 +1,3 @@
-
 import ProductCard from '../ProductCard/ProductCard';
 import { useStore } from '../../store/useStore';
 import './ProductGrid.css';
@@ -11,7 +10,7 @@ const ProductGrid = () => {
       <h2 className="section-title">
         {searchQuery ? `Search Results for "${searchQuery}"` : 'Featured Products'}
       </h2>
-      
+
       {products.length === 0 ? (
         <div className="empty-state glass">
           <h3>No products found</h3>

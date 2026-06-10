@@ -1,0 +1,48 @@
+.category-page {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  animation: slide-up 0.4s ease forwards;
+}
+
+.category-page-header {
+  margin-bottom: 2.5rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  color: var(--primary);
+  transform: translateX(-3px);
+}
+
+.category-page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.title-accent {
+  color: var(--primary);
+}
+
+.category-page-sub {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .category-page-title {
+    font-size: 1.75rem;
+  }
+}

@@ -1,4 +1,4 @@
-
+import { useNavigate } from 'react-router-dom';
 import { Smartphone, Laptop, Headphones, Watch, Gamepad } from 'lucide-react';
 import './CategorySection.css';
 
@@ -11,12 +11,20 @@ const categories = [
 ];
 
 const CategorySection = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="category-section container animate-slide">
       <h2 className="section-title">Shop by Category</h2>
       <div className="category-grid">
         {categories.map((cat, idx) => (
-          <div key={idx} className="category-card glass">
+          <div
+            key={idx}
+            className="category-card glass"
+            onClick={() => navigate(`/category/${cat.name}`)}
+            role="button"
+            aria-label={`Browse ${cat.name}`}
+          >
             <div className="category-icon-wrapper">
               <cat.icon size={28} className="category-icon" />
             </div>

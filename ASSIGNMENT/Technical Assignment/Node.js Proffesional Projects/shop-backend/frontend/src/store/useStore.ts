@@ -32,6 +32,7 @@ interface AppState {
     fetchCartTotals: () => Promise<void>;
     addToCart: (productId: number, quantity: number) => Promise<void>;
     removeFromCart: (productId: number) => Promise<void>;
+    clearCart: () => Promise<void>;
     setIsCartOpen: (isOpen: boolean) => void;
 }
 
@@ -106,6 +107,17 @@ export const useStore = create<AppState>((set) => ({
             await fetchCartTotals();
         } catch (error) {
             console.error("Error removing from cart", error);
+        }
+    },
+
+    clearCart: async () => {
+        try {
+            await api.clearCart();
+            const { fetchCart, fetchCartTotals } = useStore.getState();
+            await fetchCart();
+            await fetchCartTotals();
+        } catch (error) {
+            console.error("Error clearing cart", error);
         }
     }
 }));

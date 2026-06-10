@@ -5,6 +5,7 @@ A complete modern E-Commerce web application featuring a premium UI/UX design an
 ## 🚀 Features
 
 ### Frontend (Premium UI/UX)
+
 - **Modern Tech Stack**: React 19, TypeScript, Vite.
 - **State Management**: Global state management using Zustand for cart, products, and search.
 - **Premium Design System**: Glassmorphism, modern typography, floating animations, hover effects.
@@ -14,6 +15,7 @@ A complete modern E-Commerce web application featuring a premium UI/UX design an
 - **Responsive**: Fully responsive design (Desktop, Tablet, Mobile).
 
 ### Backend (Node.js & Express)
+
 - **RESTful API**: Structured routes for products and cart operations.
 - **Custom Middleware**: Global logging middleware capturing Timestamp, HTTP Method, and URL.
 - **Data Management**: In-memory data store for products and dynamic cart operations.
@@ -55,7 +57,7 @@ shop-backend/
    ```bash
    npm run install:all
    ```
-   *(This script automatically installs root dependencies, then installs frontend and backend dependencies).*
+   _(This script automatically installs root dependencies, then installs frontend and backend dependencies)._
 
 ## 🚦 Running the Application
 
@@ -66,18 +68,21 @@ npm start
 ```
 
 Alternatively, to run them separately:
+
 - **Backend**: `cd backend && npm start` (Runs on `http://localhost:5000`)
 - **Frontend**: `cd frontend && npm run dev` (Runs on `http://localhost:5173`)
 
 ## 📖 API Documentation
 
 ### Products
+
 - `GET /products` - Returns 3 sample premium products.
 - `GET /products/search?q={query}` - Returns products matching the search query (case-insensitive).
 
 ### Cart
+
 - `GET /cart` - Returns current cart items.
-- `POST /cart/add` - Adds an item to the cart or increases quantity if it already exists. 
+- `POST /cart/add` - Adds an item to the cart or increases quantity if it already exists.
   - Body: `{ "productId": 1, "quantity": 1 }`
 - `GET /cart/total` - Returns calculated totals.
   - Response: `{ "subtotal": 134900, "deliveryCharge": 6745, "total": 141645 }`
@@ -85,6 +90,7 @@ Alternatively, to run them separately:
 - `POST /cart/clear` - Clears the entire cart.
 
 ## 🔮 Future Improvements
+
 - Integrate a real database (MongoDB / PostgreSQL) using Prisma or Mongoose.
 - Implement User Authentication (JWT).
 - Add Stripe or Razorpay payment gateway integration.

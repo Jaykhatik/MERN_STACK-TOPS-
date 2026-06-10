@@ -1,12 +1,18 @@
 
-import { X, Trash2 } from 'lucide-react';
+import { X, Trash2, Minus, Plus } from 'lucide-react';
 import { useStore } from '../../store/useStore';
 import './CartDrawer.css';
 
 const CartDrawer = () => {
-  const { isCartOpen, setIsCartOpen, cart, cartTotals, removeFromCart } = useStore();
+  const { isCartOpen, setIsCartOpen, cart, cartTotals, removeFromCart, clearCart, showToast, addToCart } = useStore();
 
   if (!isCartOpen) return null;
+
+  const handleCheckout = async () => {
+    await clearCart();
+    setIsCartOpen(false);
+    showToast('✓ Order Placed Successfully!');
+  };
 
   return (
     <div className="cart-overlay" onClick={() => setIsCartOpen(false)}>
@@ -31,7 +37,23 @@ const CartDrawer = () => {
                 <div className="cart-item-info">
                   <h4>{item.product.name}</h4>
                   <p className="cart-item-price">₹{item.product.price.toLocaleString()}</p>
-                  <p className="cart-item-qty">Qty: {item.quantity}</p>
+                  
+                  <div className="cart-item-qty-controls">
+                    <button 
+                      className="qty-btn" 
+                      onClick={() => addToCart(item.product.id, -1)}
+                    >
+                      <Minus size={14} />
+                    </button>
+                    <span className="qty-value">{item.quantity}</span>
+                    <button 
+                      className="qty-btn" 
+                      onClick={() => addToCart(item.product.id, 1)}
+                    >
+                      <Plus size={14} />
+                    </button>
+                  </div>
+
                 </div>
                 <button 
                   className="remove-btn" 
@@ -58,7 +80,7 @@ const CartDrawer = () => {
               <span>Total</span>
               <span>₹{cartTotals.total.toLocaleString()}</span>
             </div>
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <button className="checkout-btn" onClick={handleCheckout}>Proceed to Checkout</button>
           </div>
         )}
       </div>

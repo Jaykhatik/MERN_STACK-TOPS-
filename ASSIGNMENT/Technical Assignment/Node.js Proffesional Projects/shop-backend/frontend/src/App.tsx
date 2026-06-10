@@ -7,7 +7,8 @@ import ProductGrid from './components/ProductGrid/ProductGrid';
 import CartDrawer from './components/CartDrawer/CartDrawer';
 import Toast from './components/Toast/Toast';
 import { useStore } from './store/useStore';
-import './App.css'; // Just keeping it generic
+import CategoryPage from './pages/CategoryPage';
+import './App.css';
 
 const Home = () => {
   return (
@@ -35,12 +36,13 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/category/:categoryName" element={<CategoryPage />} />
           </Routes>
         </main>
-        
+
         <footer className="footer glass">
           <div className="container">
-            <p>&copy; 2026 TechStore. All rights reserved.</p>
+            <p>&copy; 2026 E-Commerce App. All rights reserved.</p>
           </div>
         </footer>
 
