@@ -25,7 +25,7 @@ app.get('/songs', (req: Request, res: Response) => {
 
 // 4. POST /songs & 5. Validation
 app.post('/songs', (req: Request, res: Response) => {
-    const { title, artist, duration, bannerUrl } = req.body;
+    const { title, artist, duration, bannerUrl, audioUrl } = req.body;
 
     // Validation
     if (!title || typeof title !== 'string' || title.trim() === '') {
@@ -35,7 +35,7 @@ app.post('/songs', (req: Request, res: Response) => {
         return res.status(400).json({ error: 'Duration must be a positive number' });
     }
 
-    const newSong = new Song(title.trim(), artist || 'Unknown Artist', duration, bannerUrl);
+    const newSong = new Song(title.trim(), artist || 'Unknown Artist', duration, bannerUrl, audioUrl);
     songs.push(newSong);
 
     res.status(201).json(songs);

@@ -11,6 +11,7 @@ interface Song {
   artist: string;
   duration: number;
   bannerUrl?: string;
+  audioUrl?: string;
 }
 
 interface ToastMessage {
@@ -25,11 +26,12 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [playingSong, setPlayingSong] = useState<Song | null>(null);
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Form State
-  const [newSong, setNewSong] = useState({ title: '', artist: '', duration: '', bannerUrl: '' });
+  const [newSong, setNewSong] = useState({ title: '', artist: '', duration: '', bannerUrl: '', audioUrl: '' });
   const [formError, setFormError] = useState('');
 
   useEffect(() => {
@@ -92,7 +94,8 @@ function App() {
           title: newSong.title,
           artist: newSong.artist,
           duration: durationNum,
-          bannerUrl: newSong.bannerUrl
+          bannerUrl: newSong.bannerUrl,
+          audioUrl: newSong.audioUrl
         })
       });
 
@@ -104,7 +107,7 @@ function App() {
 
       await fetchSongs(searchTerm);
       setIsModalOpen(false);
-      setNewSong({ title: '', artist: '', duration: '', bannerUrl: '' });
+      setNewSong({ title: '', artist: '', duration: '', bannerUrl: '', audioUrl: '' });
       showToast('Song Added Successfully');
     } catch (err) {
       setFormError('Network error occurred');
@@ -238,8 +241,9 @@ function App() {
             {songs.map((song, idx) => (
               <div 
                 key={idx} 
-                className="song-card glass animate-fade-up"
+                className="song-card glass animate-fade-up clickable-card"
                 style={{ animationDelay: `${idx * 0.1}s` }}
+                onClick={() => setPlayingSong(song)}
               >
                 <div className="card-hover-edge"></div>
                 
@@ -262,7 +266,7 @@ function App() {
                   </div>
                   
                   <button 
-                    onClick={() => handleDelete(song.title)}
+                    onClick={(e) => { e.stopPropagation(); handleDelete(song.title); }}
                     className="btn-icon"
                     title="Delete Song"
                   >
@@ -355,11 +359,53 @@ function App() {
                   placeholder="https://example.com/image.jpg"
                 />
               </div>
+
+              <div className="form-group">
+                <label className="form-label">Audio File URL</label>
+                <input 
+                  type="text" 
+                  value={newSong.audioUrl}
+                  onChange={e => setNewSong({...newSong, audioUrl: e.target.value})}
+                  className="input-field modal-input"
+                  placeholder="/audio/your-song.mp3"
+                />
+              </div>
               
               <button type="submit" className="btn-primary w-full">
                 Save to Playlist
               </button>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Now Playing Modal */}
+      {playingSong && (
+        <div className="modal-overlay animate-fade-in" onClick={() => setPlayingSong(null)}>
+          <div className="modal-content playing-modal animate-slide-in" onClick={e => e.stopPropagation()}>
+            <button onClick={() => setPlayingSong(null)} className="modal-close">
+              <X size={20} />
+            </button>
+            <div className="playing-cover-container">
+              {playingSong.bannerUrl ? (
+                <img src={playingSong.bannerUrl} alt={playingSong.title} className="playing-cover animate-pulse-slow" />
+              ) : (
+                <div className="playing-cover playing-cover-placeholder">
+                  <Music size={64} />
+                </div>
+              )}
+            </div>
+            <h2 className="playing-title">{playingSong.title}</h2>
+            <p className="playing-artist">{playingSong.artist}</p>
+            
+            <audio 
+              src={playingSong.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}
+              controls 
+              autoPlay 
+              className="audio-player"
+            >
+              Your browser does not support the audio element.
+            </audio>
           </div>
         </div>
       )}
