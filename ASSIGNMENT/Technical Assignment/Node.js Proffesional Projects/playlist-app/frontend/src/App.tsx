@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { 
   Music, Search, Plus, Play, Clock, User, 
-  Trash2, X, CheckCircle, Music4, ChevronUp 
+  Trash2, X, CheckCircle, Music4, ChevronUp,
+  Pause, SkipForward, SkipBack, Volume2, VolumeX,
+  Repeat, Shuffle, Volume1
 } from 'lucide-react';
 import './index.css';
 
@@ -33,6 +35,16 @@ function App() {
   // Form State
   const [newSong, setNewSong] = useState({ title: '', artist: '', duration: '', bannerUrl: '', audioUrl: '' });
   const [formError, setFormError] = useState('');
+
+  // Audio Control States
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [songDuration, setSongDuration] = useState(0);
+  const [volume, setVolume] = useState(0.8);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isLooping, setIsLooping] = useState(false);
+  const [isShuffle, setIsShuffle] = useState(false);
 
   useEffect(() => {
     fetchSongs();
@@ -122,6 +134,10 @@ function App() {
       if (res.ok) {
         fetchSongs(searchTerm);
         showToast('Song Deleted');
+        if (playingSong && playingSong.title === title) {
+          setPlayingSong(null);
+          setIsPlaying(false);
+        }
       }
     } catch (err) {
       console.error(err);
@@ -129,8 +145,9 @@ function App() {
   };
 
   const formatDuration = (seconds: number) => {
+    if (isNaN(seconds) || seconds === undefined) return "0:00";
     const m = Math.floor(seconds / 60);
-    const s = seconds % 60;
+    const s = Math.floor(seconds % 60);
     return `${m}:${s.toString().padStart(2, '0')}`;
   };
 
@@ -138,8 +155,130 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Find index of playing song
+  const currentSongIndex = useMemo(() => {
+    return songs.findIndex((s) => s.title === playingSong?.title);
+  }, [songs, playingSong]);
+
+  // Audio Control Handlers
+  const handlePrev = () => {
+    if (songs.length === 0 || currentSongIndex === -1) return;
+    let prevIndex = currentSongIndex - 1;
+    if (prevIndex < 0) prevIndex = songs.length - 1;
+    setPlayingSong(songs[prevIndex]);
+  };
+
+  const handleNext = () => {
+    if (songs.length === 0 || currentSongIndex === -1) return;
+    if (isShuffle) {
+      const randomIndex = Math.floor(Math.random() * songs.length);
+      setPlayingSong(songs[randomIndex]);
+    } else {
+      let nextIndex = currentSongIndex + 1;
+      if (nextIndex >= songs.length) nextIndex = 0;
+      setPlayingSong(songs[nextIndex]);
+    }
+  };
+
+  // HTML5 Audio element listeners
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    const handleTimeUpdate = () => {
+      setCurrentTime(audio.currentTime);
+    };
+    const handleLoadedMetadata = () => {
+      setSongDuration(audio.duration);
+    };
+    const handleEnded = () => {
+      if (isLooping) {
+        audio.currentTime = 0;
+        audio.play().catch((err) => console.log(err));
+      } else {
+        handleNext();
+      }
+    };
+
+    audio.addEventListener("play", handlePlay);
+    audio.addEventListener("pause", handlePause);
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    audio.addEventListener("loadedmetadata", handleLoadedMetadata);
+    audio.addEventListener("ended", handleEnded);
+
+    return () => {
+      audio.removeEventListener("play", handlePlay);
+      audio.removeEventListener("pause", handlePause);
+      audio.removeEventListener("timeupdate", handleTimeUpdate);
+      audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      audio.removeEventListener("ended", handleEnded);
+    };
+  }, [playingSong, isLooping, isShuffle, songs, currentSongIndex]);
+
+  // Handle song source changes
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (playingSong) {
+      audio.src = playingSong.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+      audio.load();
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) =>
+          console.log("Playback interrupted or blocked by browser:", err),
+        );
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  }, [playingSong]);
+
+  // Volume control
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = isMuted ? 0 : volume;
+  }, [volume, isMuted]);
+
+  const togglePlayPause = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play().catch((err) => console.log(err));
+    }
+  };
+
+  const handleSeekChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const newTime = Number(e.target.value);
+    audio.currentTime = newTime;
+    setCurrentTime(newTime);
+  };
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = Number(e.target.value);
+    setVolume(newVolume);
+    if (newVolume > 0 && isMuted) {
+      setIsMuted(false);
+    }
+  };
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
   return (
     <div className="min-h-screen">
+      {/* Hidden Persistent Audio Tag */}
+      <audio ref={audioRef} />
+
       {/* Toast Container */}
       <div className="toast-container">
         {toasts.map(toast => (
@@ -192,11 +331,6 @@ function App() {
           <p className="hero-subtitle">
             Manage your music beautifully. Discover, organize, and experience your perfect soundtrack with our premium interface.
           </p>
-          {/* <div className="flex justify-center">
-            <button onClick={() => setIsModalOpen(true)} className="btn-primary">
-              <Plus size={22} /> Add New Song
-            </button>
-          </div> */}
         </div>
       </div>
 
@@ -379,33 +513,88 @@ function App() {
         </div>
       )}
 
-      {/* Now Playing Modal */}
+      {/* Spotify-like Bottom Persistent Player Bar */}
       {playingSong && (
-        <div className="modal-overlay animate-fade-in" onClick={() => setPlayingSong(null)}>
-          <div className="modal-content playing-modal animate-slide-in" onClick={e => e.stopPropagation()}>
-            <button onClick={() => setPlayingSong(null)} className="modal-close">
-              <X size={20} />
-            </button>
-            <div className="playing-cover-container">
-              {playingSong.bannerUrl ? (
-                <img src={playingSong.bannerUrl} alt={playingSong.title} className="playing-cover animate-pulse-slow" />
-              ) : (
-                <div className="playing-cover playing-cover-placeholder">
-                  <Music size={64} />
-                </div>
-              )}
+        <div className="spotify-bottom-bar animate-fade-in">
+          {/* Song Info */}
+          <div className="song-info">
+            {playingSong.bannerUrl ? (
+              <img src={playingSong.bannerUrl} alt={playingSong.title} />
+            ) : (
+              <div className="song-icon banner-img flex items-center justify-center bg-slate-800 text-white">
+                <Music size={20} />
+              </div>
+            )}
+            <div className="text-details">
+              <span className="title">{playingSong.title}</span>
+              <span className="artist">{playingSong.artist}</span>
             </div>
-            <h2 className="playing-title">{playingSong.title}</h2>
-            <p className="playing-artist">{playingSong.artist}</p>
-            
-            <audio 
-              src={playingSong.audioUrl || "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"}
-              controls 
-              autoPlay 
-              className="audio-player"
+            <button 
+              className="text-slate-400 hover:text-white ml-2 p-1 rounded-full hover:bg-white/10 transition" 
+              onClick={() => setPlayingSong(null)} 
+              title="Close Player"
             >
-              Your browser does not support the audio element.
-            </audio>
+              <X size={14} />
+            </button>
+          </div>
+
+          {/* Controls Center */}
+          <div className="player-controls-center">
+            <div className="control-buttons">
+              <button 
+                className={`control-btn ${isShuffle ? 'active' : ''}`} 
+                onClick={() => setIsShuffle(!isShuffle)}
+                title="Shuffle"
+              >
+                <Shuffle size={16} />
+              </button>
+              <button className="control-btn" onClick={handlePrev} title="Previous">
+                <SkipBack size={18} />
+              </button>
+              <button className="control-btn play-pause-toggle" onClick={togglePlayPause} title={isPlaying ? "Pause" : "Play"}>
+                {isPlaying ? <Pause size={18} /> : <Play size={18} className="translate-x-[1px]" />}
+              </button>
+              <button className="control-btn" onClick={handleNext} title="Next">
+                <SkipForward size={18} />
+              </button>
+              <button 
+                className={`control-btn ${isLooping ? 'active' : ''}`} 
+                onClick={() => setIsLooping(!isLooping)}
+                title="Repeat"
+              >
+                <Repeat size={16} />
+              </button>
+            </div>
+            <div className="progress-bar-container">
+              <span className="time-label">{formatDuration(currentTime)}</span>
+              <input 
+                type="range" 
+                min="0" 
+                max={songDuration || playingSong.duration || 100} 
+                value={currentTime} 
+                onChange={handleSeekChange}
+                className="progress-slider"
+              />
+              <span className="time-label">{formatDuration(songDuration || playingSong.duration)}</span>
+            </div>
+          </div>
+
+          {/* Right Utilities */}
+          <div className="player-utilities-right">
+            <div className="volume-container">
+              <button className="control-btn" onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
+                {isMuted || volume === 0 ? <VolumeX size={18} /> : volume < 0.5 ? <Volume1 size={18} /> : <Volume2 size={18} />}
+              </button>
+              <input 
+                type="range" 
+                min="0" 
+                max="1" 
+                step="0.01" 
+                value={isMuted ? 0 : volume} 
+                onChange={handleVolumeChange}
+                className="volume-slider"
+              />
+            </div>
           </div>
         </div>
       )}
@@ -421,7 +610,7 @@ function App() {
       )}
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="footer" style={{ paddingBottom: playingSong ? '7rem' : '2.5rem' }}>
         <div className="footer-logo">
           <Music4 size={20} />
           PlaylistPro
