@@ -10,6 +10,7 @@ interface Song {
   title: string;
   artist: string;
   duration: number;
+  bannerUrl?: string;
 }
 
 interface ToastMessage {
@@ -28,7 +29,7 @@ function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Form State
-  const [newSong, setNewSong] = useState({ title: '', artist: '', duration: '' });
+  const [newSong, setNewSong] = useState({ title: '', artist: '', duration: '', bannerUrl: '' });
   const [formError, setFormError] = useState('');
 
   useEffect(() => {
@@ -90,7 +91,8 @@ function App() {
         body: JSON.stringify({
           title: newSong.title,
           artist: newSong.artist,
-          duration: durationNum
+          duration: durationNum,
+          bannerUrl: newSong.bannerUrl
         })
       });
 
@@ -102,7 +104,7 @@ function App() {
 
       await fetchSongs(searchTerm);
       setIsModalOpen(false);
-      setNewSong({ title: '', artist: '', duration: '' });
+      setNewSong({ title: '', artist: '', duration: '', bannerUrl: '' });
       showToast('Song Added Successfully');
     } catch (err) {
       setFormError('Network error occurred');
@@ -243,9 +245,13 @@ function App() {
                 
                 <div className="flex justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="song-icon">
-                      <Music size={24} />
-                    </div>
+                    {song.bannerUrl ? (
+                      <img src={song.bannerUrl} alt={song.title} className="song-icon banner-img" />
+                    ) : (
+                      <div className="song-icon">
+                        <Music size={24} />
+                      </div>
+                    )}
                     <div className="song-details">
                       <h3 className="song-title" title={song.title}>{song.title}</h3>
                       <p className="song-artist">
@@ -336,6 +342,17 @@ function App() {
                   className="input-field modal-input"
                   placeholder="e.g. 354"
                   min="1"
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Banner Image URL</label>
+                <input 
+                  type="text" 
+                  value={newSong.bannerUrl}
+                  onChange={e => setNewSong({...newSong, bannerUrl: e.target.value})}
+                  className="input-field modal-input"
+                  placeholder="https://example.com/image.jpg"
                 />
               </div>
               

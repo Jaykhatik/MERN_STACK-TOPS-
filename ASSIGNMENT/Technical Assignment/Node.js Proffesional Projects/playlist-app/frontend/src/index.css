@@ -344,6 +344,7 @@ body {
 .song-card:hover .song-icon {
   transform: scale(1.1);
 }
+.banner-img { object-fit: cover; }
 .song-details {
   flex: 1;
 }
