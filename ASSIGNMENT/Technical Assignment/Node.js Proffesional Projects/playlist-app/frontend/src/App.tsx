@@ -187,11 +187,11 @@ function App() {
           <p className="hero-subtitle">
             Manage your music beautifully. Discover, organize, and experience your perfect soundtrack with our premium interface.
           </p>
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <button onClick={() => setIsModalOpen(true)} className="btn-primary">
               <Plus size={22} /> Add New Song
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 

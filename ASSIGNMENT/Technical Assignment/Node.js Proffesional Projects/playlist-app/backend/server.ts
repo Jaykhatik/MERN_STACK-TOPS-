@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const { Song, songs } = require('./song');
+import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
+import { Song, songs } from './song';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -9,15 +9,14 @@ app.use(cors());
 app.use(express.json());
 
 // 1. Root route
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
     res.send('Welcome to Playlist App');
 });
 
 // 3. GET /songs
-app.get('/songs', (req, res) => {
-    // EXTRA: Search by title
+app.get('/songs', (req: Request, res: Response) => {
     const { search } = req.query;
-    if (search) {
+    if (search && typeof search === 'string') {
         const filtered = songs.filter(s => s.title.toLowerCase().includes(search.toLowerCase()));
         return res.json(filtered);
     }
@@ -25,7 +24,7 @@ app.get('/songs', (req, res) => {
 });
 
 // 4. POST /songs & 5. Validation
-app.post('/songs', (req, res) => {
+app.post('/songs', (req: Request, res: Response) => {
     const { title, artist, duration } = req.body;
 
     // Validation
@@ -43,8 +42,8 @@ app.post('/songs', (req, res) => {
 });
 
 // EXTRA: DELETE /songs/:title
-app.delete('/songs/:title', (req, res) => {
-    const title = req.params.title;
+app.delete('/songs/:title', (req: Request, res: Response) => {
+    const title = req.params.title as string;
     const index = songs.findIndex(s => s.title.toLowerCase() === title.toLowerCase());
     
     if (index !== -1) {
@@ -56,12 +55,12 @@ app.delete('/songs/:title', (req, res) => {
 });
 
 // EXTRA: 404 handler
-app.use((req, res, next) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
     res.status(404).json({ error: 'Endpoint not found' });
 });
 
 // EXTRA: Global error handler
-app.use((err, req, res, next) => {
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     console.error(err.stack);
     res.status(500).json({ error: 'Internal Server Error' });
 });
