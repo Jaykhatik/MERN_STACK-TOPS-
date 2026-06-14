@@ -1,5 +1,5 @@
 import React from 'react';
-import { Palette, Image as ImageIcon, Type, Download, Home, Settings, FolderHeart } from 'lucide-react';
+import { Palette, Image as ImageIcon, Type, Home, Settings, FolderHeart } from 'lucide-react';
 
 interface SidebarProps {
   activeTab: string;
